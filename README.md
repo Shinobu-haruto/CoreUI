@@ -24,5 +24,5 @@ Tema completo para Linux:
 
 ```bash
 mkdir -p ~/.themes
-cp -r GTK3 ~/.themes/Core
-cp -r GTK4 ~/.themes/Core
+cp -r GTK3 ~/.themes/CoreIU
+cp -r GTK4 ~/.themes/CoreIU
