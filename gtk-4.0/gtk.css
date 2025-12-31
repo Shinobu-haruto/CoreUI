@@ -1,0 +1,215 @@
+/* ================================
+ * Core GTK 4 - Variables
+ * ================================ */
+
+@define-color core_bg              #121614;
+@define-color core_bg_alt          #1a1f1c;
+
+@define-color core_fg              #e6efe9;
+@define-color core_fg_muted        #9aa7a1;
+@define-color core_fg_disabled     #6b7771;
+
+@define-color core_border          #2a322e;
+
+@define-color core_accent          #1db954;
+@define-color core_accent_soft     alpha(#1db954, 0.25);
+@define-color core_accent_active   #169e46;
+
+@define-color core_selection_fg    #ffffff;
+
+/* ================================
+ * Core Light GTK4 - Variables
+ * ================================ */
+
+@define-color core_bg              #f5f7f6;
+@define-color core_bg_alt          #e9edeb;
+
+@define-color core_fg              #1f2a26;
+@define-color core_fg_muted        #5f6f68;
+@define-color core_fg_disabled     #9aa7a1;
+
+@define-color core_border          #cdd6d1;
+
+@define-color core_accent          #1db954;
+@define-color core_accent_soft     alpha(#1db954, 0.18);
+@define-color core_accent_active   #169e46;
+
+@define-color core_selection_fg    #ffffff;
+--------------------------------------------------------
+window,
+.background {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+button {
+    background-color: @core_bg_alt;
+    border: 1px solid @core_border;
+    border-radius: 8px;
+    padding: 6px 12px;
+}
+
+button:hover {
+    background-color: shade(@core_bg_alt, 1.05);
+}
+
+button:active,
+button:checked {
+    background-color: @core_accent;
+    color: @core_selection_fg;
+}
+
+entry {
+    background-color: @core_bg_alt;
+    border: 1px solid @core_border;
+    border-radius: 6px;
+    padding: 6px 8px;
+}
+
+entry:focus {
+    border-color: @core_accent;
+}
+
+checkbutton {
+    color: @core_fg;
+}
+
+checkbutton:checked {
+    color: @core_accent;
+}
+
+switch {
+    background-color: @core_bg_alt;
+    border-radius: 999px;
+}
+
+switch:checked {
+    background-color: @core_accent;
+}
+
+notebook tab {
+    padding: 8px 12px;
+}
+
+notebook tab:checked {
+    border-bottom: 2px solid @core_accent;
+}
+
+scale trough {
+    background-color: @core_bg_alt;
+    min-height: 4px;
+}
+
+scale highlight {
+    background-color: @core_accent;
+}
+
+scale slider {
+    background-color: @core_fg;
+    border-radius: 50%;
+}
+
+* {
+    transition: background-color 140ms ease-out,
+                border-color 140ms ease-out;
+}
+-------------------------------------------------------
+
+window,
+.background {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+button {
+    background-color: @core_bg_alt;
+    border: 1px solid @core_border;
+    border-radius: 8px;
+    padding: 6px 12px;
+}
+
+button:hover {
+    background-color: shade(@core_bg_alt, 0.97);
+}
+
+button:active,
+button:checked {
+    background-color: @core_accent;
+    color: @core_selection_fg;
+}
+
+entry {
+    background-color: #ffffff;
+    border: 1px solid @core_border;
+    border-radius: 6px;
+    padding: 6px 8px;
+    color: @core_fg;
+}
+
+entry:focus {
+    border-color: @core_accent;
+}
+
+checkbutton {
+    color: @core_fg;
+}
+
+checkbutton:checked {
+    color: @core_accent;
+}
+
+switch {
+    background-color: @core_bg_alt;
+    border-radius: 999px;
+}
+
+switch:checked {
+    background-color: @core_accent;
+}
+
+notebook tab {
+    padding: 8px 12px;
+    background-color: transparent;
+}
+
+notebook tab:checked {
+    border-bottom: 2px solid @core_accent;
+}
+
+scale trough {
+    background-color: @core_bg_alt;
+    min-height: 4px;
+}
+
+scale highlight {
+    background-color: @core_accent;
+}
+
+scale slider {
+    background-color: @core_fg;
+    border-radius: 50%;
+    min-width: 12px;
+    min-height: 12px;
+}
+
+*:backdrop {
+    opacity: 0.92;
+}
+
+* {
+    transition: background-color 140ms ease-out,
+                border-color 140ms ease-out;
+}
+
+headerbar button image {
+    color: @core_fg;
+}
+
+headerbar button:hover image {
+    color: @core_accent;
+}
+
+headerbar button:active image {
+    color: @core_selection_fg;
+}
+

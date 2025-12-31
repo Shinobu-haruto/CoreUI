@@ -1,0 +1,43 @@
+/* ================================
+ * Core Color System
+ * ================================ */
+
+/* Fondos base */
+@define-color core_bg          #0e1210;
+@define-color core_bg_alt      #151a17;
+@define-color core_bg_soft     #1b211d;
+
+/* Texto */
+@define-color core_fg          #e6f4ea;
+@define-color core_fg_muted    #a7bdb0;
+@define-color core_fg_disabled #6f8578;
+
+/* Acento Core */
+@define-color core_accent        #2ecc71;
+@define-color core_accent_hover  #3eea88;
+@define-color core_accent_active #26b863;
+
+/* Acento translúcido */
+@define-color core_accent_soft rgba(46, 204, 113, 0.18);
+
+/* Bordes */
+@define-color core_border        #1f2a24;
+@define-color core_border_focus  #2ecc71;
+
+/* Divisores */
+@define-color core_divider       #202a25;
+
+/* Sombras */
+@define-color core_shadow_strong rgba(0, 0, 0, 0.55);
+@define-color core_shadow_soft   rgba(0, 0, 0, 0.35);
+
+/* Estados */
+@define-color core_success #2ecc71;
+@define-color core_warning #f1c40f;
+@define-color core_error   #e74c3c;
+@define-color core_info    #3498db;
+
+/* Selección */
+@define-color core_selection_bg @core_accent;
+@define-color core_selection_fg #08120c;
+

@@ -1,0 +1,40 @@
+/* ================================
+ * Core Checks & Radios
+ * ================================ */
+
+/* Base común */
+check,
+radio {
+    background-color: @core_bg_alt;
+    border: 1px solid @core_border;
+    border-radius: @core_radius_sm;
+    min-width: 16px;
+    min-height: 16px;
+}
+
+/* Hover */
+check:hover,
+radio:hover {
+    border-color: @core_accent;
+}
+
+/* Checked */
+check:checked,
+radio:checked {
+    background-color: @core_accent;
+    border-color: @core_accent_active;
+}
+
+/* Radio = circular */
+radio {
+    border-radius: 50%;
+}
+
+/* Disabled */
+check:disabled,
+radio:disabled {
+    background-color: shade(@core_bg_alt, 0.95);
+    border-color: @core_border;
+    opacity: 0.6;
+}
+

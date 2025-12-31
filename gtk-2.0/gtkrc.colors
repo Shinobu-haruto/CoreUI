@@ -1,0 +1,14 @@
+# ================================
+# Core GTK2 - Colors
+# ================================
+
+gtk-color-scheme = " \
+    core_bg:#121614 \
+    core_bg_alt:#1a1f1c \
+    core_fg:#e6efe9 \
+    core_fg_muted:#9aa7a1 \
+    core_border:#2a322e \
+    core_accent:#1db954 \
+    core_error:#d9534f \
+"
+

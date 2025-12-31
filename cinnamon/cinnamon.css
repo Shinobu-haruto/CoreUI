@@ -1,0 +1,231 @@
+/* ================================
+ * Core Cinnamon Variables
+ * ================================ */
+
+@define-color core_bg              #121614;
+@define-color core_bg_alt          #1a1f1c;
+@define-color core_bg_soft         #1f2522;
+
+@define-color core_fg              #e6efe9;
+@define-color core_fg_muted        #9aa7a1;
+@define-color core_fg_disabled     #6b7771;
+
+@define-color core_border          #2a322e;
+
+@define-color core_accent          #1db954;
+@define-color core_accent_hover    #22c55e;
+@define-color core_accent_active   #169e46;
+
+-----------------------------------------------------
+.panel {
+    height: 32px;
+    background-color: @core_bg;
+    color: @core_fg;
+    border-top: 1px solid @core_border;
+}
+
+.panel-button {
+    padding: 0 8px;
+    border-radius: 6px;
+    color: @core_fg;
+}
+
+.panel-button:hover {
+    background-color: @core_bg_soft;
+}
+
+.panel-button:active,
+.panel-button:checked {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
+.menu {
+    background-color: @core_bg_alt;
+    border: 1px solid @core_border;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+.menu-category-button {
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.menu-category-button:hover {
+    background-color: @core_bg_soft;
+}
+
+.menu-category-button:checked {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
+.applet-box {
+    padding: 0 6px;
+}
+
+.applet-box:hover {
+    background-color: @core_bg_soft;
+}
+
+.calendar {
+    background-color: @core_bg_alt;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.calendar-day-base:selected {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
+.menu-search-box {
+    min-height: 28px;
+    padding: 0 8px;
+    border-radius: 8px;
+    background-color: @core_bg;
+    color: @core_fg;
+    border: 1px solid @core_border;
+}
+
+.menu-search-box:focus {
+    border-color: @core_accent;
+}
+
+.menu-application-button {
+    min-height: 28px;
+    padding: 0 10px;
+    border-radius: 6px;
+}
+
+.menu-application-button:hover {
+    background-color: @core_bg_soft;
+}
+
+.menu-application-button:selected {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
+.menu-category-button {
+    min-height: 28px;
+    padding: 0 10px;
+    border-radius: 6px;
+}
+
+.menu scrollbar {
+    width: 6px;
+}
+
+.menu scrollbar slider {
+    border-radius: 999px;
+    background-color: @core_border;
+}
+
+.menu scrollbar slider:hover {
+    background-color: @core_accent;
+}
+
+.menu-application-button image,
+.menu-category-button image {
+    icon-size: 16px;
+}
+
+.menu-box {
+    spacing: 4px;
+}
+
+.applet-box {
+    padding: 0 6px;
+    margin: 0;
+    border-radius: 6px;
+    color: @core_fg;
+}
+
+.applet-box:hover {
+    background-color: @core_bg_soft;
+}
+
+.applet-box:active,
+.applet-box:checked {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
+.clock {
+    font-size: 10.5pt;
+    font-weight: 500;
+    padding: 0 2px;
+}
+
+.clock:hover {
+    color: @core_accent;
+}
+
+.network-applet {
+    padding: 0 4px;
+}
+
+.network-applet image {
+    icon-size: 16px;
+    color: @core_fg;
+}
+
+.network-applet:checked image {
+    color: #ffffff;
+}
+
+.sound-applet image {
+    icon-size: 16px;
+    color: @core_fg;
+}
+
+.sound-applet.muted image {
+    color: @core_fg_disabled;
+}
+
+.systray {
+    spacing: 4px;
+}
+
+.systray image {
+    icon-size: 16px;
+}
+
+.panel-separator {
+    width: 1px;
+    background-color: @core_border;
+    margin: 6px 4px;
+}
+
+/* ================================
+ * Core Cinnamon – Compact Panel
+ * ================================ */
+
+.panel.compact {
+    height: 28px;
+}
+
+.panel.compact .panel-button {
+    padding: 0 6px;
+    border-radius: 6px;
+}
+
+.panel.compact .applet-box {
+    padding: 0 4px;
+}
+
+.panel.compact .clock {
+    font-size: 10pt;
+    font-weight: 500;
+}
+
+.panel.compact image {
+    icon-size: 14px;
+}
+
+.panel.compact .systray {
+    spacing: 3px;
+}
+

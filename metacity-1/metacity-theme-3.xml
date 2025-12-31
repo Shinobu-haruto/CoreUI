@@ -1,0 +1,50 @@
+<metacity_theme name="Core"
+                version="3"
+                author="Shinobu Haruto"
+                date="2025">
+
+  <!-- ==========================
+       Window metrics
+       ========================== -->
+
+  <frame_geometry name="normal"
+                  title_scale="medium"
+                  left_width="1"
+                  right_width="1"
+                  bottom_height="1"
+                  title_height="28"/>
+
+  <frame_geometry name="maximized"
+                  title_scale="medium"
+                  left_width="0"
+                  right_width="0"
+                  bottom_height="0"
+                  title_height="28"/>
+
+  <constant name="core_bg" value="#121614"/>
+  <constant name="core_bg_alt" value="#1a1f1c"/>
+  <constant name="core_border" value="#2a322e"/>
+  <constant name="core_fg" value="#e6efe9"/>
+  <constant name="core_accent" value="#1db954"/>
+
+  <draw_ops name="titlebar_bg">
+    <rectangle x="0" y="0" width="width" height="height"
+               color="core_bg"/>
+  </draw_ops>
+
+  <draw_ops name="title_text">
+    <title x="12" y="center"
+           color="core_fg"
+           ellipsize_width="width"/>
+  </draw_ops>
+
+  <button name="close"   x="width-22" y="6"/>
+  <button name="maximize" x="width-44" y="6"/>
+  <button name="minimize" x="width-66" y="6"/>
+
+<button_style name="close">
+  <state name="normal" color="core_fg"/>
+  <state name="hover" color="core_accent"/>
+  <state name="pressed" color="#ffffff"/>
+</button_style>
+

@@ -1,0 +1,74 @@
+/* ================================
+ * Core Light - Color Overrides
+ * ================================ */
+
+@define-color core_bg              #f5f7f6;
+@define-color core_bg_alt          #e9edeb;
+
+@define-color core_fg              #1f2a26;
+@define-color core_fg_muted        #5f6f68;
+@define-color core_fg_disabled     #9aa7a1;
+
+@define-color core_border          #cdd6d1;
+
+@define-color core_accent          #1db954;
+@define-color core_accent_soft     alpha(#1db954, 0.18);
+@define-color core_accent_active   #169e46;
+
+@define-color core_selection_fg    #ffffff;
+
+@define-color core_warning         #d9822b;
+@define-color core_success         #1db954;
+
+window,
+.background {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+button {
+    background-color: @core_bg_alt;
+    border: 1px solid @core_border;
+}
+
+button:hover {
+    background-color: shade(@core_bg_alt, 0.97);
+}
+
+button:checked,
+button:active {
+    background-color: @core_accent;
+    color: @core_selection_fg;
+}
+
+entry {
+    background-color: #ffffff;
+    border: 1px solid @core_border;
+}
+
+entry:focus {
+    border-color: @core_accent;
+}
+
+notebook tab {
+    background-color: transparent;
+}
+
+notebook tab:checked {
+    background-color: @core_bg;
+    border-bottom: 2px solid @core_accent;
+}
+
+.sidebar {
+    background-color: @core_bg_alt;
+}
+
+.sidebar row:selected {
+    background-color: @core_accent_soft;
+}
+
+scale trough,
+progressbar trough {
+    background-color: @core_bg_alt;
+}
+

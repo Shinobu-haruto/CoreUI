@@ -1,0 +1,37 @@
+/* ================================
+ * Core Switches
+ * ================================ */
+
+switch {
+    background-color: @core_bg_alt;
+    border: 1px solid @core_border;
+    border-radius: 999px;
+    min-width: 36px;
+    min-height: 18px;
+}
+
+/* Slider */
+switch slider {
+    background-color: @core_fg;
+    border-radius: 50%;
+    min-width: 16px;
+    min-height: 16px;
+    margin: 1px;
+}
+
+/* ON */
+switch:checked {
+    background-color: @core_accent;
+    border-color: @core_accent_active;
+}
+
+/* Hover */
+switch:hover {
+    border-color: @core_accent;
+}
+
+/* Disabled */
+switch:disabled {
+    opacity: 0.5;
+}
+

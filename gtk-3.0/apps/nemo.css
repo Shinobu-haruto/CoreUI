@@ -1,0 +1,41 @@
+/* ================================
+ * Core Nemo
+ * ================================ */
+
+.nemo-window {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+.nemo-window .view {
+    background-color: @core_bg;
+}
+
+.nemo-window .view:selected {
+    background-color: @core_accent_soft;
+    color: @core_fg;
+}
+
+.nemo-window .view:selected:focus {
+    background-color: @core_accent;
+    color: @core_selection_fg;
+}
+
+.nemo-pathbar button {
+    background-color: transparent;
+    border-radius: @core_radius_sm;
+    padding: 0 @core_pad_sm;
+}
+
+.nemo-pathbar button:hover {
+    background-color: @core_bg_alt;
+}
+
+.nemo-window .sidebar row:selected {
+    background-color: @core_accent_soft;
+}
+
+.nemo-window entry.search {
+    margin: @core_pad_sm;
+}
+

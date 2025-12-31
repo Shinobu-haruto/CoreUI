@@ -1,0 +1,52 @@
+/* ================================
+ * Core Buttons
+ * ================================ */
+
+button {
+    background-color: @core_bg_alt;
+    color: @core_fg;
+    border: 1px solid @core_border;
+    border-radius: @core_radius_md;
+    min-height: @core_height_md;
+    padding: 0 @core_pad_md;
+    box-shadow: none;
+}
+
+button:hover {
+    background-color: @core_bg_soft;
+    border-color: @core_accent;
+}
+
+button:active {
+    background-color: @core_accent;
+    color: @core_selection_fg;
+    border-color: @core_accent_active;
+}
+
+button.suggested-action {
+    background-color: @core_accent;
+    color: @core_selection_fg;
+    border-color: @core_accent_active;
+}
+
+button.suggested-action:hover {
+    background-color: @core_accent_hover;
+}
+
+button.destructive-action {
+    background-color: @core_error;
+    color: #ffffff;
+    border-color: shade(@core_error, 0.9);
+}
+
+button:disabled {
+    background-color: shade(@core_bg_alt, 0.95);
+    color: @core_fg_disabled;
+    border-color: @core_border;
+}
+
+headerbar button {
+    min-height: @core_height_sm;
+    padding: 0 @core_pad_sm;
+}
+

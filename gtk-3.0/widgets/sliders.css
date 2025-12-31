@@ -1,0 +1,48 @@
+/* ================================
+ * Core Sliders (Scale)
+ * ================================ */
+
+scale {
+    background-color: transparent;
+}
+
+scale trough {
+    background-color: shade(@core_bg_alt, 0.9);
+    border: 1px solid @core_border;
+}
+
+
+scale highlight {
+    background-color: @core_accent;
+    border-radius: @core_radius_md;
+}
+
+scale slider {
+    background-color: @core_bg;
+    border: 2px solid @core_accent;
+    border-radius: 50%;
+    min-width: 14px;
+    min-height: 14px;
+}
+
+scale slider:hover {
+    border-color: @core_accent;
+}
+
+scale slider:active {
+    background-color: @core_accent;
+    border-color: @core_accent_active;
+}
+
+scale:disabled trough {
+    background-color: shade(@core_bg_alt, 0.95);
+}
+
+scale:disabled highlight {
+    background-color: shade(@core_accent, 0.7);
+}
+
+scale:disabled slider {
+    background-color: @core_fg_disabled;
+}
+

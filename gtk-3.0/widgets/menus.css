@@ -1,0 +1,69 @@
+/* ================================
+ * Core Menus
+ * ================================ */
+
+menu,
+.menu {
+    background-color: @core_bg_alt;
+    color: @core_fg;
+    border: 1px solid @core_border;
+    border-radius: @core_radius_md;
+    padding: @core_pad_sm 0;
+    box-shadow: 0 6px 16px @core_shadow_soft;
+}
+
+menuitem {
+    min-height: @core_height_sm;
+    padding: 0 @core_pad_lg;
+    border-radius: @core_radius_sm;
+}
+
+menuitem:hover,
+menuitem:selected {
+    background-color: @core_accent_soft;
+    color: @core_fg;
+}
+
+menuitem:active {
+    background-color: @core_accent;
+    color: @core_selection_fg;
+}
+
+menuitem:disabled {
+    color: @core_fg_disabled;
+}
+
+menu separator {
+    background-color: @core_divider;
+    min-height: 1px;
+    margin: @core_pad_xs 0;
+}
+
+menu menu {
+    margin: 4px;
+}
+
+menubar {
+    background-color: @core_bg_alt;
+    border-bottom: 1px solid @core_border;
+    padding: 0 4px; /* padding general del menubar */
+}
+
+menubar menuitem {
+    padding: 0 12px; /* separación horizontal entre botones */
+    margin: 0 2px;   /* pequeño espacio entre botones */
+    border-radius: @core_radius_sm;
+    min-height: @core_height_sm;
+    color: @core_fg;
+}
+
+menubar menuitem:hover {
+    background-color: @core_bg_soft;
+    color: @core_accent;
+}
+
+menubar menuitem:active {
+    background-color: @core_accent;
+    color: @core_selection_fg;
+}
+

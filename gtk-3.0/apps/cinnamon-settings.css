@@ -1,0 +1,48 @@
+/* ================================
+ * Core Cinnamon Settings Sidebar
+ * ================================ */
+
+.cinnamon-settings .sidebar {
+    background-color: @core_bg_alt;
+}
+
+/* Categoría */
+.cinnamon-settings .sidebar row {
+    padding: @core_pad_sm @core_pad_md;
+    border-radius: @core_radius_sm;
+}
+
+/* Hover */
+.cinnamon-settings .sidebar row:hover {
+    background-color: alpha(@core_accent, 0.12);
+}
+
+/* Activo */
+.cinnamon-settings .sidebar row:selected {
+    background-color: @core_accent_soft;
+    color: @core_fg;
+}
+
+.cinnamon-settings frame {
+    background-color: transparent;
+    border: 1px solid @core_border;
+    margin-bottom: @core_pad_md;
+}
+
+.cinnamon-settings label {
+    color: @core_fg;
+}
+
+.cinnamon-settings label.dim-label {
+    color: @core_fg_muted;
+    font-size: 0.95em;
+}
+
+.cinnamon-settings switch:checked {
+    background-color: @core_accent;
+}
+
+.cinnamon-settings scale slider {
+    border-width: 2px;
+}
+

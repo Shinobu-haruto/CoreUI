@@ -1,0 +1,12 @@
+/* ================================
+ * Core GTK3 Reset
+ * ================================ */
+
+* {
+    background-clip: padding-box;
+    box-shadow: none;
+    outline: none;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+}
+

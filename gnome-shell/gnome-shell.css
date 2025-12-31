@@ -1,0 +1,81 @@
+/* ================================
+ * Core GNOME Shell Variables
+ * ================================ */
+
+@define-color core_bg           #121614;
+@define-color core_bg_alt       #1a1f1c;
+@define-color core_bg_soft      #1f2522;
+
+@define-color core_fg           #e6efe9;
+@define-color core_fg_muted     #9aa7a1;
+@define-color core_fg_disabled  #6b7771;
+
+@define-color core_border       #2a322e;
+@define-color core_accent       #1db954;
+@define-color core_accent_hover #22c55e;
+@define-color core_accent_active #169e46;
+@define-color core_error        #d9534f;
+
+#panel {
+    background-color: @core_bg;
+    color: @core_fg;
+    height: 32px; /* compact */
+}
+
+.panel-button {
+    padding: 0 6px;
+    border-radius: 6px;
+    color: @core_fg;
+}
+
+.panel-button:hover {
+    background-color: @core_bg_soft;
+}
+
+.panel-button:active {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
+#dash {
+    background-color: @core_bg_alt;
+}
+
+#overview .search-entry {
+    background-color: @core_bg;
+    color: @core_fg;
+    border-radius: 8px;
+    padding: 2px 6px;
+    border: 1px solid @core_border;
+}
+
+#overview .search-entry:focus {
+    border-color: @core_accent;
+}
+
+.notifications {
+    background-color: @core_bg_alt;
+    color: @core_fg;
+    border-radius: 10px;
+    border: 1px solid @core_border;
+}
+
+.notifications .notification-banner {
+    background-color: @core_bg_alt;
+}
+
+.popup-menu {
+    background-color: @core_bg_alt;
+    border-radius: 10px;
+    border: 1px solid @core_border;
+}
+
+.popup-menu .popup-menu-item {
+    padding: 0 8px;
+}
+
+.popup-menu .popup-menu-item:hover {
+    background-color: @core_bg_soft;
+    color: @core_accent;
+}
+

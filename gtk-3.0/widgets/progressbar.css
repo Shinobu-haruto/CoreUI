@@ -1,0 +1,20 @@
+/* ================================
+ * Core Progressbar
+ * ================================ */
+
+progressbar {
+    background-color: transparent;
+}
+
+progressbar trough {
+    background-color: @core_bg_alt;
+    border: 1px solid @core_border;
+    border-radius: @core_radius_md;
+    min-height: 6px;
+}
+
+progressbar progress {
+    background-color: @core_accent;
+    border-radius: @core_radius_md;
+}
+

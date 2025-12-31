@@ -1,0 +1,37 @@
+/* ================================
+ * Core Entries
+ * ================================ */
+
+entry {
+    background-color: @core_bg_alt;
+    color: @core_fg;
+    border: 1px solid @core_border;
+    border-radius: @core_radius_md;
+    min-height: @core_height_md;
+    padding: 0 @core_pad_md;
+    box-shadow: none;
+}
+
+entry:hover {
+    border-color: shade(@core_border, 1.2);
+}
+
+entry:focus {
+    border-color: @core_accent;
+    box-shadow: 0 0 0 @core_outline_w rgba(46, 204, 113, 0.35);
+}
+
+entry:disabled {
+    background-color: shade(@core_bg_alt, 0.95);
+    color: @core_fg_disabled;
+    border-color: @core_border;
+}
+
+entry.search {
+    padding-left: 28px;
+}
+
+spinbutton entry {
+    border-radius: @core_radius_md 0 0 @core_radius_md;
+}
+

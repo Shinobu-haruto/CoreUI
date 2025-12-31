@@ -1,0 +1,77 @@
+# ================================
+# Core GTK2
+# ================================
+
+include "gtkrc.colors"
+
+style "core-default"
+{
+    bg[NORMAL]        = @core_bg
+    bg[PRELIGHT]      = @core_bg_alt
+    bg[ACTIVE]        = @core_accent
+
+    fg[NORMAL]        = @core_fg
+    fg[PRELIGHT]      = @core_fg
+    fg[ACTIVE]        = @core_fg
+
+    base[NORMAL]      = @core_bg_alt
+    base[ACTIVE]      = @core_bg_alt
+
+    text[NORMAL]      = @core_fg
+    text[ACTIVE]      = @core_fg
+
+    xthickness = 4
+    ythickness = 4
+}
+
+class "*" style "core-default"
+
+style "core-button"
+{
+    bg[NORMAL]   = @core_bg_alt
+    bg[PRELIGHT] = @core_bg_soft
+    bg[ACTIVE]   = @core_accent
+
+    fg[NORMAL]   = @core_fg
+    fg[ACTIVE]   = "#ffffff"
+
+    xthickness = 8
+    ythickness = 4
+}
+
+widget_class "*GtkButton*" style "core-button"
+
+style "core-entry"
+{
+    bg[NORMAL] = @core_bg_alt
+    fg[NORMAL] = @core_fg
+
+    xthickness = 6
+    ythickness = 4
+}
+
+widget_class "*GtkEntry*" style "core-entry"
+
+style "core-check"
+{
+    bg[NORMAL] = @core_bg_alt
+    fg[NORMAL] = @core_fg
+}
+
+widget_class "*GtkCheckButton*" style "core-check"
+widget_class "*GtkRadioButton*" style "core-check"
+
+style "core-menu"
+{
+    bg[NORMAL]   = @core_bg
+    bg[PRELIGHT] = @core_bg_alt
+
+    fg[NORMAL]   = @core_fg
+    fg[PRELIGHT] = @core_fg
+
+    xthickness = 6
+    ythickness = 4
+}
+
+widget_class "*GtkMenu*" style "core-menu"
+

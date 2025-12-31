@@ -1,0 +1,33 @@
+/* ================================
+ * Core Scrollbar
+ * ================================ */
+
+scrollbar {
+    background-color: transparent;
+}
+
+scrollbar trough {
+    background-color: transparent;
+    min-width: 8px;
+    min-height: 8px;
+}
+
+scrollbar slider {
+    background-color: @core_border;
+    border-radius: 8px;
+    min-width: 8px;
+    min-height: 8px;
+}
+
+scrollbar slider:hover {
+    background-color: @core_accent;
+}
+
+scrollbar slider:active {
+    background-color: @core_accent_active;
+}
+
+scrollbar:disabled slider {
+    background-color: shade(@core_border, 0.8);
+}
+

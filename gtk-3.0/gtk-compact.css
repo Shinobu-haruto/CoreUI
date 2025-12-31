@@ -1,0 +1,77 @@
+/* ================================
+ * Core Compact – Refined
+ * ================================ */
+
+/* ----------------
+ * Buttons
+ * ---------------- */
+button {
+    min-height: 26px;
+    padding: 0 8px;
+}
+
+/* ----------------
+ * Entries / Combobox
+ * ---------------- */
+entry,
+combobox entry {
+    min-height: 24px;
+    padding: 0 6px;
+}
+
+/* ----------------
+ * Switch
+ * ---------------- */
+switch {
+    min-width: 34px;
+    min-height: 18px;
+    padding: 0;
+}
+
+switch slider {
+    min-width: 14px;
+    min-height: 14px;
+    margin: 2px;
+}
+
+/* ----------------
+ * Sliders
+ * ---------------- */
+scale trough {
+    min-height: 4px;
+}
+
+scale slider {
+    min-width: 12px;
+    min-height: 12px;
+}
+
+/* ----------------
+ * Tabs
+ * ---------------- */
+notebook tab {
+    min-height: 24px;
+    padding: 2px 8px;
+}
+
+/* ----------------
+ * Sidebar / Lists
+ * ---------------- */
+.sidebar row {
+    min-height: 24px;
+    padding: 0 8px;
+}
+
+/* ----------------
+ * Headerbar
+ * ---------------- */
+headerbar {
+    min-height: 32px;
+    padding: 0 6px;
+}
+
+headerbar button {
+    min-height: 24px;
+    padding: 0 6px;
+}
+

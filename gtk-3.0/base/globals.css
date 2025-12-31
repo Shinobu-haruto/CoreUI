@@ -1,0 +1,46 @@
+/* ================================
+ * Core Global Styles
+ * ================================ */
+
+.background {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+.background:backdrop {
+    background-color: shade(@core_bg, 0.96);
+    color: @core_fg_muted;
+}
+
+selection,
+*:selected {
+    background-color: @core_selection_bg;
+    color: @core_selection_fg;
+}
+
+tooltip {
+    background-color: @core_bg_alt;
+    color: @core_fg;
+    border: 1px solid @core_border;
+    border-radius: @core_radius_md;
+    padding: @core_pad_sm @core_pad_md;
+    box-shadow: 0 4px 10px @core_shadow_soft;
+}
+
+popover {
+    background-color: @core_bg_alt;
+    border: 1px solid @core_border;
+    border-radius: @core_radius_lg;
+    box-shadow: 0 6px 16px @core_shadow_strong;
+}
+
+separator {
+    background-color: @core_divider;
+    min-height: 1px;
+    min-width: 1px;
+}
+
+scrolledwindow {
+    background-color: transparent;
+}
+

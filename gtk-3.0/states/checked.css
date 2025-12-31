@@ -1,0 +1,11 @@
+/* ================================
+ * Core State: Checked
+ * ================================ */
+
+button:checked,
+check:checked,
+radio:checked,
+switch:checked {
+    background-color: @core_accent;
+}
+

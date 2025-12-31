@@ -1,0 +1,36 @@
+/* ================================
+ * Core Levelbar
+ * ================================ */
+
+levelbar {
+    background-color: transparent;
+}
+
+levelbar trough {
+    background-color: @core_bg_alt;
+    border: 1px solid @core_border;
+    border-radius: @core_radius_md;
+    min-height: 6px;
+}
+
+/* Nivel normal */
+levelbar block {
+    background-color: @core_accent;
+    border-radius: @core_radius_md;
+}
+
+/* Nivel bajo */
+levelbar block.low {
+    background-color: @core_warning;
+}
+
+/* Nivel alto */
+levelbar block.high {
+    background-color: @core_accent_active;
+}
+
+/* Nivel lleno */
+levelbar block.full {
+    background-color: @core_success;
+}
+

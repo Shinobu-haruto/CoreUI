@@ -1,0 +1,42 @@
+/* ================================
+ * Core Sidebar
+ * ================================ */
+
+.sidebar,
+.sidebar list,
+.sidebar listview {
+    background-color: @core_bg_alt;
+    color: @core_fg;
+}
+
+.sidebar row {
+    min-height: @core_height_sm;
+    padding: 0 @core_pad_md;
+    border-radius: @core_radius_sm;
+}
+
+.sidebar row:hover {
+    background-color: shade(@core_bg_alt, 1.05);
+}
+
+.sidebar row:selected {
+    background-color: @core_accent_soft;
+    color: @core_fg;
+}
+
+.sidebar row:selected:focus {
+    background-color: @core_accent;
+    color: @core_selection_fg;
+}
+
+.sidebar image {
+    -gtk-icon-size: 16px;
+    margin-right: 6px;
+}
+
+.sidebar separator {
+    background-color: @core_divider;
+    min-height: 1px;
+    margin: @core_pad_xs 0;
+}
+

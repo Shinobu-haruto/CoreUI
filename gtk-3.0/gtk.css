@@ -1,0 +1,49 @@
+/* Core GTK Theme */
+
+@import url("core/colors.css");
+@import url("core/typography.css");
+@import url("core/metrics.css");
+
+@import url("base/reset.css");
+@import url("base/globals.css");
+@import url("base/animations.css");
+
+@import url("states/hover.css");
+@import url("states/active.css");
+@import url("states/focus.css");
+@import url("states/disabled.css");
+
+@import url("widgets/buttons.css");
+@import url("widgets/entries.css");
+@import url("widgets/headerbar.css");
+@import url("widgets/menus.css");
+@import url("widgets/popovers.css");
+@import url("widgets/sidebar.css");
+@import url("widgets/scrollbar.css");
+@import url("widgets/switches.css");
+
+@import url("apps/nemo.css");
+@import url("apps/cinnamon-settings.css");
+@import url("apps/terminal.css");
+@import url("apps/gtk-dialogs.css");
+
+@import url("widgets/checks.css");
+@import url("widgets/progressbar.css");
+@import url("widgets/tabs.css");
+
+@import url("widgets/levelbar.css");
+@import url("widgets/switches.css");
+@import url("widgets/frame.css");
+@import url("widgets/sliders.css");
+@import url("gtk-compact.css");
+
+@import url("states/hover.css");
+@import url("states/active.css");
+@import url("states/checked.css");
+@import url("states/focus.css");
+@import url("states/disabled.css");
+@import url("states/selected.css");
+@import url("states/backdrop.css");
+@import url("states/animations.css");
+@import url("states/contrast.css");
+

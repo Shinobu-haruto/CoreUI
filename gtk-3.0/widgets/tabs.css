@@ -1,0 +1,36 @@
+/* ================================
+ * Core Tabs (Notebook)
+ * ================================ */
+
+notebook {
+    background-color: @core_bg;
+}
+
+/* Barra de tabs */
+notebook header {
+    background-color: @core_bg_alt;
+    border-bottom: 1px solid @core_border;
+}
+
+/* Tab */
+notebook tab {
+    min-height: @core_height_sm;
+    padding: 0 @core_pad_md;
+    background-color: transparent;
+    border-radius: @core_radius_md @core_radius_md 0 0;
+    color: @core_fg_muted;
+}
+
+/* Hover */
+notebook tab:hover {
+    background-color: shade(@core_bg_alt, 1.05);
+    color: @core_fg;
+}
+
+/* Tab activa */
+notebook tab:checked {
+    background-color: @core_bg;
+    color: @core_fg;
+    border-bottom: 2px solid @core_accent;
+}
+

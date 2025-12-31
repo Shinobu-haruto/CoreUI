@@ -1,0 +1,9 @@
+/* ================================
+ * Core State: Selected
+ * ================================ */
+
+*:selected {
+    background-color: @core_accent_soft;
+    color: @core_fg;
+}
+

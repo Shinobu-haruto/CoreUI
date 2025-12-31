@@ -1,0 +1,44 @@
+/* ================================
+ * Core Animations
+ * ================================ */
+
+* {
+    transition-property: background-color, border-color, box-shadow, color;
+    transition-duration: 140ms;
+    transition-timing-function: ease-out;
+}
+
+button {
+    transition-property: background-color, border-color, box-shadow;
+}
+
+entry {
+    transition-property: border-color, box-shadow;
+}
+
+switch {
+    transition-property: background-color;
+}
+
+switch slider {
+    transition-property: margin-left, margin-right, background-color;
+    transition-duration: 160ms;
+}
+
+scale slider {
+    transition-property: background-color, border-color, box-shadow;
+}
+
+notebook tab {
+    transition-property: background-color, border-color;
+}
+
+row {
+    transition-property: background-color;
+}
+
+*:backdrop {
+    transition-property: opacity;
+    transition-duration: 200ms;
+}
+

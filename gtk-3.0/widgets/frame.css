@@ -1,0 +1,16 @@
+/* ================================
+ * Core Frames
+ * ================================ */
+
+frame {
+    border: 1px solid @core_border;
+    border-radius: @core_radius_md;
+    padding: @core_pad_md;
+}
+
+/* Título del frame */
+frame > label {
+    color: @core_fg_muted;
+    font-weight: 500;
+}
+
