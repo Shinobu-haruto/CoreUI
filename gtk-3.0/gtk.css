@@ -3,7 +3,6 @@
 @import url("core/colors.css");
 @import url("core/typography.css");
 @import url("core/metrics.css");
-@import URL("gtk-light");
 
 @import url("base/reset.css");
 @import url("base/globals.css");
@@ -23,10 +22,11 @@
 @import url("widgets/scrollbar.css");
 @import url("widgets/switches.css");
 
-@import url("apps/nemo.css");
+@import url("apps/_filemanagers.css");
 @import url("apps/cinnamon-settings.css");
-@import url("apps/terminal.css");
-@import url("apps/gtk-dialogs.css");
+@import url("apps/_terminal.css");
+@import url("apps/_media.css");
+@import url("apps/_settings.css");
 
 @import url("widgets/checks.css");
 @import url("widgets/progressbar.css");

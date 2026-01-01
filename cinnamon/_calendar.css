@@ -1,0 +1,7 @@
+/* Cinnamon 6.4 tray popups */
+.calendar,
+.calendar-box {
+    background-color: @core_bg_alt;
+    color: @core_fg;
+}
+

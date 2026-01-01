@@ -1,0 +1,257 @@
+/* ================================
+ * CoreUI – Settings & Utilities
+ * ================================ */
+
+.preferences,
+.settings-window {
+    background-color: @core_bg;
+}
+
+.list-row:selected {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
+/* ================================
+ * CoreUI – Blueman Manager
+ * ================================ */
+
+/* Ventana principal */
+.blueman-manager,
+window.blueman-manager {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+/* Toolbar */
+.blueman-manager toolbar {
+    background-color: @core_bg_alt;
+    border-bottom: 1px solid @core_border;
+}
+
+/* Lista de dispositivos */
+.blueman-manager treeview {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+.blueman-manager treeview row {
+    padding: 4px 6px;
+}
+
+.blueman-manager treeview row:hover {
+    background-color: @core_bg_soft;
+}
+
+.blueman-manager treeview row:selected {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
+/* Botones */
+.blueman-manager button {
+    border-radius: 6px;
+    color: @core_fg;
+}
+
+.blueman-manager button:hover {
+    background-color: @core_bg_soft;
+}
+
+.blueman-manager button:checked {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
+/* Dialogs / popups */
+.blueman-manager dialog {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+/* ================================
+ * CoreUI – GNOME System Monitor
+ * ================================ */
+
+/* Ventana principal */
+.gnome-system-monitor,
+window.gnome-system-monitor {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+/* Notebook (tabs) */
+.gnome-system-monitor notebook > header {
+    background-color: @core_bg_alt;
+    border-bottom: 1px solid @core_border;
+}
+
+.gnome-system-monitor notebook > header tab {
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: @core_fg;
+}
+
+.gnome-system-monitor notebook > header tab:hover {
+    background-color: @core_bg_soft;
+}
+
+.gnome-system-monitor notebook > header tab:checked {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
+/* Lists / tables */
+.gnome-system-monitor treeview {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+.gnome-system-monitor treeview row:hover {
+    background-color: @core_bg_soft;
+}
+
+.gnome-system-monitor treeview row:selected {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
+/* Progress bars (RAM / Swap) */
+.gnome-system-monitor progressbar trough {
+    background-color: @core_border;
+    border-radius: 999px;
+}
+
+.gnome-system-monitor progressbar progress {
+    background-color: @core_accent;
+}
+
+/* Level bars (disk usage) */
+.gnome-system-monitor levelbar trough {
+    background-color: @core_border;
+}
+
+.gnome-system-monitor levelbar block {
+    background-color: @core_accent;
+}
+
+/* ================================
+ * CoreUI – GNOME Disks
+ * ================================ */
+
+/* Ventana principal */
+.gnome-disk-utility,
+window.gnome-disk-utility {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+/* Panel lateral (discos) */
+.gnome-disk-utility list {
+    background-color: @core_bg_alt;
+    color: @core_fg;
+}
+
+.gnome-disk-utility list row {
+    padding: 6px 8px;
+    border-radius: 6px;
+}
+
+.gnome-disk-utility list row:hover {
+    background-color: @core_bg_soft;
+}
+
+.gnome-disk-utility list row:selected {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
+/* Área principal */
+.gnome-disk-utility .content {
+    background-color: @core_bg;
+}
+
+/* Notebook / sections */
+.gnome-disk-utility notebook > header {
+    background-color: @core_bg_alt;
+    border-bottom: 1px solid @core_border;
+}
+
+/* Level bars (uso de disco) */
+.gnome-disk-utility levelbar trough {
+    background-color: @core_border;
+}
+
+.gnome-disk-utility levelbar block {
+    background-color: @core_accent;
+}
+
+/* Progress bars (operaciones) */
+.gnome-disk-utility progressbar trough {
+    background-color: @core_border;
+    border-radius: 999px;
+}
+
+.gnome-disk-utility progressbar progress {
+    background-color: @core_accent;
+}
+
+/* Dialogs */
+.gnome-disk-utility dialog {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+/* ================================
+ * CoreUI – File Roller
+ * ================================ */
+
+/* Ventana principal */
+.file-roller,
+window.file-roller {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+/* Toolbar / Header */
+.file-roller toolbar,
+.file-roller headerbar {
+    background-color: @core_bg_alt;
+    border-bottom: 1px solid @core_border;
+}
+
+/* Lista de archivos */
+.file-roller treeview {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+.file-roller treeview row {
+    padding: 4px 6px;
+}
+
+.file-roller treeview row:hover {
+    background-color: @core_bg_soft;
+}
+
+.file-roller treeview row:selected {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
+/* Progress bars */
+.file-roller progressbar trough {
+    background-color: @core_border;
+    border-radius: 999px;
+}
+
+.file-roller progressbar progress {
+    background-color: @core_accent;
+}
+
+/* Dialogs */
+.file-roller dialog {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+

@@ -1,0 +1,15 @@
+
+@define-color core_bg              #121614;
+@define-color core_bg_alt          #1a1f1c;
+@define-color core_bg_soft         #1f2522;
+
+@define-color core_fg              #e6efe9;
+@define-color core_fg_muted        #9aa7a1;
+@define-color core_fg_disabled     #6b7771;
+
+@define-color core_border          #2a322e;
+
+@define-color core_accent          #1db954;
+@define-color core_accent_hover    #22c55e;
+@define-color core_accent_active   #169e46;
+

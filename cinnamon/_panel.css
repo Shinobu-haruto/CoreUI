@@ -1,0 +1,36 @@
+/* ================================
+ * Cinnamon 6.4.x – Panel FINAL FIX
+ * ================================ */
+
+/* Panel root */
+#panel {
+    background-color: @core_bg !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
+}
+
+/* Panel containers */
+#panel .panel,
+#panel .panel-background {
+    background-color: @core_bg !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+/* NUEVA capa crítica en 6.4 */
+#panel StBin,
+#panel StBoxLayout,
+#panel StWidget {
+    background-color: @core_bg !important;
+    background-image: none !important;
+}
+
+/* Direcciones del panel */
+.panel-top .panel-background,
+.panel-bottom .panel-background,
+.panel-left .panel-background,
+.panel-right .panel-background {
+    background-color: @core_bg !important;
+}
+

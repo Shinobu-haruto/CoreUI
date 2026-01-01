@@ -1,0 +1,9 @@
+style "audacious-coreui" {
+    bg[NORMAL] = @core_bg
+    bg[SELECTED] = @core_accent
+    fg[NORMAL] = @core_fg
+    fg[SELECTED] = "#ffffff"
+}
+
+widget "Audacious*" style "audacious-coreui"
+

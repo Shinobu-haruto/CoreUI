@@ -1,0 +1,5 @@
+.applet-box:checked {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+

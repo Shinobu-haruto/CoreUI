@@ -1,0 +1,13 @@
+/* ================================
+ * CoreUI – Browsers
+ * ================================ */
+
+window.background {
+    background-color: @core_bg;
+}
+
+/* Firefox GTK */
+#main-window {
+    background-color: @core_bg;
+}
+

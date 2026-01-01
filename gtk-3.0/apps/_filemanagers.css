@@ -1,0 +1,29 @@
+/* ================================
+ * CoreUI – File Managers
+ * ================================ */
+
+.nemo-window,
+.nautilus-window {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+/* Sidebar */
+.nemo-window .sidebar,
+.nautilus-window .sidebar {
+    background-color: @core_bg_alt;
+}
+
+/* Items */
+.nemo-window .view .cell,
+.nautilus-window .view .cell {
+    border-radius: 6px;
+    padding: 4px;
+}
+
+.nemo-window .view .cell:selected,
+.nautilus-window .view .cell:selected {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+

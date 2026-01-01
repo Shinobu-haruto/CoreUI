@@ -1,0 +1,31 @@
+/* ================================
+ * Core Cinnamon – Compact Panel
+ * ================================ */
+
+.panel.compact {
+    height: 28px;
+}
+
+.panel.compact .panel-button {
+    padding: 0 6px;
+    border-radius: 6px;
+}
+
+.panel.compact .applet-box {
+    padding: 0 4px;
+}
+
+.panel.compact .clock {
+    font-size: 10pt;
+    font-weight: 500;
+}
+
+.panel.compact image {
+    icon-size: 14px;
+}
+
+.panel.compact .systray {
+    spacing: 3px;
+}
+
+

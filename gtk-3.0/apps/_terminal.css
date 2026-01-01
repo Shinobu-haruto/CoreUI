@@ -1,0 +1,10 @@
+/* ================================
+ * CoreUI – Terminals
+ * ================================ */
+
+terminal-window,
+VteTerminal {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+

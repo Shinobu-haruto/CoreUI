@@ -1,0 +1,124 @@
+/* ================================
+ * CoreUI – Systray & Clock (Cinnamon)
+ * ================================ */
+
+/* Clock */
+.clock {
+    font-size: 11px;
+    font-weight: 500;
+    padding: 0 6px;
+    color: @core_fg;
+}
+
+.clock:hover {
+    color: @core_accent;
+}
+
+/* Network */
+.network-applet {
+    padding: 0 6px;
+}
+
+.network-applet image {
+    icon-size: 16px;
+    color: @core_fg;
+}
+
+.network-applet:checked image {
+    color: #ffffff;
+}
+
+/* Sound */
+.sound-applet image {
+    icon-size: 16px;
+    color: @core_fg;
+}
+
+.sound-applet.muted image {
+    color: @core_fg_disabled;
+}
+
+/* Systray container */
+.systray {
+    spacing: 4px;
+}
+
+.systray image {
+    icon-size: 16px;
+    color: @core_fg;
+}
+
+/* Notification buttons */
+.notification-button,
+.notification-icon-button,
+.calendar-today-home-button,
+.calendar-today-home-button-enabled {
+    border-radius: 6px;
+    color: @core_fg;
+    background-color: transparent;
+}
+
+.notification-button:hover,
+.notification-icon-button:hover,
+.calendar-today-home-button:hover {
+    background-color: @core_bg_soft;
+}
+
+.notification-button:active,
+.notification-icon-button:active,
+.calendar-today-home-button:active,
+.calendar-today-home-button-enabled:active {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
+.notification-button:insensitive,
+.notification-icon-button:insensitive,
+.calendar-today-home-button:insensitive {
+    color: @core_fg_disabled;
+    background-color: transparent;
+}
+
+/* Modal dialog buttons (used by calendar & tray) */
+.modal-dialog-button-box .modal-dialog-button {
+    min-height: 24px;
+    padding: 6px 24px;
+    border-radius: 6px;
+    color: @core_fg;
+    background-color: @core_bg_alt;
+}
+
+.modal-dialog-button-box .modal-dialog-button:hover {
+    background-color: @core_bg_soft;
+}
+
+.modal-dialog-button-box .modal-dialog-button:focus {
+    border: 1px solid @core_accent;
+}
+
+.modal-dialog-button-box .modal-dialog-button:active {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
+.modal-dialog-button-box .modal-dialog-button:insensitive {
+    color: @core_fg_disabled;
+    background-color: transparent;
+}
+
+/* Cinnamon 5.x popup fixes */
+.popup-menu-item {
+    border-radius: 6px;
+    padding: 6px 10px;
+    color: @core_fg;
+}
+
+.popup-menu-item:hover {
+    background-color: @core_bg_soft;
+}
+
+.popup-menu-item:checked {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+

@@ -1,0 +1,129 @@
+/* ================================
+ * CoreUI – Audacious (GTK3)
+ * ================================ */
+
+/* Ventana principal */
+.audacious {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+/* Playlist */
+.audacious .playlistview {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+/* Filas */
+.audacious .playlistview row {
+    padding: 4px 6px;
+}
+
+/* Selección */
+.audacious .playlistview row:selected {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
+/* Hover */
+.audacious .playlistview row:hover {
+    background-color: @core_bg_soft;
+}
+
+/* Header / toolbar */
+.audacious toolbar {
+    background-color: @core_bg_alt;
+    border-bottom: 1px solid @core_border;
+}
+
+/* Botones */
+.audacious button {
+    border-radius: 6px;
+}
+
+.audacious button:hover {
+    background-color: @core_bg_soft;
+}
+
+/* Sliders (volumen / progreso) */
+.audacious scale trough highlight {
+    background-color: @core_accent;
+}
+
+.audacious scale trough {
+    background-color: @core_border;
+    border-radius: 999px;
+}
+
+/* ================================
+ * CoreUI – Pavucontrol
+ * ================================ */
+
+/* Ventana principal */
+.pavucontrol,
+window.pavucontrol {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+/* Notebook (tabs: Playback, Recording, Output, Input, Configuration) */
+.pavucontrol notebook {
+    background-color: @core_bg;
+}
+
+/* Tabs */
+.pavucontrol notebook > header {
+    background-color: @core_bg_alt;
+    border-bottom: 1px solid @core_border;
+}
+
+.pavucontrol notebook > header tab {
+    padding: 6px 12px;
+    border-radius: 6px;
+    color: @core_fg;
+}
+
+.pavucontrol notebook > header tab:hover {
+    background-color: @core_bg_soft;
+}
+
+.pavucontrol notebook > header tab:checked {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
+/* Lists (devices, streams) */
+.pavucontrol treeview {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+.pavucontrol treeview row:selected {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
+/* Sliders (volume bars) */
+.pavucontrol scale trough {
+    background-color: @core_border;
+    border-radius: 999px;
+}
+
+.pavucontrol scale trough highlight {
+    background-color: @core_accent;
+}
+
+/* Mute buttons */
+.pavucontrol button {
+    border-radius: 6px;
+}
+
+.pavucontrol button:hover {
+    background-color: @core_bg_soft;
+}
+
+.pavucontrol button:checked {
+    background-color: @core_accent;
+    color: #ffffff;
+}
+
