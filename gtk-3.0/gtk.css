@@ -3,6 +3,7 @@
 @import url("core/colors.css");
 @import url("core/typography.css");
 @import url("core/metrics.css");
+@import URL("gtk-light");
 
 @import url("base/reset.css");
 @import url("base/globals.css");
