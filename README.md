@@ -4,7 +4,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/Shinobu-haruto/CoreUI)](https://github.com/Shinobu-haruto/CoreUI/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/Shinobu-haruto/CoreUI)](https://github.com/Shinobu-haruto/CoreUI/issues)
 
-[!screenshot.png](https://github.com/Shinobu-haruto/CoreUI/blob/main/screenshot.png)
+![screenshot.png](https://github.com/Shinobu-haruto/CoreUI/blob/main/screenshot.png)
 Tema completo para Linux:
 **GTK2 / GTK3 / GTK4 + Cinnamon + GNOME Shell + KDE Plasma + Metacity/Muffin**
 
