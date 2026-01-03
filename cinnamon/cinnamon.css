@@ -1,52 +1,239 @@
-/* ================================
- * CoreUI – Cinnamon Shell (Main)
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - LCD OPTIMIZED (FINAL 2026)
+   Configuración: Doble Panel | Bordes: Cuadrados Industriales
+   Ajuste: Contraste Alto para Paneles LCD 1366x768 y 1080p
+   ============================================================ */
 
-/* Variables y colores primero */
-@import url("_variables.css");
-@import url("_colors.css");
-
-/* Componentes principales */
-@import url("_panel.css");
-@import url("_menu.css");
-@import url("_applets.css");
-@import url("_systray.css");
-
-/* Ajustes de densidad */
-@import url("_compact.css");
-
-/* ================================
- * Global stage
- * ================================ */
-
-stage,
-.stage {
-    background-color: @core_bg;
+/* 1. PANELES - NITIDEZ MÁXIMA */
+#panel,
+#panel-container,
+.panel-background {
+    background-color: #0e1210 !important; /* core_bg sólido */
+    background-image: none !important;
+    color: #e6f4ea !important;            /* core_fg */
+    opacity: 1.0 !important;
+    height: 26px !important;
+    box-shadow: none !important;
 }
 
-/* Evita sombras de texto heredadas */
-.label-shadow {
-    color: transparent;
+/* Bordes Cian definidos: Evitan el sangrado de luz en LCD */
+.panel-top {
+    border-bottom: 2px solid #00CCCC !important;
 }
 
-/* ================================
- * Applet base
- * ================================ */
-
-.applet-box {
-    padding: 0 6px;
-    margin: 0;
-    border-radius: 6px;
-    color: @core_fg;
+.panel-bottom {
+    border-top: 2px solid #00CCCC !important;
 }
 
-.applet-box:hover {
-    background-color: @core_bg_soft;
+/* 2. APPLETS Y BOTONES - GEOMETRÍA RÍGIDA */
+.panel-button,
+.applet-box,
+.window-list-item-box {
+    background-color: transparent !important;
+    border-radius: 0px !important;
+    padding-left: 12px !important; /* Espacio extra para legibilidad */
+    padding-right: 12px !important;
+    margin: 0px !important;
+    transition: none !important; /* Sin transiciones para evitar ghosting en LCDs lentos */
 }
 
-.applet-box:active,
-.applet-box:checked {
-    background-color: @core_accent;
-    color: #ffffff;
+/* Hover: Color sólido para evitar distorsión de color en LCD */
+.panel-button:hover,
+.applet-box:hover,
+.window-list-item-box:hover {
+    background-color: #1b211d !important; /* core_bg_soft */
+    box-shadow: inset 0 -1px 0 #00CCCC;
 }
 
+/* Activo: Contraste invertido puro */
+.panel-button:active,
+.panel-button:checked,
+.applet-box:checked,
+.window-list-item-box:checked {
+    background-color: #00CCCC !important;
+    color: #0e1210 !important;
+}
+
+/* 3. MENÚ COREUI - ALINEACIÓN DE PÍXELES */
+.menu {
+    background-color: #0e1210 !important;
+    border: 1px solid #00CCCC !important;
+    border-radius: 0px !important;
+    color: #e6f4ea;
+    box-shadow: none !important; /* Las sombras suaves se ven mal en LCD de baja res */
+    outline: 1px solid #000000; /* Doble borde para separar del fondo */
+}
+
+.menu-search-entry {
+    background-color: #151a17 !important;
+    border: 1px solid #1f2a24 !important;
+    border-radius: 0px !important;
+    color: #e6f4ea;
+    padding: 8px;
+    caret-color: #00CCCC;
+}
+
+/* Categorías laterales del menú */
+.menu-category-button {
+    border-radius: 0px !important;
+    padding: 7px !important;
+    transition: none !important;
+}
+
+.menu-category-button-selected {
+    background-color: #00CCCC !important;
+    color: #0e1210 !important;
+}
+
+/* Aplicaciones dentro del menú */
+.menu-application-button {
+    border-radius: 0px !important;
+    padding: 7px !important;
+}
+
+.menu-application-button-selected {
+    background-color: rgba(0, 204, 204, 0.2) !important;
+    color: #00CCCC !important;
+    border-left: 3px solid #00CCCC;
+}
+
+/* Botones de acción (Apagar/Bloquear) */
+.menu-favorites-button {
+    padding: 10px !important;
+    border-radius: 0px !important;
+}
+
+.menu-favorites-button:hover {
+    background-color: #1b211d !important;
+    color: #00CCCC !important;
+}
+/* 4. HUD (ALT+TAB, OSD, NOTIFICACIONES) */
+#switcher-list,
+.osd-window,
+#notification,
+#tooltip {
+    background-color: #0e1210 !important;
+    border: 1px solid #00CCCC !important;
+    border-radius: 0px !important;
+    color: #e6f4ea;
+}
+
+/* Tooltip: Texto Cian para máximo contraste en LCD */
+#tooltip {
+    color: #00CCCC !important;
+    font-weight: bold;
+    border-width: 2px;
+}
+
+/* 5. SISTRAY Y CALENDARIO - ESPACIADO FIJO */
+.systray {
+    spacing: 10px !important;
+}
+
+.calendar-today {
+    background-color: #00CCCC !important;
+    color: #0e1210 !important;
+    border-radius: 0px !important;
+}
+
+/* 6. SCROLLBARS - DISEÑO DE ALTA VISIBILIDAD */
+StScrollBar {
+    width: 8px; /* Un poco más ancha para LCDs de 1366px */
+}
+
+StScrollBar StButton#vhandle,
+StScrollBar StButton#hhandle {
+    background-color: #151a17 !important;
+    border: 1px solid #00CCCC !important;
+    border-radius: 0px !important;
+}
+
+StScrollBar StButton#vhandle:hover {
+    background-color: #00CCCC !important;
+}
+
+/* 7. LISTA DE VENTANAS (Panel Inferior) */
+.window-list-item-box {
+    border-right: 1px solid #1f2a24; /* Divisor vertical claro */
+}
+
+.window-list-item-box.active,
+.window-list-item-box.checked {
+    box-shadow: inset 0 -2px 0 #00CCCC !important;
+}
+
+/* Estilo específico para el reloj en el panel de Cinnamon */
+.panel-resizable-box #calendar-applet-label {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 800; /* Extra Bold para que resalte en el HUD */
+    font-size: 10.5pt;
+    color: #00CCCC;   /* Tu Cian LCD */
+    text-shadow: 0 0 5px rgba(0, 204, 204, 0.4); /* Brillo sutil de pantalla */
+}
+
+/* Sliders de volumen y brillo en el panel */
+.popup-slider-menu-item {
+    height: 1.5em !important;
+    min-width: 15em !important;
+    -slider-height: 4px !important;
+    -slider-background-color: #151a17 !important;
+    -slider-border-color: #1f2a24 !important;
+    -slider-active-background-color: #00CCCC !important;
+    -slider-active-border-color: #00CCCC !important;
+    -slider-handle-radius: 0px !important; /* Slider cuadrado */
+    -slider-handle-width: 12px !important;
+    -slider-handle-height: 12px !important;
+    -slider-handle-border-width: 1px !important;
+    -slider-handle-color: #00CCCC !important;
+}
+
+/* Checkboxes en menús de applets */
+.check-box {
+    -check-graphic-width: 16px;
+    -check-graphic-height: 16px;
+    background-image: none !important;
+    background-color: #151a17 !important;
+    border: 1px solid #1f2a24 !important;
+    border-radius: 0px !important;
+}
+
+.check-box:checked {
+    background-color: #00CCCC !important;
+}
+
+/* Forzar color en iconos del sistema */
+.system-status-icon {
+    icon-size: 1.14em;
+    padding: 0 2px;
+}
+
+.system-status-icon.warning { color: #f1c40f !important; }
+.system-status-icon.error { color: #e74c3c !important; }
+
+/* Notificaciones críticas */
+#notification {
+    border-left: 5px solid #00CCCC !important; /* Barra de énfasis lateral */
+    padding: 15px !important;
+}
+
+#notification-button {
+    background-color: #151a17 !important;
+    border: 1px solid #1f2a24 !important;
+    border-radius: 0px !important;
+    color: #e6f4ea !important;
+}
+
+#notification-button:hover {
+    border-color: #00CCCC !important;
+}
+
+/* Agrupador de ventanas (Applet Window List) */
+.window-list-item-label {
+    font-weight: bold;
+    font-size: 9pt;
+}
+
+.window-list-item-box .progress {
+    background-color: rgba(0, 204, 204, 0.3) !important;
+    border-radius: 0px !important;
+}
