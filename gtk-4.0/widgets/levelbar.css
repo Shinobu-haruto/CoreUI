@@ -1,0 +1,34 @@
+/* CoreUI GTK 4 - LEVELBAR */
+levelbar > trough {
+    padding: 2px;
+    background-color: @core_bg;
+    border: 1px solid @core_border;
+    border-radius: 0;
+}
+
+/* --- Orientación Horizontal --- */
+levelbar.horizontal > trough {
+    min-height: 12px;
+}
+
+levelbar.horizontal block {
+    min-width: 4px;
+    margin: 0 1px;
+}
+
+/* --- Orientación Vertical --- */
+levelbar.vertical > trough {
+    min-width: 12px;
+    min-height: 80px;
+}
+
+levelbar.vertical block {
+    min-height: 4px;
+    margin: 1px 0; /* Espaciado entre bloques verticales */
+}
+
+/* --- Colores de los Bloques --- */
+levelbar block.low { background-color: #e74c3c; }   /* Rojo */
+levelbar block.high { background-color: @core_accent; } /* Cian */
+levelbar block.full { background-color: #26B863; }  /* Verde */
+levelbar block.empty { background-color: #1b211d; } /* Fondo apagado */

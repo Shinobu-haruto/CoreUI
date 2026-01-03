@@ -1,0 +1,9 @@
+/* ================================
+ * Core State: Focus
+ * ================================ */
+
+*:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px alpha(@core_accent, 0.45);
+}
+

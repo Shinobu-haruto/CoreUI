@@ -1,0 +1,15 @@
+/* CoreUI GTK 4 - POPOVERS */
+popover > contents {
+    background-color: @core_bg_alt;
+    color: @core_fg;
+    border: 1px solid @core_accent;
+    border-radius: 0;
+    padding: 8px;
+    /* Sombra de bloque HUD */
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.5);
+}
+
+popover list row:hover {
+    background-color: rgba(0, 204, 204, 0.15);
+    color: @core_accent;
+}

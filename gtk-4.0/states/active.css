@@ -1,0 +1,9 @@
+/* ================================
+ * Core State: Active
+ * ================================ */
+
+button:active,
+scale slider:active {
+    background-color: @core_accent_active;
+}
+

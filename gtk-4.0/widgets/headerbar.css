@@ -1,0 +1,42 @@
+/* CoreUI GTK 4 - Headerbar (Optimizado 768p) */
+
+headerbar {
+    background-color: @core_bg;
+    border-bottom: 2px solid @core_accent;
+    min-height: 30px; /* Reducción agresiva de espacio */
+    padding: 0 4px;
+}
+
+/* Títulos en GTK 4 */
+headerbar windowhandle {
+    padding: 0;
+}
+
+headerbar label.title {
+    font-weight: 800;
+    font-size: 9.5pt;
+    color: @core_accent;
+    text-transform: uppercase; /* Look militar/industrial */
+}
+
+/* Botones de control (Cerrar, Minimizar) */
+windowcontrols button {
+    min-width: 24px;
+    min-height: 24px;
+    padding: 0;
+    margin: 2px;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+
+windowcontrols button:hover {
+    background-color: rgba(0, 204, 204, 0.2);
+    border-color: @core_accent;
+}
+
+/* El botón de cerrar en rojo solo al pasar el mouse */
+windowcontrols button.close:hover {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+    color: white;
+}

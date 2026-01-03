@@ -1,0 +1,10 @@
+/* ================================
+ * Core State: Hover
+ * ================================ */
+
+button:hover,
+row:hover,
+menuitem:hover {
+    background-color: alpha(@core_accent, 0.12);
+}
+

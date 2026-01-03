@@ -1,0 +1,73 @@
+/* ============================================================
+   CoreUI v1.1 - CINNAMON SETTINGS (GTK 3.0)
+   Estilo: Panel de Control HUD / Cian LCD
+   Ajuste: Bordes Cuadrados e Identidad Industrial
+   ============================================================ */
+
+/* Barra lateral de categorías */
+.cinnamon-settings .sidebar {
+    background-color: #151a17 !important; /* core_bg_alt */
+    border-right: 1px solid #1f2a24;
+}
+
+/* Filas de categorías */
+.cinnamon-settings .sidebar row {
+    padding: 8px 12px;
+    border-radius: 0px !important; /* TOTALMENTE CUADRADO */
+    color: #e6f4ea;
+    transition: none;
+    border: none;
+}
+
+/* Hover en la categoría */
+.cinnamon-settings .sidebar row:hover {
+    background-color: #1b211d; /* core_bg_soft */
+    color: #00CCCC;
+}
+
+/* Categoría seleccionada (Activa) */
+.cinnamon-settings .sidebar row:selected {
+    background-color: rgba(0, 204, 204, 0.2) !important;
+    color: #00CCCC !important;
+    font-weight: bold;
+    /* Indicador lateral firma de CoreUI */
+    border-left: 3px solid #00CCCC;
+}
+
+/* Marcos de opciones (Secciones de la derecha) */
+.cinnamon-settings frame {
+    background-color: transparent;
+    border: 1px solid #1f2a24;
+    border-radius: 0px !important;
+    margin-bottom: 12px;
+}
+
+/* Etiquetas de texto */
+.cinnamon-settings label {
+    color: #e6f4ea;
+}
+
+/* Etiquetas secundarias / Descripciones */
+.cinnamon-settings label.dim-label {
+    color: #a7bdb0; /* core_fg_muted */
+    font-size: 0.9em;
+}
+
+/* Switches dentro de configuración */
+.cinnamon-settings switch:checked {
+    background-color: #00CCCC !important;
+    border-color: #00CCCC !important;
+}
+
+/* Sliders (Escalas) dentro de configuración */
+.cinnamon-settings scale slider {
+    border: 2px solid #00CCCC !important;
+    border-radius: 0px !important;
+    background-color: #0e1210;
+}
+
+/* Botones dentro de la configuración de Cinnamon */
+.cinnamon-settings button {
+    border-radius: 0px !important;
+}
+

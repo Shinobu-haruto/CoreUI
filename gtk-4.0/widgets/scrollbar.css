@@ -1,0 +1,21 @@
+/* CoreUI GTK 4 - Scrollbar */
+scrollbar {
+    background-color: transparent;
+}
+
+scrollbar slider {
+    background-color: #1b211d;
+    border: 1px solid #00CCCC;
+    min-width: 8px;
+    min-height: 8px;
+    border-radius: 0;
+}
+
+scrollbar slider:hover {
+    background-color: #00CCCC;
+}
+
+/* Las barras laterales ahora se definen por orientación directamente */
+scrollbar.vertical slider {
+    min-width: 8px;
+}

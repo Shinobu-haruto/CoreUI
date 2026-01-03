@@ -1,0 +1,23 @@
+/* CoreUI GTK 4 - FRAMES */
+frame {
+    /* Borde Cian sólido para máxima definición */
+    border: 1px solid @core_accent;
+    border-radius: 0;
+    padding: 6px;
+}
+
+/* Títulos de los marcos (Labels) */
+frame > label {
+    color: @core_accent;
+    font-weight: bold;
+    font-size: 8.5pt;
+    margin-bottom: 4px;
+    /* En GTK 4 usamos padding directamente en el label para separarlo del marco */
+    padding: 0 4px;
+}
+
+/* Marcos secundarios (dentro de otras cajas) */
+.frame {
+    border: 1px solid @core_border;
+    border-radius: 0;
+}

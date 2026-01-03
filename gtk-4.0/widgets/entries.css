@@ -1,0 +1,20 @@
+/* CoreUI GTK 4 - Entry */
+entry {
+    background-color: #151a17;
+    border: 1px solid #1f2a24;
+    color: #e6f4ea;
+    padding: 6px;
+}
+
+entry:focus {
+    /* GTK 4 maneja mejor el outline */
+    outline: 2px solid #00CCCC;
+    outline-offset: -2px;
+    border-color: transparent;
+}
+
+/* En GTK 4 el nodo de selección se llama 'selection' */
+entry > selection {
+    background-color: rgba(0, 204, 204, 0.4);
+    color: #0e1210;
+}

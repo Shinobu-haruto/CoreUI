@@ -1,0 +1,14 @@
+/* CoreUI GTK 4 - SEPARATORS */
+separator {
+    background-color: @core_border;
+    min-height: 1px;
+    min-width: 1px;
+    margin: 4px;
+}
+
+/* Separadores en Menús y Popovers */
+popover separator,
+menu separator {
+    margin: 4px 0;
+    background-color: @core_border;
+}

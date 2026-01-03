@@ -1,0 +1,70 @@
+/* ================================
+ * Core Metrics System (Refined)
+ * ================================ */
+
+/* Radius */
+@define-color core_radius_xs 3px;
+@define-color core_radius_sm 4px;
+@define-color core_radius_md 6px;
+@define-color core_radius_lg 8px;
+
+/* Borders */
+@define-color core_border_w  1px;
+@define-color core_outline_w 2px;
+
+/* Heights (desktop scale) */
+@define-color core_height_xs 20px;
+@define-color core_height_sm 24px;
+@define-color core_height_md 30px;
+@define-color core_height_lg 32px;
+
+/* Padding */
+@define-color core_pad_xs 4px;
+@define-color core_pad_sm 6px;
+@define-color core_pad_md 10px;
+@define-color core_pad_lg 12px;
+
+/* ================================
+ * Base widgets
+ * ================================ */
+
+button {
+    min-height: @core_height_md;
+    padding: 0 @core_pad_md;
+    border-radius: @core_radius_md;
+}
+
+entry {
+    min-height: @core_height_md;
+    padding: 0 @core_pad_md;
+    border-radius: @core_radius_sm;
+}
+
+/* ================================
+ * Headerbar (compact desktop)
+ * ================================ */
+
+headerbar {
+    min-height: @core_height_lg;
+    padding: 4px 8px;
+}
+
+headerbar button {
+    min-height: @core_height_sm;
+    padding: 0 @core_pad_sm;
+}
+
+/* ================================
+ * Menus & lists
+ * ================================ */
+
+menuitem {
+    min-height: @core_height_sm;
+    padding: 0 @core_pad_md;
+}
+
+.sidebar row {
+    min-height: @core_height_sm;
+    padding: 0 @core_pad_md;
+}
+

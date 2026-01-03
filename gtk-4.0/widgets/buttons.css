@@ -1,0 +1,35 @@
+/* CoreUI GTK 4 - BUTTONS */
+button {
+    background-color: @core_bg_alt;
+    color: @core_fg;
+    border: 1px solid @core_border;
+    border-radius: 0;
+    padding: 4px 12px;
+    min-height: 24px; /* Ajuste compacto nativo */
+}
+
+button:hover {
+    background-color: #1b211d;
+    border-color: @core_accent;
+    color: @core_accent;
+}
+
+/* Estado presionado */
+button:active {
+    background-color: @core_accent;
+    color: @core_accent_fg;
+}
+
+/* Botones con Toggle (Seleccionados) */
+button.checked, button:checked {
+    background-color: rgba(0, 204, 204, 0.2);
+    border-color: @core_accent;
+    color: @core_accent;
+}
+
+/* Sugerido (Aceptar/Guardar) */
+button.suggested-action {
+    background-color: @core_accent;
+    color: @core_accent_fg;
+    font-weight: bold;
+}

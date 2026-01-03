@@ -1,0 +1,56 @@
+/* ================================
+ * Core Typography System
+ * ================================ */
+
+* {
+    font-family: "Inter", sans-serif;
+    font-size: 10.5pt;
+    font-weight: 400;
+    -gtk-icon-size: 16px;
+}
+
+window,
+dialog {
+    font-weight: 400;
+}
+
+headerbar {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+headerbar title {
+    font-weight: 600;
+}
+
+button {
+    font-weight: 500;
+    letter-spacing: 0.1px;
+}
+
+menuitem,
+treeview,
+list row {
+    font-size: 13px;
+    font-weight: 400;
+}
+
+entry,
+textview,
+spinbutton {
+    font-weight: 400;
+}
+
+tooltip {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+label:disabled {
+    font-weight: 400;
+}
+
+label:backdrop {
+    opacity: 0.85;
+}
+

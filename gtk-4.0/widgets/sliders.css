@@ -1,0 +1,71 @@
+/* widgets/sliders.css */
+scale > trough {
+    min-height: 6px;
+    background-color: @core_bg_alt;
+    border: 1px solid @core_border;
+}
+
+/* RUTA CRÍTICA EN GTK 4: scale > trough > contents > slider */
+scale > trough > contents > slider {
+    background-color: @core_accent; /* Tu color Cian */
+    background-image: none;
+    border: 1px solid @core_bg;
+    border-radius: 0;
+    
+    /* Dimensiones explícitas para la GPU */
+    min-width: 14px;
+    min-height: 14px;
+    
+    /* Centrado manual */
+    margin: -5px 0; 
+}
+
+/* El color de la parte ya recorrida */
+scale > trough > contents > highlight {
+    background-color: @core_accent;
+    background-image: none;
+}
+
+/* ... (Manten tu código anterior para la base horizontal) ... */
+
+/* --- AJUSTES PARA ORIENTACIÓN VERTICAL --- */
+
+scale.vertical {
+    min-height: 80px;
+    min-width: 18px;
+    padding: 6px;
+}
+
+scale.vertical > trough {
+    min-width: 6px;      /* En vertical, el ancho es el limitante */
+    min-height: 80px;
+    background-color: @core_bg_alt;
+}
+
+/* El slider en modo vertical */
+scale.vertical > trough > contents > slider {
+    /* Invertimos márgenes para centrar en el eje X */
+    margin: 0 -5px; 
+    
+    /* Mantenemos el tamaño industrial */
+    min-width: 14px;
+    min-height: 14px;
+}
+
+/* El highlight (relleno) en modo vertical */
+scale.vertical > trough > contents > highlight {
+    background-color: @core_accent;
+    /* En vertical, el highlight crece de abajo hacia arriba */
+}
+
+/* --- ESTADOS DE INTERACCIÓN (Comunes para ambos) --- */
+
+scale > trough > contents > slider:hover {
+    background-color: @core_accent;
+    box-shadow: 0 0 8px @core_accent; /* Brillo LCD */
+}
+
+scale:disabled > trough > contents > slider {
+    background-color: @core_border;
+    border-color: transparent;
+}

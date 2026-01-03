@@ -1,0 +1,46 @@
+/* ================================
+ * Core Contrast
+ * ================================ */
+
+*:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px alpha(@core_accent, 0.55);
+}
+
+*:selected {
+    background-color: @core_accent;
+    color: @core_selection_fg;
+}
+
+.dim-label,
+.subtitle,
+.secondary-label {
+    color: mix(@core_fg, @core_fg_muted, 70%);
+}
+
+*:disabled {
+    opacity: 0.6;
+}
+
+image,
+.icon,
+.symbolic {
+    color: @core_fg;
+}
+
+*:disabled image,
+*:disabled .icon {
+    color: @core_fg_disabled;
+}
+
+progressbar trough,
+scale trough,
+levelbar trough {
+    border-color: shade(@core_border, 0.9);
+}
+
+.sidebar row:selected {
+    background-color: @core_accent;
+    color: @core_selection_fg;
+}
+

@@ -1,0 +1,24 @@
+/* CoreUI GTK 4 - SWITCHES */
+switch {
+    background-color: @core_bg_alt;
+    border: 1px solid @core_border;
+    border-radius: 0;
+    min-width: 36px;
+    min-height: 18px;
+}
+
+switch:checked {
+    background-color: @core_accent;
+}
+
+switch slider {
+    background-color: @core_fg;
+    border-radius: 0;
+    min-width: 14px;
+    min-height: 14px;
+    margin: 2px;
+}
+
+switch:checked slider {
+    background-color: @core_bg;
+}

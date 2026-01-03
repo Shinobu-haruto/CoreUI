@@ -1,0 +1,26 @@
+/* CoreUI GTK 4 - TABS (NOTEBOOK) */
+notebook > header {
+    background-color: @core_bg_alt;
+    border-bottom: 1px solid @core_border;
+}
+
+notebook > header > tabs > tab {
+    padding: 4px 12px;
+    color: #a7bdb0;
+    font-weight: bold;
+    border: 1px solid transparent;
+}
+
+notebook > header > tabs > tab:hover {
+    color: @core_fg;
+    background-color: #1b211d;
+}
+
+notebook > header > tabs > tab:checked {
+    color: @core_accent;
+    background-color: @core_bg;
+    /* Acento superior Cian */
+    border-top: 3px solid @core_accent;
+    border-left: 1px solid @core_border;
+    border-right: 1px solid @core_border;
+}

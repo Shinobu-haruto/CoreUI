@@ -1,215 +1,34 @@
-/* ================================
- * Core GTK 4 - Variables
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - GTK 4.0 MASTER ARCHIVE
+   ============================================================ */
 
-@define-color core_bg              #121614;
-@define-color core_bg_alt          #1a1f1c;
+/* 1. Variables y Base */
+@import url("core/colors.css");
+@import url("core/typography.css");
+@import url("base/globals.css");
 
-@define-color core_fg              #e6efe9;
-@define-color core_fg_muted        #9aa7a1;
-@define-color core_fg_disabled     #6b7771;
+/* 2. Widgets de Control */
+@import url("widgets/headerbar.css");
+@import url("widgets/buttons.css");
+@import url("widgets/entries.css");
+@import url("widgets/switches.css");
+@import url("widgets/menus.css");
 
-@define-color core_border          #2a322e;
+/* 3. Widgets de Datos e Información */
+@import url("widgets/progressbar.css");
+@import url("widgets/levelbar.css");
+@import url("widgets/scrollbar.css");
+@import url("widgets/tabs.css");
+@import url("widgets/separators.css");
+/* ... otros widgets ... */
+@import url("widgets/switches.css");
+@import url("widgets/sliders.css"); /* <--- Agregar esta línea */
+@import url("widgets/frame.css");
+/* ... */
 
-@define-color core_accent          #1db954;
-@define-color core_accent_soft     alpha(#1db954, 0.25);
-@define-color core_accent_active   #169e46;
+/* 4. Contenedores */
+@import url("widgets/lists.css");
+@import url("widgets/popovers.css");
 
-@define-color core_selection_fg    #ffffff;
-
-/* ================================
- * Core Light GTK4 - Variables
- * ================================ */
-
-@define-color core_bg              #f5f7f6;
-@define-color core_bg_alt          #e9edeb;
-
-@define-color core_fg              #1f2a26;
-@define-color core_fg_muted        #5f6f68;
-@define-color core_fg_disabled     #9aa7a1;
-
-@define-color core_border          #cdd6d1;
-
-@define-color core_accent          #1db954;
-@define-color core_accent_soft     alpha(#1db954, 0.18);
-@define-color core_accent_active   #169e46;
-
-@define-color core_selection_fg    #ffffff;
---------------------------------------------------------
-window,
-.background {
-    background-color: @core_bg;
-    color: @core_fg;
-}
-
-button {
-    background-color: @core_bg_alt;
-    border: 1px solid @core_border;
-    border-radius: 8px;
-    padding: 6px 12px;
-}
-
-button:hover {
-    background-color: shade(@core_bg_alt, 1.05);
-}
-
-button:active,
-button:checked {
-    background-color: @core_accent;
-    color: @core_selection_fg;
-}
-
-entry {
-    background-color: @core_bg_alt;
-    border: 1px solid @core_border;
-    border-radius: 6px;
-    padding: 6px 8px;
-}
-
-entry:focus {
-    border-color: @core_accent;
-}
-
-checkbutton {
-    color: @core_fg;
-}
-
-checkbutton:checked {
-    color: @core_accent;
-}
-
-switch {
-    background-color: @core_bg_alt;
-    border-radius: 999px;
-}
-
-switch:checked {
-    background-color: @core_accent;
-}
-
-notebook tab {
-    padding: 8px 12px;
-}
-
-notebook tab:checked {
-    border-bottom: 2px solid @core_accent;
-}
-
-scale trough {
-    background-color: @core_bg_alt;
-    min-height: 4px;
-}
-
-scale highlight {
-    background-color: @core_accent;
-}
-
-scale slider {
-    background-color: @core_fg;
-    border-radius: 50%;
-}
-
-* {
-    transition: background-color 140ms ease-out,
-                border-color 140ms ease-out;
-}
--------------------------------------------------------
-
-window,
-.background {
-    background-color: @core_bg;
-    color: @core_fg;
-}
-
-button {
-    background-color: @core_bg_alt;
-    border: 1px solid @core_border;
-    border-radius: 8px;
-    padding: 6px 12px;
-}
-
-button:hover {
-    background-color: shade(@core_bg_alt, 0.97);
-}
-
-button:active,
-button:checked {
-    background-color: @core_accent;
-    color: @core_selection_fg;
-}
-
-entry {
-    background-color: #ffffff;
-    border: 1px solid @core_border;
-    border-radius: 6px;
-    padding: 6px 8px;
-    color: @core_fg;
-}
-
-entry:focus {
-    border-color: @core_accent;
-}
-
-checkbutton {
-    color: @core_fg;
-}
-
-checkbutton:checked {
-    color: @core_accent;
-}
-
-switch {
-    background-color: @core_bg_alt;
-    border-radius: 999px;
-}
-
-switch:checked {
-    background-color: @core_accent;
-}
-
-notebook tab {
-    padding: 8px 12px;
-    background-color: transparent;
-}
-
-notebook tab:checked {
-    border-bottom: 2px solid @core_accent;
-}
-
-scale trough {
-    background-color: @core_bg_alt;
-    min-height: 4px;
-}
-
-scale highlight {
-    background-color: @core_accent;
-}
-
-scale slider {
-    background-color: @core_fg;
-    border-radius: 50%;
-    min-width: 12px;
-    min-height: 12px;
-}
-
-*:backdrop {
-    opacity: 0.92;
-}
-
-* {
-    transition: background-color 140ms ease-out,
-                border-color 140ms ease-out;
-}
-
-headerbar button image {
-    color: @core_fg;
-}
-
-headerbar button:hover image {
-    color: @core_accent;
-}
-
-headerbar button:active image {
-    color: @core_selection_fg;
-}
-
+/* 5. Optimización para 768p (DEBE IR AL FINAL) */
+@import url("gtk-compact-4.css");

@@ -1,0 +1,40 @@
+/* CoreUI GTK 4 - COMPACT MODE */
+button,
+entry,
+row,
+tab {
+    min-height: 22px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+headerbar {
+    min-height: 28px !important;
+}
+
+/* Ajuste de fuentes para HUD compacto */
+* {
+    font-size: 9pt;
+}
+
+progressbar > trough {
+    min-height: 6px !important; /* Más delgado para ahorrar espacio vertical */
+}
+
+progressbar > trough > text {
+    font-size: 7pt; /* Texto más pequeño para que quepa en la barra delgada */
+}
+
+/* Asegurar visibilidad en modo compacto */
+scale > trough > contents > slider {
+    min-width: 10px !important;
+    min-height: 10px !important;
+    margin: -3px 0 !important;
+}
+
+popover.menu modelbutton {
+    min-height: 22px !important;
+    padding-top: 2px !important;
+    padding-bottom: 2px !important;
+    font-size: 8.5pt;
+}

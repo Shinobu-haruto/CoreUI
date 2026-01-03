@@ -1,0 +1,85 @@
+/* ============================================================
+   CoreUI v1.1 - MENUS & MENUBARS (GTK 4.0)
+   Estilo: Industrial Hard-Square / Cian LCD
+   ============================================================ */
+
+/* En GTK 4, los menús desplegables son Popovers con la clase .menu */
+popover.menu {
+    padding: 0;
+    background-color: @core_bg_alt;
+    border: 1px solid @core_accent;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* El contenido interno del menú */
+popover.menu contents {
+    padding: 4px 0;
+    background-color: transparent;
+}
+
+/* Elementos individuales del menú (ahora son botones o secciones) */
+popover.menu modelbutton {
+    min-height: 28px;
+    padding: 4px 12px;
+    border-radius: 0;
+    transition: none;
+    color: @core_fg;
+}
+
+/* Estado: Pasar el mouse o navegar con teclado */
+popover.menu modelbutton:hover,
+popover.menu modelbutton:selected {
+    background-color: rgba(0, 204, 204, 0.2);
+    color: @core_accent;
+}
+
+/* Estado: Activo / Marcado */
+popover.menu modelbutton:active {
+    background-color: @core_accent;
+    color: @core_accent_fg;
+}
+
+/* Flechas de submenú en GTK 4 */
+popover.menu arrow {
+    background-color: @core_accent;
+    min-width: 6px;
+    min-height: 6px;
+    -gtk-icon-source: none; /* Reemplazamos flechas por bloques HUD */
+}
+
+/* ============================================================
+   MENUBAR (Barra superior)
+   ============================================================ */
+
+/* Nota: En GTK 4 se usa mucho el widget 'menubar' o cajas con .menubar */
+menubar {
+    background-color: @core_bg;
+    border-bottom: 1px solid @core_border;
+    padding: 0 4px;
+}
+
+menubar > item {
+    padding: 4px 12px;
+    min-height: 26px;
+    color: @core_fg;
+    transition: none;
+}
+
+menubar > item:hover {
+    background-color: #1b211d;
+    color: @core_accent;
+}
+
+/* Cuando el menú está desplegado */
+menubar > item:selected {
+    background-color: @core_accent;
+    color: @core_accent_fg;
+}
+
+/* Separadores internos */
+popover.menu separator {
+    background-color: @core_border;
+    margin: 4px 0;
+    min-height: 1px;
+}

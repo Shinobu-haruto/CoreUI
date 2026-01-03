@@ -1,0 +1,29 @@
+/* CoreUI GTK 4 - LISTS & SIDEBAR */
+listview,
+list {
+    background-color: @core_bg;
+    color: @core_fg;
+}
+
+row {
+    min-height: 26px;
+    padding: 4px 10px;
+    border: none;
+    transition: none;
+}
+
+row:hover {
+    background-color: rgba(0, 204, 204, 0.1);
+    color: @core_accent;
+}
+
+row:selected {
+    background-color: @core_accent;
+    color: @core_accent_fg;
+    outline: none;
+}
+
+/* Indicador lateral CoreUI (Firma visual) */
+row:selected {
+    border-left: 3px solid @core_fg;
+}

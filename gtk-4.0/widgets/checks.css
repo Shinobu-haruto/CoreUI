@@ -1,0 +1,64 @@
+/* ============================================================
+   CoreUI v1.1 - CHECKS & RADIOS (GTK 3.0)
+   Estilo: Celdas de Datos HUD / Cian LCD
+   ============================================================ */
+
+/* Base común: Ambos son cuadrados para CoreUI */
+check,
+radio {
+    background-color: #151a17; /* core_bg_alt */
+    border: 1px solid #1f2a24; /* core_border */
+    border-radius: 0px;        /* TOTALMENTE CUADRADO */
+    min-width: 16px;
+    min-height: 16px;
+    margin: 4px;
+    -gtk-icon-source: none;    /* Eliminamos iconos del sistema para usar formas sólidas */
+    transition: none;
+}
+
+/* Hover: El borde se ilumina en Cian */
+check:hover,
+radio:hover {
+    border-color: #00CCCC; /* core_accent */
+}
+
+/* Checked (Activado): La celda se llena de color Cian sólido */
+check:checked,
+radio:checked {
+    background-color: #00CCCC; 
+    border-color: #00CCCC;
+    /* Dibujamos un pequeño punto o marca interna manual para mayor claridad */
+    background-image: radial-gradient(circle, #0e1210 35%, transparent 40%);
+}
+
+/* Diferenciación visual: Radio usa un rombo interno en vez de punto */
+radio:checked {
+    background-image: linear-gradient(45deg, transparent 40%, #0e1210 40%, #0e1210 60%, transparent 60%),
+                      linear-gradient(-45deg, transparent 40%, #0e1210 40%, #0e1210 60%, transparent 60%);
+}
+
+/* Estado Indeterminado (Mixto) */
+check:indeterminate {
+    background-color: #1b211d;
+    border-color: #00CCCC;
+    background-image: linear-gradient(to bottom, #00CCCC, #00CCCC);
+    background-size: 10px 2px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Disabled */
+check:disabled,
+radio:disabled {
+    background-color: #0e1210;
+    border-color: #1f2a24;
+    opacity: 0.4;
+}
+
+/* Ajuste de color para las etiquetas de texto al lado de los checks */
+check + label,
+radio + label {
+    padding-left: 6px;
+    color: #e6f4ea;
+}
+

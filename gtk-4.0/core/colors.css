@@ -1,0 +1,16 @@
+/* CoreUI GTK 4 - Sistema de Colores */
+
+@define-color core_bg #0e1210;
+@define-color core_bg_alt #151a17;
+@define-color core_accent #00CCCC;
+@define-color core_accent_fg #0e1210;
+@define-color core_fg #e6f4ea;
+@define-color core_border #1f2a24;
+
+/* Compatibilidad con Adwaita (GTK 4 lo requiere) */
+@define-color accent_bg_color @core_accent;
+@define-color accent_fg_color @core_accent_fg;
+@define-color window_bg_color @core_bg;
+@define-color window_fg_color @core_fg;
+@define-color view_bg_color @core_bg_alt;
+@define-color view_fg_color @core_fg;

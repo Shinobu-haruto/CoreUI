@@ -1,0 +1,91 @@
+/* ================================
+ * Core Headerbar
+ * ================================ */
+
+headerbar {
+    background-color: @core_bg;
+    color: @core_fg;
+    border-bottom: 1px solid @core_border;
+    min-height: @core_height_lg;
+    padding: 0 @core_pad_md;
+    box-shadow: 0 2px 6px @core_shadow_soft;
+}
+
+headerbar:backdrop {
+    background-color: shade(@core_bg, 0.96);
+    color: @core_fg_muted;
+}
+
+headerbar button {
+    background-color: transparent;
+    border: none;
+    border-radius: @core_radius_md;
+    min-height: @core_height_sm;
+    padding: 0 @core_pad_sm;
+    box-shadow: none;
+}
+
+headerbar button:hover {
+    background-color: @core_bg_alt;
+}
+
+headerbar button.suggested-action {
+    background-color: @core_accent;
+    color: @core_selection_fg;
+}
+
+headerbar title {
+    font-weight: 600;
+}
+
+headerbar subtitle {
+    font-weight: 400;
+    color: @core_fg_muted;
+}
+
+headerbar .titlebutton {
+    min-width: 36px;
+    border-radius: 0;
+}
+
+/* ------------------------
+   Botón minimizar
+   ------------------------ */
+headerbar button.titlebar.minimize {
+    background-image: url("layout/minimize-line.svg");
+     background-size: contain;
+      color: transparent;
+}
+
+/* ------------------------
+   Botón cerrar
+   ------------------------ */
+headerbar button.titlebar.close {
+    background-image: url("layout/close-triangle.svg");
+     background-size: contain;
+      color: transparent;
+}
+/* Hover (opcional si quieres efecto) */
+headerbar button.titlebar.minimize:hover {
+    background-image: url("layout/minimize-line-hover.svg");
+     background-size: contain;
+      color: transparent;
+}
+
+headerbar button.titlebar.close:hover {
+    background-image: url("layout/close-triangle-hover.svg");
+     background-size: contain;
+      color: transparent;
+}
+
+/* Presionado */
+headerbar button.titlebar.minimize:active{
+    background-image: url("layout/minimize-line-pressed.svg");
+     background-size: contain;
+      color: transparent;
+}
+
+headerbar button.titlebar.close:active {
+    -gtk-icon-source: "../metacity-1/buttons/close-triangle-pressed.svg";
+}
+
