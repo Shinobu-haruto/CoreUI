@@ -1,33 +1,71 @@
-/* ================================
- * Core Scrollbar
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - SCROLLBAR (GTK 3.0)
+   Estilo: Rectangular Industrial / Cian LCD
+   ============================================================ */
 
 scrollbar {
     background-color: transparent;
+    transition: none; /* Eliminamos delay para respuesta táctil instantánea */
 }
 
+/* El carril (Trough) */
 scrollbar trough {
-    background-color: transparent;
-    min-width: 8px;
-    min-height: 8px;
+    background-color: #0e1210; /* core_bg */
+    border: none;
 }
 
+/* El tirador (Slider) - ESTILO CUADRADO HUD */
 scrollbar slider {
-    background-color: @core_border;
-    border-radius: 8px;
-    min-width: 8px;
-    min-height: 8px;
+    background-color: #1b211d; /* core_bg_soft */
+    border: 1px solid #00CCCC; /* El contorno cian define la posición */
+    border-radius: 0px;        /* TOTALMENTE CUADRADO */
+    /* Grosor optimizado: Visible pero no invasivo */
+    min-width: 6px;
+    min-height: 6px;
+    margin: 1px;               
 }
 
+/* Estado: Hover - El slider se llena de energía */
 scrollbar slider:hover {
-    background-color: @core_accent;
+    background-color: #00CCCC; 
+    border-color: #3EBFFF;     /* Brillo cian eléctrico */
 }
 
+/* Estado: Active (Arrastrando) */
 scrollbar slider:active {
-    background-color: @core_accent_active;
+    background-color: #26B863; /* Verde éxito CoreUI */
+    border-color: #e6f4ea;     /* Contraste máximo al mover */
 }
 
-scrollbar:disabled slider {
-    background-color: shade(@core_border, 0.8);
+/* --- Variaciones de Orientación --- */
+
+scrollbar.vertical trough {
+    min-width: 10px; /* Un poco más ancho que el slider para el margen */
 }
 
+scrollbar.horizontal trough {
+    min-height: 10px;
+}
+
+/* Estilo para las esquinas donde se juntan dos scrollbars */
+scrollbar.junction {
+    background-color: #0e1210;
+    border: 1px solid #1f2a24;
+}
+
+/* --- Limpieza Visual --- */
+
+/* Ocultar botones de flecha (Steppers) para look moderno */
+scrollbar button {
+    display: none;
+    opacity: 0;
+}
+
+/* Ajuste para ScrolledWindow (Evita bordes dobles) */
+.scrolledwindow scrollbar.vertical {
+    border-left: 1px solid #1f2a24;
+}
+
+.scrolledwindow scrollbar.horizontal {
+    border-top: 1px solid #1f2a24;
+}

@@ -1,77 +1,106 @@
-/* ================================
- * Core Compact – Refined
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - COMPACT MODE (FINAL 2026)
+   Optimizado para: LCD 1366x768 (Ahorro de espacio vertical)
+   Estilo: Industrial Hard-Square / Cian
+   ============================================================ */
 
 /* ----------------
- * Buttons
- * ---------------- */
+   Botones (Más delgados para 768p)
+   ---------------- */
 button {
-    min-height: 26px;
+    min-height: 22px;
     padding: 0 8px;
+    border-radius: 0px !important;
 }
 
 /* ----------------
- * Entries / Combobox
- * ---------------- */
+   Entradas / Combobox
+   ---------------- */
 entry,
 combobox entry {
-    min-height: 24px;
+    min-height: 22px;
     padding: 0 6px;
+    border-radius: 0px !important;
 }
 
 /* ----------------
- * Switch
- * ---------------- */
+   Switch (Compacto Industrial)
+   ---------------- */
 switch {
-    min-width: 34px;
-    min-height: 18px;
+    min-width: 30px;
+    min-height: 16px;
     padding: 0;
+    border-radius: 0px !important;
 }
 
 switch slider {
-    min-width: 14px;
-    min-height: 14px;
+    min-width: 12px;
+    min-height: 12px;
     margin: 2px;
+    border-radius: 0px !important;
 }
 
 /* ----------------
- * Sliders
- * ---------------- */
+   Sliders / Scales
+   ---------------- */
 scale trough {
     min-height: 4px;
+    border-radius: 0px !important;
 }
 
 scale slider {
-    min-width: 12px;
-    min-height: 12px;
+    min-width: 10px;
+    min-height: 10px;
+    border-radius: 0px !important;
 }
 
 /* ----------------
- * Tabs
- * ---------------- */
+   Pestañas (Notebook Tabs)
+   ---------------- */
 notebook tab {
-    min-height: 24px;
+    min-height: 22px;
+    padding: 2px 10px;
+    border-radius: 0px !important;
+}
+
+/* ----------------
+   Barras Laterales / Filas
+   ---------------- */
+.sidebar row,
+list row {
+    min-height: 22px;
     padding: 2px 8px;
+    border-radius: 0px !important;
 }
 
 /* ----------------
- * Sidebar / Lists
- * ---------------- */
-.sidebar row {
-    min-height: 24px;
-    padding: 0 8px;
-}
-
-/* ----------------
- * Headerbar
- * ---------------- */
+   Headerbar (Ajuste Crítico para 768p)
+   ---------------- */
 headerbar {
-    min-height: 32px;
-    padding: 0 6px;
+    min-height: 28px; /* Altura mínima para no desperdiciar pantalla */
+    padding: 0 4px;
+    border-radius: 0px !important;
 }
 
 headerbar button {
-    min-height: 24px;
+    min-height: 22px;
     padding: 0 6px;
+    margin: 3px 0;
+}
+
+/* ----------------
+   Menús y Menubars
+   ---------------- */
+menubar {
+    min-height: 20px;
+}
+
+menubar menuitem {
+    padding: 2px 10px;
+}
+
+menuitem {
+    min-height: 22px;
+    padding: 2px 12px;
 }
 

@@ -1,69 +1,84 @@
-/* ================================
- * Core Menus
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - MENUS & MENUBARS (GTK 3.0)
+   Estilo: Industrial Hard-Square / Cian LCD
+   ============================================================ */
 
+/* Contenedor principal del menú desplegable */
 menu,
 .menu {
-    background-color: @core_bg_alt;
-    color: @core_fg;
-    border: 1px solid @core_border;
-    border-radius: @core_radius_md;
-    padding: @core_pad_sm 0;
-    box-shadow: 0 6px 16px @core_shadow_soft;
+    background-color: #151a17; /* core_bg_alt */
+    color: #e6f4ea;            /* core_fg */
+    border: 1px solid #00CCCC; /* Borde Cian sólido: máxima nitidez */
+    border-radius: 0px; 
+    padding: 2px 0;            /* Un poco más compacto verticalmente */
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5); /* Sombra sólida, no difusa */
 }
 
+/* Elementos individuales del menú */
 menuitem {
-    min-height: @core_height_sm;
-    padding: 0 @core_pad_lg;
-    border-radius: @core_radius_sm;
+    min-height: 26px;          /* Optimizado para 768p */
+    padding: 2px 12px;
+    border-radius: 0px;
+    transition: none;
 }
 
+/* Estado: Hover o Selección */
 menuitem:hover,
 menuitem:selected {
-    background-color: @core_accent_soft;
-    color: @core_fg;
+    background-color: rgba(0, 204, 204, 0.25); 
+    color: #00CCCC;
 }
 
-menuitem:active {
-    background-color: @core_accent;
-    color: @core_selection_fg;
+/* Texto de atajo de teclado (Aceleradores) */
+menuitem accelerator {
+    color: #a7bdb0;            /* core_fg_muted */
+    margin-left: 10px;
 }
 
-menuitem:disabled {
-    color: @core_fg_disabled;
+menuitem:hover accelerator {
+    color: #00CCCC;            /* Brilla junto con el texto principal */
 }
 
-menu separator {
-    background-color: @core_divider;
-    min-height: 1px;
-    margin: @core_pad_xs 0;
+/* Checkmarks y Radios dentro de Menús */
+menuitem check,
+menuitem radio {
+    min-width: 8px;
+    min-height: 8px;
+    margin-right: 8px;
+    background-color: transparent;
+    border: 1px solid #1f2a24;
 }
 
-menu menu {
-    margin: 4px;
+menuitem check:checked,
+menuitem radio:checked {
+    background-color: #00CCCC;
+    border-color: #00CCCC;
 }
 
+/* --- Barra de Menú (Menubar Superior) --- */
 menubar {
-    background-color: @core_bg_alt;
-    border-bottom: 1px solid @core_border;
-    padding: 0 4px; /* padding general del menubar */
+    background-color: #0e1210; 
+    border-bottom: 1px solid #1f2a24;
+    padding: 0 4px;
 }
 
 menubar menuitem {
-    padding: 0 12px; /* separación horizontal entre botones */
-    margin: 0 2px;   /* pequeño espacio entre botones */
-    border-radius: @core_radius_sm;
-    min-height: @core_height_sm;
-    color: @core_fg;
+    padding: 4px 10px;
+    color: #e6f4ea;
 }
 
 menubar menuitem:hover {
-    background-color: @core_bg_soft;
-    color: @core_accent;
+    background-color: #1b211d;
+    color: #00CCCC;
 }
 
-menubar menuitem:active {
-    background-color: @core_accent;
-    color: @core_selection_fg;
+/* Flechas de submenú: Bloque de datos CoreUI */
+menu .arrow {
+    -gtk-icon-source: none;
+    background-color: #00CCCC;
+    min-width: 5px;
+    min-height: 5px;
+    margin-left: 10px;
+    /* Efecto de rombo técnico */
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
 }
-

@@ -1,56 +1,29 @@
-/* ================================
- * Core Typography System
- * ================================ */
+/* ============================================================
+   Core Typography - Cyan HUD (Optimizado para 768p/1080p)
+   ============================================================ */
 
 * {
-    font-family: "Inter", sans-serif;
-    font-size: 10.5pt;
+    font-family: "Inter", "Segoe UI", sans-serif;
+    font-size: 10pt; /* Reducido de 10.5pt para ganar espacio vertical */
     font-weight: 400;
     -gtk-icon-size: 16px;
 }
 
-window,
-dialog {
-    font-weight: 400;
-}
-
+/* Encabezados de ventana compactos */
 headerbar {
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 11px;
+    font-weight: 700; /* Más grueso para compensar el tamaño pequeño */
+    text-transform: uppercase; /* Estética industrial */
 }
 
-headerbar title {
-    font-weight: 600;
-}
-
+/* Botones con texto más nítido */
 button {
-    font-weight: 500;
-    letter-spacing: 0.1px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
 }
 
-menuitem,
-treeview,
-list row {
-    font-size: 13px;
-    font-weight: 400;
-}
-
-entry,
-textview,
-spinbutton {
-    font-weight: 400;
-}
-
+/* Tooltips pequeños para no tapar información en 768p */
 tooltip {
-    font-size: 12px;
+    font-size: 9pt;
     font-weight: 400;
 }
-
-label:disabled {
-    font-weight: 400;
-}
-
-label:backdrop {
-    opacity: 0.85;
-}
-

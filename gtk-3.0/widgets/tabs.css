@@ -1,36 +1,88 @@
-/* ================================
- * Core Tabs (Notebook)
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - TABS / NOTEBOOK (GTK 3.0)
+   Estilo: Celdas HUD / Cian LCD
+   ============================================================ */
 
 notebook {
-    background-color: @core_bg;
+    background-color: #0e1210; /* core_bg */
+    border: 1px solid #1f2a24; /* core_border */
 }
 
-/* Barra de tabs */
+/* Contenedor de la barra de pestañas */
 notebook header {
-    background-color: @core_bg_alt;
-    border-bottom: 1px solid @core_border;
+    background-color: #151a17; /* core_bg_alt */
+    border-bottom: 1px solid #1f2a24;
+    padding: 0;
 }
 
-/* Tab */
+/* Estilo base de cada Pestaña (Tab) */
 notebook tab {
-    min-height: @core_height_sm;
-    padding: 0 @core_pad_md;
+    min-height: 26px;          /* Optimizado para 768p */
+    padding: 4px 14px;
     background-color: transparent;
-    border-radius: @core_radius_md @core_radius_md 0 0;
-    color: @core_fg_muted;
+    border-radius: 0px;        /* TOTALMENTE CUADRADO */
+    color: #a7bdb0;            /* core_fg_muted */
+    border: 1px solid transparent;
+    transition: none;          /* Respuesta instantánea para LCD */
 }
 
-/* Hover */
+/* Estado: Hover */
 notebook tab:hover {
-    background-color: shade(@core_bg_alt, 1.05);
-    color: @core_fg;
+    background-color: #1b211d; /* core_bg_soft */
+    color: #e6f4ea;            /* core_fg */
 }
 
-/* Tab activa */
+/* Estado: Pestaña Activa (Seleccionada) */
 notebook tab:checked {
-    background-color: @core_bg;
-    color: @core_fg;
-    border-bottom: 2px solid @core_accent;
+    background-color: #0e1210; /* Fusión con el panel inferior */
+    color: #00CCCC;            /* Texto en Cian resaltado */
+    border-left: 1px solid #1f2a24;
+    border-right: 1px solid #1f2a24;
+    font-weight: bold;
 }
 
+/* --- Indicadores de Acento por Posición --- */
+
+/* Pestañas arriba (estándar) */
+notebook.top header tab:checked {
+    border-top: 3px solid #00CCCC;
+    margin-top: -1px; /* Solapa ligeramente el borde para nitidez */
+}
+
+/* Pestañas abajo */
+notebook.bottom header tab:checked {
+    border-bottom: 3px solid #00CCCC;
+    margin-bottom: -1px;
+}
+
+/* Pestañas a la izquierda (Side tabs) */
+notebook.left header tab:checked {
+    border-left: 3px solid #00CCCC;
+    margin-left: -1px;
+}
+
+/* Pestañas a la derecha */
+notebook.right header tab:checked {
+    border-right: 3px solid #00CCCC;
+    margin-right: -1px;
+}
+
+/* Botón de cerrar dentro de la pestaña (X) */
+notebook tab button {
+    padding: 2px;
+    margin-left: 6px;
+    background-color: transparent;
+    color: currentColor;
+    border: none;
+}
+
+notebook tab button:hover {
+    background-color: #e74c3c; /* Rojo destructivo */
+    color: #ffffff;
+}
+
+/* El área donde vive el contenido */
+notebook stack {
+    padding: 10px;
+    background-color: #0e1210;
+}

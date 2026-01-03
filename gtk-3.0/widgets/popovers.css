@@ -1,37 +1,78 @@
-/* ================================
- * Core Popovers
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - POPOVERS (GTK 3.0)
+   Estilo: Módulo de Datos HUD / Cian LCD
+   ============================================================ */
 
 popover {
-    background-color: @core_bg_alt;
-    color: @core_fg;
-    border: 1px solid @core_border;
-    border-radius: @core_radius_lg;
-    padding: @core_pad_md;
-    box-shadow: 0 8px 20px @core_shadow_strong;
+    background-color: #151a17; /* core_bg_alt */
+    color: #e6f4ea;            /* core_fg */
+    /* Borde Cian sólido para delimitar el popover en LCD */
+    border: 1px solid #00CCCC; 
+    border-radius: 0px;        /* TOTALMENTE CUADRADO */
+    padding: 8px;
+    /* Efecto de relieve industrial: borde oscuro exterior */
+    box-shadow: 0 0 0 1px #0e1210; 
 }
 
+/* Contenido interno del popover */
 popover.background {
-    border-radius: @core_radius_md;
+    background-color: #151a17;
+    border-radius: 0px;
+    padding: 2px;
 }
 
+/* Filas de lista dentro de un popover (ej. menús rápidos) */
 popover list row {
-    min-height: @core_height_sm;
-    padding: 0 @core_pad_md;
-    border-radius: @core_radius_sm;
+    min-height: 28px;          /* Optimizado para ahorro de espacio vertical */
+    padding: 4px 10px;
+    border-radius: 0px;        /* TOTALMENTE CUADRADO */
+    color: #e6f4ea;
+    transition: none;          /* Respuesta inmediata sin ghosting */
 }
 
+/* Estado: Hover (Cian suave) */
 popover list row:hover {
-    background-color: @core_accent_soft;
+    background-color: rgba(0, 204, 204, 0.15); 
+    color: #00CCCC;
 }
 
+/* Estado: Seleccionado / Activo */
 popover list row:selected {
-    background-color: @core_accent;
-    color: @core_selection_fg;
+    background-color: #00CCCC; 
+    color: #0e1210;            /* Texto oscuro sobre fondo brillante */
 }
 
+/* Separadores internos técnicos */
 popover separator {
-    background-color: @core_divider;
-    margin: @core_pad_xs 0;
+    background-color: #1f2a24; 
+    min-height: 1px;
+    margin: 4px 0;
 }
 
+/* --- La Flecha (Arrow) --- */
+/* En GTK 3.20+ se usa el nodo 'arrow' */
+popover > contents > arrow {
+    background-color: #151a17;
+    border: 1px solid #00CCCC;
+}
+
+/* --- Ajustes de Pantalla y Scroll --- */
+
+/* Scroll interno: Evita que el popover sea más alto que la pantalla de 768p */
+popover scrolledwindow {
+    border: 1px solid #1f2a24;
+    background-color: #0e1210;
+}
+
+/* Etiquetas secundarias */
+popover label.subtitle {
+    color: #a7bdb0;            /* core_fg_muted */
+    font-size: 8.5pt;
+    margin-top: 2px;
+}
+
+/* Botones dentro de popovers */
+popover button {
+    padding: 4px 8px;
+    min-height: 24px;
+}

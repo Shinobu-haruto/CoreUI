@@ -1,48 +1,68 @@
-/* ================================
- * Core Sliders (Scale)
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - SLIDERS / SCALE (GTK 3.0)
+   Estilo: Industrial HUD / Cian LCD
+   ============================================================ */
 
 scale {
     background-color: transparent;
+    padding: 8px 0;
 }
 
+/* El carril o fondo del deslizador */
 scale trough {
-    background-color: shade(@core_bg_alt, 0.9);
-    border: 1px solid @core_border;
+    background-color: #151a17; /* core_bg_alt */
+    border: 1px solid #1f2a24; /* core_border */
+    border-radius: 0px;        /* TOTALMENTE CUADRADO */
+    min-height: 4px;           /* Más delgado para un look técnico */
+    margin: 10px 0;
 }
 
-
+/* La parte resaltada (lo que ya se ha deslizado) */
 scale highlight {
-    background-color: @core_accent;
-    border-radius: @core_radius_md;
+    background-color: #00CCCC; /* core_accent (Cian) */
+    border-radius: 0px;        /* TOTALMENTE CUADRADO */
 }
 
+/* El tirador (Slider) - ESTILO BLOQUE COREUI */
 scale slider {
-    background-color: @core_bg;
-    border: 2px solid @core_accent;
-    border-radius: 50%;
-    min-width: 14px;
-    min-height: 14px;
+    background-color: #0e1210; /* core_bg */
+    border: 2px solid #00CCCC; /* Borde Cian sólido */
+    border-radius: 0px;        /* TOTALMENTE CUADRADO */
+    min-width: 12px;           /* Dimensiones optimizadas para 1366x768 */
+    min-height: 12px;
+    margin: -5px 0;            /* Centrado vertical sobre el carril */
 }
 
+/* Estado: Pasar el mouse */
 scale slider:hover {
-    border-color: @core_accent;
+    background-color: #1b211d; /* core_bg_soft */
+    border-color: #3EBFFF;     /* Cian más brillante */
 }
 
+/* Estado: Al arrastrar o presionar */
 scale slider:active {
-    background-color: @core_accent;
-    border-color: @core_accent_active;
+    background-color: #00CCCC; 
+    border-color: #e6f4ea;     /* Contraste blanco verdoso al activar */
 }
 
+/* Deslizadores deshabilitados */
 scale:disabled trough {
-    background-color: shade(@core_bg_alt, 0.95);
+    background-color: #0e1210;
+    border-color: #1f2a24;
 }
 
 scale:disabled highlight {
-    background-color: shade(@core_accent, 0.7);
+    background-color: #6f8578; /* core_fg_disabled */
 }
 
 scale:disabled slider {
-    background-color: @core_fg_disabled;
+    background-color: #151a17;
+    border-color: #6f8578;
+}
+
+/* Ajuste específico para Scales en barras de herramientas o Headerbars */
+headerbar scale {
+    min-width: 80px;
+    padding: 0 4px;
 }
 

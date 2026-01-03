@@ -1,42 +1,79 @@
-/* ================================
- * Core Sidebar
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - SIDEBAR (GTK 3.0)
+   Estilo: Navegación HUD / Cian LCD
+   ============================================================ */
 
+/* Contenedor de la barra lateral (Nemo, Nautilus, Ajustes) */
 .sidebar,
 .sidebar list,
-.sidebar listview {
-    background-color: @core_bg_alt;
-    color: @core_fg;
+.sidebar listview,
+stacksidebar.sidebar list,
+viewport.sidebar {
+    background-color: #151a17; /* core_bg_alt */
+    color: #e6f4ea;            /* core_fg */
+    border: none;
 }
 
+/* Filas de navegación (Carpetas, Dispositivos, Categorías) */
 .sidebar row {
-    min-height: @core_height_sm;
-    padding: 0 @core_pad_md;
-    border-radius: @core_radius_sm;
+    min-height: 28px;          /* Ajustado para optimizar espacio en 768p */
+    padding: 2px 12px;
+    border-radius: 0px;        /* TOTALMENTE CUADRADO */
+    border: none;
+    transition: none;          /* Respuesta instantánea para LCD */
 }
 
+/* Estado: Pasar el mouse */
 .sidebar row:hover {
-    background-color: shade(@core_bg_alt, 1.05);
+    background-color: #1b211d; /* core_bg_soft */
+    color: #00CCCC;            /* Texto resalta en Cian */
 }
 
+/* Estado: Seleccionado (Fila Activa) */
 .sidebar row:selected {
-    background-color: @core_accent_soft;
-    color: @core_fg;
+    background-color: rgba(0, 204, 204, 0.15); /* Acento suave CoreUI */
+    color: #00CCCC;
+    /* Indicador lateral: Firma visual del tema */
+    border-left: 3px solid #00CCCC;
 }
 
+/* Estado: Seleccionado con Foco (Navegación por teclado) */
 .sidebar row:selected:focus {
-    background-color: @core_accent;
-    color: @core_selection_fg;
+    background-color: #00CCCC; /* Bloque Cian sólido */
+    color: #0e1210;            /* Texto oscuro para contraste HUD */
+    border-left: 3px solid #1f2a24;
 }
+
+/* --- Iconografía --- */
 
 .sidebar image {
     -gtk-icon-size: 16px;
-    margin-right: 6px;
+    margin-right: 10px;
+    color: inherit;            /* Los iconos cambian de color con el texto */
 }
+
+/* --- Estructura y Divisores --- */
 
 .sidebar separator {
-    background-color: @core_divider;
+    background-color: #1f2a24; /* core_divider */
     min-height: 1px;
-    margin: @core_pad_xs 0;
+    margin: 8px 4px;           /* Más espacio para separar secciones de datos */
 }
 
+/* Scrollbar específico para sidebar */
+.sidebar scrolledwindow {
+    background-color: transparent;
+}
+
+/* --- Estados de Fondo (Backdrop) --- */
+
+.sidebar:backdrop {
+    background-color: #0e1210; /* Se oscurece al perder foco */
+    color: #6f8578;            /* core_fg_disabled */
+}
+
+.sidebar row:selected:backdrop {
+    background-color: #1b211d;
+    color: #a7bdb0;
+    border-color: #1f2a24;
+}

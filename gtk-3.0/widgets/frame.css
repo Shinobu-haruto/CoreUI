@@ -1,16 +1,60 @@
-/* ================================
- * Core Frames
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - FRAMES & BOXES (GTK 3.0)
+   Estilo: Industrial Hard-Square / Cian LCD
+   ============================================================ */
 
 frame {
-    border: 1px solid @core_border;
-    border-radius: @core_radius_md;
-    padding: @core_pad_md;
+    /* Borde sólido Cian: Nitidez máxima en LCD */
+    border: 1px solid #00CCCC; 
+    border-radius: 0px; 
+    padding: 8px;
+    background-color: transparent;
 }
 
-/* Título del frame */
+/* Título del frame: Estilo etiqueta de módulo */
 frame > label {
-    color: @core_fg_muted;
-    font-weight: 500;
+    color: #00CCCC; 
+    font-weight: bold;
+    font-size: 8.5pt; /* Ajustado ligeramente para look técnico */
+    text-transform: uppercase; /* Opcional: refuerza el look industrial */
+    margin-bottom: 4px;
+    padding: 0 6px;
 }
 
+/* Frames secundarios (dentro de listas o diálogos) */
+.frame {
+    border: 1px solid #1f2a24; /* core_border */
+    border-radius: 0px;
+    background-color: rgba(21, 26, 23, 0.5); /* Fondo muy sutil para jerarquía */
+}
+
+/* Ajuste para marcos con etiquetas (GtkFrame) */
+border {
+    border: 1px solid #1f2a24;
+    border-radius: 0px;
+}
+
+/* Estado: Ventana inactiva (Backdrop) */
+frame:backdrop {
+    border-color: #1f2a24;
+}
+
+frame:backdrop > label {
+    color: #6f8578; /* core_fg_disabled */
+}
+
+/* --- Mejoras para Contenedores de ScrolledWindow --- */
+scrolledwindow frame {
+    border: none; /* Evita doble borde en áreas con scroll */
+}
+
+/* Línea divisoria de Paned (División de paneles ajustables) */
+paned > separator {
+    background-color: #1f2a24;
+    min-width: 2px;
+    min-height: 2px;
+}
+
+paned > separator:hover {
+    background-color: #00CCCC; /* Brillo al ajustar paneles */
+}

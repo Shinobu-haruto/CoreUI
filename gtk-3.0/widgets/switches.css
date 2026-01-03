@@ -1,37 +1,58 @@
-/* ================================
- * Core Switches
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - SWITCHES (GTK 3.0)
+   Estilo: Toggle Industrial / Cian LCD
+   ============================================================ */
 
 switch {
-    background-color: @core_bg_alt;
-    border: 1px solid @core_border;
-    border-radius: 999px;
-    min-width: 36px;
-    min-height: 18px;
+    background-color: #1b211d; /* core_bg_soft para mejor visibilidad del carril */
+    border: 1px solid #1f2a24; /* core_border */
+    border-radius: 0px;        /* TOTALMENTE CUADRADO */
+    min-width: 38px;
+    min-height: 20px;
+    transition: none;          /* Respuesta instantánea para evitar ghosting */
 }
 
-/* Slider */
+/* El bloque deslizante (Slider interno) */
 switch slider {
-    background-color: @core_fg;
-    border-radius: 50%;
+    background-color: #6f8578; /* core_fg_disabled (grisáceo en OFF) */
+    border-radius: 0px;        /* TOTALMENTE CUADRADO */
     min-width: 16px;
     min-height: 16px;
-    margin: 1px;
+    margin: 1px;               /* Ajuste fino de margen para alineación de píxeles */
+    border: 1px solid #0e1210;
 }
 
-/* ON */
+/* Estado: ON (Activado) */
 switch:checked {
-    background-color: @core_accent;
-    border-color: @core_accent_active;
+    background-color: #00CCCC; /* core_accent (Cian sólido) */
+    border-color: #00CCCC;
 }
 
-/* Hover */
+switch:checked slider {
+    background-color: #0e1210; /* El slider se vuelve oscuro sobre el fondo cian */
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* Estado: Hover (Pasar el mouse) */
 switch:hover {
-    border-color: @core_accent;
+    border-color: #00CCCC;
 }
 
-/* Disabled */
+/* Estado: Deshabilitado */
 switch:disabled {
-    opacity: 0.5;
+    opacity: 0.4;
+    background-color: #0e1210;
 }
 
+/* --- Limpieza Visual HUD --- */
+
+/* Ocultar las etiquetas de texto internas (ON/OFF) para mantener el minimalismo */
+switch label {
+    color: transparent;
+    font-size: 0;
+}
+
+/* Ajuste para switches dentro de listas de configuración */
+row switch {
+    margin: 8px 0;
+}

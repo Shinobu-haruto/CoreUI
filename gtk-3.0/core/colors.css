@@ -1,43 +1,33 @@
-/* ================================
- * Core Color System
- * ================================ */
+/* ============================================================
+   CoreUI Color System - Cyan LCD (HEX Directo)
+   ============================================================ */
 
-/* Fondos base */
-@define-color core_bg          #0e1210;
-@define-color core_bg_alt      #151a17;
-@define-color core_bg_soft     #1b211d;
+/* Fondos */
+/* @define-color core_bg #0e1210 */
+/* @define-color core_bg_alt #151a17 */
 
-/* Texto */
-@define-color core_fg          #e6f4ea;
-@define-color core_fg_muted    #a7bdb0;
-@define-color core_fg_disabled #6f8578;
+/* Acento Principal */
+/* @define-color core_accent #00CCCC */
 
-/* Acento Core */
-@define-color core_accent        #2ecc71;
-@define-color core_accent_hover  #3eea88;
-@define-color core_accent_active #26b863;
+/* Aplicación en Widgets Core */
+window {
+    background-color: #0e1210;
+    color: #e6f4ea;
+}
 
-/* Acento translúcido */
-@define-color core_accent_soft rgba(46, 204, 113, 0.18);
+headerbar {
+    background-color: #151a17;
+    color: #e6f4ea;
+    border-bottom: 2px solid #00CCCC; /* Firma visual en la parte superior */
+}
 
-/* Bordes */
-@define-color core_border        #1f2a24;
-@define-color core_border_focus  #2ecc71;
+/* Estados de botones en el core */
+button.suggested-action {
+    background-color: #00CCCC;
+    color: #0e1210;
+}
 
-/* Divisores */
-@define-color core_divider       #202a25;
-
-/* Sombras */
-@define-color core_shadow_strong rgba(0, 0, 0, 0.55);
-@define-color core_shadow_soft   rgba(0, 0, 0, 0.35);
-
-/* Estados */
-@define-color core_success #2ecc71;
-@define-color core_warning #f1c40f;
-@define-color core_error   #e74c3c;
-@define-color core_info    #3498db;
-
-/* Selección */
-@define-color core_selection_bg @core_accent;
-@define-color core_selection_fg #08120c;
-
+button:hover {
+    background-color: #1b211d;
+    border-color: #00CCCC;
+}

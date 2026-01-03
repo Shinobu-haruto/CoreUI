@@ -1,20 +1,67 @@
-/* ================================
- * Core Progressbar
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - PROGRESSBAR (GTK 3.0/4.0)
+   Estilo: Celda de Carga HUD / Cian LCD
+   ============================================================ */
 
 progressbar {
     background-color: transparent;
+    margin: 4px 0;
 }
 
+/* El carril o fondo de la barra */
 progressbar trough {
-    background-color: @core_bg_alt;
-    border: 1px solid @core_border;
-    border-radius: @core_radius_md;
-    min-height: 6px;
+    background-color: #151a17; /* core_bg_alt */
+    border: 1px solid #1f2a24; /* core_border */
+    border-radius: 0px;        /* TOTALMENTE CUADRADO */
+    min-height: 8px;           /* Altura HUD compacta */
+    padding: 1px;
 }
 
+/* La barra de progreso activa */
 progressbar progress {
-    background-color: @core_accent;
-    border-radius: @core_radius_md;
+    background-color: #00CCCC; /* core_accent (Cian) */
+    border-radius: 0px;
+    border: none;
+    /* Efecto segmentado: crea pequeñas líneas divisorias cada 4px */
+    background-image: linear-gradient(90deg, 
+                        rgba(14, 18, 16, 0.3) 1px, 
+                        transparent 1px);
+    background-size: 5px 100%;
 }
 
+/* --- Estados Especiales --- */
+
+/* Barra de progreso en estado "Indeterminado" (Carga infinita) */
+progressbar.pulse progress {
+    background-image: linear-gradient(90deg, 
+                        #0e1210 25%, 
+                        #00CCCC 50%, 
+                        #0e1210 75%);
+    background-size: 200% 100%;
+    /* En GTK 3 esto activa una transición suave de barrido */
+}
+
+/* Barra de progreso dentro de una tabla (TreeView) */
+treeview progressbar trough {
+    background-color: #0e1210;
+    border-color: #1f2a24;
+}
+
+/* Cuando la ventana no tiene el foco (Backdrop) */
+progressbar:backdrop progress {
+    background-color: #1f2a24; /* Se vuelve grisáceo para no distraer */
+    background-image: none;
+}
+
+/* Barra de progreso vertical */
+progressbar.vertical trough {
+    min-width: 8px;
+    min-height: 50px;
+}
+
+progressbar.vertical progress {
+    background-image: linear-gradient(0deg, 
+                        rgba(14, 18, 16, 0.3) 1px, 
+                        transparent 1px);
+    background-size: 100% 5px;
+}

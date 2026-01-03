@@ -37,6 +37,7 @@
 @import url("widgets/frame.css");
 @import url("widgets/sliders.css");
 @import url("gtk-compact.css");
+@import url("gtk-light.css");
 
 @import url("states/hover.css");
 @import url("states/active.css");
