@@ -1,86 +1,88 @@
 /* ================================
- * CoreUI – Menu (Cinnamon)
+ * CoreUI – Menu (Cinnamon) - Cyan Optimized
  * ================================ */
 
 /* Contenedor principal del menú */
 .menu,
+.popup-menu,
 .popup-menu-content {
     background-color: @core_bg_alt;
     border: 1px solid @core_border;
-    border-radius: 10px;
+    border-radius: @core_radius_md; /* Uso de tu variable para consistencia */
     padding: 6px;
     color: @core_fg;
+    box-shadow: 0 4px 15px @core_shadow_strong;
 }
 
 /* Caja interna */
 .menu-box {
-    spacing: 4px;
+    spacing: 2px; /* Reducido de 4px para ahorrar espacio vertical */
 }
 
-/* Categorías */
-.menu-category-button {
-    min-height: 28px;
-    padding: 0 10px;
-    border-radius: 6px;
+/* Categorías y Aplicaciones */
+.menu-category-button,
+.menu-application-button,
+.popup-menu-item,
+.popup-submenu-menu-item {
+    min-height: 26px; /* Reducido de 28px para 768p */
+    padding: 4px 8px; /* Más compacto */
+    border-radius: 4px;
     color: @core_fg;
+    transition-duration: 100ms;
 }
 
-.menu-category-button:hover {
+.menu-category-button:hover,
+.menu-application-button:hover,
+.popup-menu-item:hover,
+.popup-submenu-menu-item:hover {
     background-color: @core_bg_soft;
+    color: @core_accent; /* Texto cian en hover para resaltar */
 }
 
-.menu-category-button:checked {
+/* Estado Activo / Seleccionado */
+.menu-category-button:checked,
+.menu-application-button:selected,
+.popup-menu-item:checked,
+.popup-submenu-menu-item:checked {
     background-color: @core_accent;
-    color: #ffffff;
-}
-
-/* Aplicaciones */
-.menu-application-button {
-    min-height: 28px;
-    padding: 0 10px;
-    border-radius: 6px;
-    color: @core_fg;
-}
-
-.menu-application-button:hover {
-    background-color: @core_bg_soft;
-}
-
-.menu-application-button:selected {
-    background-color: @core_accent;
-    color: #ffffff;
+    color: @core_selection_fg; /* Usa tu color oscuro de contraste */
+    font-weight: bold;
 }
 
 /* Iconos */
 .menu-application-button image,
-.menu-category-button image {
+.menu-category-button image,
+.popup-menu-item StIcon {
     icon-size: 16px;
     color: currentColor;
 }
 
-/* Search box */
+/* Search box - Optimizado para visibilidad LCD */
 .menu-search-box,
 #menu-search-entry {
-    min-height: 28px;
-    padding: 0 10px;
-    border-radius: 8px;
+    min-height: 26px;
+    padding: 2px 10px;
+    border-radius: 6px;
     background-color: @core_bg;
     color: @core_fg;
     border: 1px solid @core_border;
+    /* Un pequeño brillo cian sutil en el borde del buscador */
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.2);
 }
 
 .menu-search-box:focus,
 #menu-search-entry:focus {
     border-color: @core_accent;
+    background-color: @core_bg_soft;
 }
 
-/* Scrollbar */
+/* Scrollbar Cyan */
 .menu scrollbar {
-    width: 6px;
+    width: 5px; /* Más delgada para no estorbar */
 }
 
 .menu scrollbar slider {
-    border-radius: 999px;
+    border-radius: 10px;
     background-color: @core_border;
 }
 
@@ -88,86 +90,19 @@
     background-color: @core_accent;
 }
 
-/* Notificaciones dentro del menú */
-.notification StEntry,
-.menu #notification StEntry,
-.popup-menu #notification StEntry,
-#notification StEntry {
-    padding: 3px 12px;
-    min-height: 22px;
-    caret-size: 1px;
-    border-radius: 6px;
-    color: @core_fg;
-    border: 1px solid transparent;
-    background-color: @core_bg;
-}
-
-.notification StEntry:focus,
-.menu #notification StEntry:focus,
-.popup-menu #notification StEntry:focus,
-#notification StEntry:focus {
-    border-color: @core_accent;
-}
-
-/* Caps Lock warning */
-#menu-search-entry StIcon.capslock-warning,
-.notification StEntry StIcon.capslock-warning {
-    icon-size: 16px;
-    warning-color: #FDD633;
-    padding: 0 6px;
-}
-
 /* ================================
- * Cinnamon 4.x / 5.x compatibility
+ * Cinnamon 6.4.x / Modern Compatibility
  * ================================ */
 
-/* Submenus nuevos */
-.popup-submenu-menu-item {
-    border-radius: 6px;
-    padding: 6px 10px;
-    color: @core_fg;
-}
-
-.popup-submenu-menu-item:hover {
-    background-color: @core_bg_soft;
-}
-
-.popup-submenu-menu-item:checked {
+/* Asegura que los menús de contexto del panel también sean cian */
+.popup-menu-item:active {
     background-color: @core_accent;
-    color: #ffffff;
+    color: @core_selection_fg;
 }
 
-/* Contenido interno del popup */
-.popup-menu-content {
-    background-color: @core_bg_alt;
-    color: @core_fg;
+/* Separadores de menú */
+.popup-separator-menu-item {
+    -margin-horizontal: 10px;
+    height: 1px;
+    background-color: @core_divider;
 }
-
-/* ================================
- * Cinnamon 6.4.x compatibility
- * ================================ */
-
-.popup-menu-item,
-.popup-submenu-menu-item {
-    border-radius: 6px;
-    padding: 6px 10px;
-    color: @core_fg;
-}
-
-.popup-menu-item:hover,
-.popup-submenu-menu-item:hover {
-    background-color: @core_bg_soft;
-}
-
-.popup-menu-item:checked,
-.popup-submenu-menu-item:checked {
-    background-color: @core_accent;
-    color: #ffffff;
-}
-
-/* Asegura fondo sólido en 6.4 */
-.popup-menu-content {
-    background-color: @core_bg_alt;
-    color: @core_fg;
-}
-
