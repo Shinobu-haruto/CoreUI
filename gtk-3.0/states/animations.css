@@ -1,44 +1,48 @@
-/* ================================
- * Core Animations
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - ANIMATIONS & KINETICS
+   Estilo: Respuesta Táctica / Cero Ghosting
+   ============================================================ */
 
 * {
-    transition-property: background-color, border-color, box-shadow, color;
-    transition-duration: 140ms;
-    transition-timing-function: ease-out;
+    /* Propiedades seguras para evitar parpadeos de renderizado GPU */
+    transition-property: background-color, border-color, color, opacity;
+    
+    /* 80ms es el "Sweet Spot" para LCD: 
+       Más rápido que un parpadeo, pero evita el salto brusco de píxeles. */
+    transition-duration: 80ms;
+    
+    /* Usamos linear para una respuesta de hardware puro */
+    transition-timing-function: linear;
 }
 
-button {
-    transition-property: background-color, border-color, box-shadow;
+/* --- EXCEPCIONES DE ALTA VELOCIDAD --- */
+
+/* Elementos que deben responder SIN delay para una sensación de control total */
+button:active,
+button:checked,
+switch slider,
+scrollbar slider,
+menuitem:hover {
+    transition-duration: 0s !important;
 }
 
-entry {
-    transition-property: border-color, box-shadow;
+/* --- OPTIMIZACIÓN DE RENDIMIENTO --- */
+
+/* Deshabilitamos animaciones de sombras: 
+   Las sombras dinámicas consumen ciclos de GPU innecesarios y 
+   pueden ensuciar la nitidez del borde Cian en LCD. */
+button, 
+entry, 
+switch, 
+headerbar, 
+window {
+    box-shadow: none !important;
+    /* Forzamos el renderizado 2D para mantener los bordes afilados */
+    backface-visibility: hidden;
 }
 
-switch {
-    transition-property: background-color;
+/* Animación sutil de aparición para Tooltips y Popovers */
+tooltip,
+popover {
+    transition: opacity 150ms ease-out;
 }
-
-switch slider {
-    transition-property: margin-left, margin-right, background-color;
-    transition-duration: 160ms;
-}
-
-scale slider {
-    transition-property: background-color, border-color, box-shadow;
-}
-
-notebook tab {
-    transition-property: background-color, border-color;
-}
-
-row {
-    transition-property: background-color;
-}
-
-*:backdrop {
-    transition-property: opacity;
-    transition-duration: 200ms;
-}
-

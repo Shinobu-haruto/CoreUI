@@ -1,9 +1,11 @@
-/* ================================
- * Core State: Selected
- * ================================ */
-
+/* Selección global */
 *:selected {
-    background-color: @core_accent_soft;
-    color: @core_fg;
+    background-color: #00CCCC;
+    color: #0e1210;
 }
 
+/* Selección en segundo plano (Ventana no activa) */
+*:selected:backdrop {
+    background-color: #1f2a24; /* Gris verdoso oscuro */
+    color: #e6f4ea;
+}

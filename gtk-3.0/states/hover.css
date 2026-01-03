@@ -1,10 +1,45 @@
-/* ================================
- * Core State: Hover
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - HOVER STATES (Feedback de Proximidad)
+   Estilo: Iluminación de Celda HUD / 2026 Edition
+   ============================================================ */
 
+/* Feedback Global: Resaltado de componentes interactivos */
 button:hover,
 row:hover,
-menuitem:hover {
-    background-color: alpha(@core_accent, 0.12);
+menuitem:hover,
+.sidebar row:hover,
+list row:hover {
+    /* Fondo con tinte Cian muy sutil para simular luz de fondo */
+    background-color: rgba(0, 204, 204, 0.08); 
+    color: #00CCCC;            
+    border-color: #3EBFFF;     /* Borde Cian Eléctrico para definición */
+    
+    /* Transición rápida para evitar el 'smearing' en paneles LCD */
+    transition: background-color 60ms linear;
 }
 
+/* Excepción para Menús: Inversión de color más agresiva */
+menu menuitem:hover {
+    background-color: #00CCCC;
+    color: #0e1210;
+}
+
+/* Iconografía en Hover: Energía en los símbolos */
+button:hover image,
+row:hover image {
+    color: #FFB000; /* Los iconos brillan en Ámbar al pasar el mouse */
+    -gtk-icon-shadow: 0 0 5px rgba(255, 176, 0, 0.3);
+}
+
+/* Efecto para Sliders y Switches: Pre-activación */
+scale slider:hover,
+switch:hover {
+    box-shadow: 0 0 8px rgba(0, 204, 204, 0.2);
+    border-color: #00CCCC;
+}
+
+/* Links y texto interactivo */
+link:hover {
+    color: #3EBFFF;
+    text-decoration-color: #3EBFFF;
+}

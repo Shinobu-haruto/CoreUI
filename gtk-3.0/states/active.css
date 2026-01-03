@@ -1,9 +1,49 @@
-/* ================================
- * Core State: Active
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - ACTIVE STATES (Adaptativo)
+   Estilo: Circuito Cerrado / Inversión de Píxeles
+   ============================================================ */
 
+/* Global Active: Cuando el usuario interactúa físicamente 
+   con un componente (Click o Toggle ON)
+*/
 button:active,
-scale slider:active {
-    background-color: @core_accent_active;
+button:checked,
+check:checked,
+radio:checked,
+switch:checked,
+scale slider:active,
+treeview.view:selected,
+list row:selected:focus {
+    background-color: var(--accent) !important;
+    color: var(--bg-base) !important; /* Inversión total */
+    
+    /* Resplandor de activación: Escala según el tamaño del widget */
+    box-shadow: 0 0 calc(var(--btn-h) / 2) rgba(0, 204, 204, 0.4) !important;
+    
+    /* Transición instantánea para respuesta táctica */
+    transition: none !important;
 }
 
+/* Ajuste para Iconos en estado activo */
+button:active image,
+button:checked image,
+button:active label,
+button:checked label {
+    color: var(--bg-base) !important;
+}
+
+/* Efecto de pulsación técnica:
+   Profundidad mecánica vinculada al grosor de borde del perfil
+*/
+button:active {
+    box-shadow: inset 0 var(--b-width) calc(var(--b-width) * 3) rgba(0, 0, 0, 0.3), 
+                0 0 calc(var(--btn-h) / 3) rgba(0, 204, 204, 0.5) !important;
+}
+
+/* Estado de Selección en Listas/Sidebars cuando no tienen el foco */
+selection:backdrop,
+.sidebar row:selected:backdrop,
+list row:selected:backdrop {
+    background-color: var(--border); /* Color apagado en ventanas inactivas */
+    color: var(--fg-main);
+}

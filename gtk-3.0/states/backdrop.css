@@ -1,8 +1,52 @@
-/* ================================
- * Core State: Backdrop
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - BACKDROP STATE (Ventanas Inactivas)
+   Estilo: Low-Power Mode / Hibernación Visual
+   ============================================================ */
 
+/* Estado Global: Desaturación de la Interfaz */
 *:backdrop {
-    opacity: 0.9;
+    /* Mantenemos opacidad total para evitar el parpadeo del panel LCD */
+    opacity: 1.0 !important;
+    
+    /* El cian brillante se apaga a un gris verdoso oscuro */
+    color: #314239; 
+    
+    /* Eliminamos cualquier resplandor (glow) activo */
+    box-shadow: none !important;
+    text-shadow: none !important;
+    -gtk-icon-shadow: none !important;
 }
 
+/* Headerbar en reposo: Pierde su bus de datos cian */
+headerbar:backdrop {
+    background-color: #0e1210 !important;
+    /* La línea inferior cian se vuelve un separador sutil */
+    box-shadow: inset 0 -1px 0 0 #1f2a24 !important;
+}
+
+headerbar:backdrop .title {
+    color: #1f2a24 !important; /* El título casi desaparece en el fondo */
+}
+
+/* Botones y Entradas en reposo */
+button:backdrop,
+entry:backdrop {
+    background-color: #0e1210 !important;
+    border-color: #1f2a24 !important;
+    color: #1f2a24 !important;
+}
+
+/* Elementos de Selección y Progreso: Desconexión de Energía */
+selection:backdrop,
+progressbar:backdrop progress,
+levelbar:backdrop block,
+switch:checked:backdrop {
+    background-color: #1b211d !important;
+    color: #314239 !important;
+}
+
+/* Sidebar en reposo */
+.sidebar:backdrop {
+    background-color: #0e1210 !important;
+    border-color: transparent !important;
+}

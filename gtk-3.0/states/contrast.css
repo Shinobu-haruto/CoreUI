@@ -1,46 +1,60 @@
-/* ================================
- * Core Contrast
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - CONTRAST & HIERARCHY
+   Estilo: Definición de Capas HUD / 2026 Edition
+   ============================================================ */
 
+/* Enfoque (Focus): El anillo de seguridad del sistema */
 *:focus {
     outline: none;
-    box-shadow: 0 0 0 2px alpha(@core_accent, 0.55);
+    /* Un resplandor Cian suave para indicar dónde está el teclado */
+    box-shadow: 0 0 0 2px rgba(0, 204, 204, 0.4);
 }
 
+/* Selección Universal: Inversión de Píxeles para LCD */
+selection,
 *:selected {
-    background-color: @core_accent;
-    color: @core_selection_fg;
+    background-color: #00CCCC; 
+    color: #0e1210;            
 }
 
+/* Etiquetas Secundarias: El "Ghost Text" industrial */
 .dim-label,
 .subtitle,
 .secondary-label {
-    color: mix(@core_fg, @core_fg_muted, 70%);
+    /* Un color intermedio entre el verde pálido y el gris oscuro */
+    color: #6a7a70; 
 }
 
+/* Estado Deshabilitado: Modo Offline */
 *:disabled {
-    opacity: 0.6;
+    opacity: 0.4; /* Reducido para mayor contraste con lo activo */
+    color: #314239 !important;
 }
 
+/* Iconografía y Símbolos: Claridad de Vector */
 image,
 .icon,
 .symbolic {
-    color: @core_fg;
+    color: #e6f4ea; /* Blanco verdoso CoreUI */
 }
 
 *:disabled image,
 *:disabled .icon {
-    color: @core_fg_disabled;
+    color: #1f2a24; /* El icono casi se funde con el fondo */
 }
 
+/* Refuerzo de Carriles (Troughs): Profundidad Mecánica */
 progressbar trough,
 scale trough,
 levelbar trough {
-    border-color: shade(@core_border, 0.9);
+    border-color: #070908; /* Un tono más oscuro que el fondo base */
+    background-color: #0e1210;
 }
 
-.sidebar row:selected {
-    background-color: @core_accent;
-    color: @core_selection_fg;
+/* Filas de Navegación Seleccionadas */
+.sidebar row:selected,
+list row:selected {
+    background-color: #00CCCC;
+    color: #0e1210;
+    font-weight: 700;
 }
-
