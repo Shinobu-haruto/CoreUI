@@ -1,0 +1,30 @@
+/* ============================================================
+   CoreUI - PROFILE: SD (1366x768) - GLOBAL VARIABLES
+   Sintaxis: GTK3 @define-color (Constantes Estáticas)
+   ============================================================ */
+
+/* --- PALETA DE COLORES CORE --- */
+@define-color bg_base #0e1210;          /* Fondo principal (Negro Verdoso) */
+@define-color bg_alt #151a17;           /* Fondo secundario (Barra lateral/Header) */
+@define-color fg_main #e6f4ea;          /* Texto principal (Blanco Fósforo) */
+@define-color accent #00CCCC;           /* Acento (Cian LCD) */
+@define-color accent_alt #3EBFFF;       /* Acento Eléctrico (Hover/Focus) */
+@define-color border_col #1f2a24;       /* Bordes estructurales */
+@define-color warning_amber #FFB000;    /* Alertas y Monospace (Ámbar) */
+
+/* --- VARIANTES DE TRANSPARENCIA (Para Hover/Active) --- */
+@define-color bg_hover rgba(0, 204, 204, 0.08);
+@define-color bg_active rgba(0, 204, 204, 0.2);
+@define-color fg_disabled #4a5a50;
+
+/* --- MÉTRICAS DE INTERFAZ (Optimizado 768p) --- */
+/* Nota: Usamos nombres descriptivos que usaremos en metrics.css */
+@define-color h_bar_height 32px;        /* Altura compacta de Headerbar */
+@define-color btn_height 24px;          /* Altura de botones y entradas */
+@define-color row_height 26px;          /* Altura de filas en listas/Nemo */
+@define-color ui_radius 0px;            /* Esquinas cuadradas (Industrial) */
+@define-color p_side 6px;               /* Padding lateral estándar */
+
+/* --- TIPOGRAFÍA --- */
+@define-color font_size_main 9pt;
+@define-color font_size_mono 8pt;

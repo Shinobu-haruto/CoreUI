@@ -1,29 +1,50 @@
 /* ============================================================
-   Core Metrics - Industrial Mode (HEX & Square)
+   Core Metrics - Adaptative HUD
+   Estilo: Rejilla de Datos Dinámica (768p / 1080p)
    ============================================================ */
 
-/* Alturas compactas para ahorrar espacio en 1366x768 */
+/* Botones: Ajuste quirúrgico de altura */
 button {
-    min-height: 24px; /* Ajustado de 30px para HUD compacto */
-    padding: 0 8px;
-    border-radius: 0px !important; /* TOTALMENTE CUADRADO */
+    min-height: var(--btn-h) !important; 
+    padding: 0 var(--p-side) !important;
+    margin: 1px; /* Margen reducido para ahorrar espacio */
+    border-radius: var(--ui-radius) !important;
 }
 
+/* Entradas de Texto: Alineación con la altura de botones */
 entry {
-    min-height: 24px;
-    padding: 0 8px;
-    border-radius: 0px !important;
+    min-height: var(--btn-h) !important;
+    padding: 0 var(--p-side);
+    border-radius: var(--ui-radius) !important;
 }
 
+/* Headerbar: El chasis de la ventana se encoge en SD */
 headerbar {
-    min-height: 32px;
-    padding: 0 6px;
-    border-radius: 0px !important;
+    min-height: var(--h-bar) !important;
+    padding: 0 var(--p-side);
+    border-radius: var(--ui-radius) !important;
 }
 
-/* Menús y listas densas */
+/* Menús y Listas: Densidad de información escalable */
 menuitem,
-.sidebar row {
-    min-height: 22px;
-    padding: 4px 10px;
+.sidebar row,
+list row {
+    min-height: var(--row-h) !important;
+    padding: 2px var(--p-side); /* Reducimos padding vertical para 768p */
+}
+
+/* Notebook Tabs: Pestañas compactas */
+notebook tab {
+    min-height: var(--btn-h);
+    padding: 0 var(--p-side);
+}
+
+/* Ajustes de Scrolled Windows */
+scrolledwindow {
+    -gtk-gradient: none;
+}
+
+/* Espaciado de Checkboxes y Radios: Proporcional al botón */
+check, radio {
+    margin: calc(var(--p-side) / 2);
 }
