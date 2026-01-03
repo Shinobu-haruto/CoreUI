@@ -1,76 +1,24 @@
-/* ============================================================
-   CoreUI v1.1 - ENTRIES (GTK 3.0)
-   Estilo: Celda de Datos HUD / Cian LCD (Píxel Perfect)
-   ============================================================ */
+/* widgets/entries.css - Data Cell Fixed */
 
 entry {
-    background-color: #151a17; /* core_bg_alt */
-    color: #e6f4ea;            /* core_fg */
-    border: 1px solid #1f2a24; /* core_border */
-    border-radius: 0px;        /* TOTALMENTE CUADRADO */
-    min-height: 28px;          /* Ajustado de 30px para ahorrar espacio vertical */
-    padding: 0 10px;
-    box-shadow: none;
-    transition: none;          /* Evita el ghosting en paneles LCD */
+    background-color: @bg_alt; 
+    color: @fg_main;            
+    border: 1px solid @border_col; 
+    border-radius: 0px;        
+    min-height: 24px !important;
+    padding: 0 6px;
+    font-family: "Inter", sans-serif;
 }
 
-/* Estado: Pasar el mouse */
-entry:hover {
-    border-color: #a7bdb0;     /* core_fg_muted */
-    background-color: #1b211d; /* core_bg_soft */
-}
-
-/* Estado: Foco (Escribiendo) - ESTILO CIAN ACTIVO */
 entry:focus {
-    border-color: #00CCCC;     /* core_accent (Cian) */
-    background-color: #0e1210; /* Fondo más oscuro para inmersión */
-    /* Resplandor sólido de 1px: nítido en 1080p y 768p */
-    outline: 1px solid rgba(0, 204, 204, 0.4);
+    border-color: @accent;      
+    background-color: @bg_base; 
+    /* El borde inferior cian simula un cursor de terminal */
+    box-shadow: inset 0 -2px 0 0 @accent;
 }
 
-/* Selección de texto: Contraste máximo */
+/* Selección de texto dentro de la entrada */
 entry selection {
-    background-color: #00CCCC;
-    color: #0e1210;
-}
-
-/* --- Spinbuttons (Contadores numéricos) --- */
-spinbutton entry {
-    border-radius: 0px;
-    border-right-style: none; /* Evita doble borde con el botón */
-}
-
-spinbutton button {
-    background-color: #151a17;
-    border: 1px solid #1f2a24;
-    border-radius: 0px;
-    color: #00CCCC;
-    min-width: 24px;
-}
-
-spinbutton button:hover {
-    background-color: #1b211d;
-    border-color: #00CCCC;
-    color: #00CCCC;
-}
-
-spinbutton button:active {
-    background-color: #00CCCC;
-    color: #0e1210;
-}
-
-/* --- Searchbars (Barras de búsqueda en aplicaciones) --- */
-entry.search {
-    border-radius: 0px;
-    /* Ajuste para que el icono de lupa no se vea borroso */
-    -gtk-icon-shadow: none;
-}
-
-/* Eliminar el botón de "limpiar" (X) por defecto o darle estilo cian */
-entry.search image.clear {
-    color: #00CCCC;
-}
-
-entry.search image.clear:hover {
-    color: #3EBFFF;
+    background-color: @accent;
+    color: @bg_base;
 }

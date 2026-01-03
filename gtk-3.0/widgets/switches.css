@@ -1,58 +1,69 @@
 /* ============================================================
-   CoreUI v1.1 - SWITCHES (GTK 3.0)
-   Estilo: Toggle Industrial / Cian LCD
+   CoreUI v1.1 - ADAPTIVE SWITCHES (Fixed)
+   Estilo: Toggle de Potencia HUD / Hardware-Linked
    ============================================================ */
 
 switch {
-    background-color: #1b211d; /* core_bg_soft para mejor visibilidad del carril */
-    border: 1px solid #1f2a24; /* core_border */
-    border-radius: 0px;        /* TOTALMENTE CUADRADO */
-    min-width: 38px;
-    min-height: 20px;
-    transition: none;          /* Respuesta instantánea para evitar ghosting */
+    background-color: @bg_base; 
+    border: 1px solid @border_col; 
+    border-radius: 0px;        
+    
+    /* Dimensiones fijas para 768p (Basadas en botón de 24px) */
+    min-width: 34px;            
+    min-height: 18px;
+    transition: none;          
 }
 
-/* El bloque deslizante (Slider interno) */
+/* El bloque deslizante (Slider interno): El "Actuador" */
 switch slider {
-    background-color: #6f8578; /* core_fg_disabled (grisáceo en OFF) */
-    border-radius: 0px;        /* TOTALMENTE CUADRADO */
-    min-width: 16px;
-    min-height: 16px;
-    margin: 1px;               /* Ajuste fino de margen para alineación de píxeles */
-    border: 1px solid #0e1210;
+    background-color: @bg_alt; 
+    /* Ámbar en OFF: Estado de espera técnica */
+    border: 1px solid @warning_amber; 
+    border-radius: 0px;        
+    
+    /* El actuador llena el espacio interno perfectamente */
+    min-width: 14px;
+    min-height: 14px;
+    margin: 1px; 
 }
 
-/* Estado: ON (Activado) */
+/* Estado: ON (Sistema Energizado - Cian) */
 switch:checked {
-    background-color: #00CCCC; /* core_accent (Cian sólido) */
-    border-color: #00CCCC;
+    background-color: rgba(0, 204, 204, 0.15); 
+    border-color: @accent;
 }
 
 switch:checked slider {
-    background-color: #0e1210; /* El slider se vuelve oscuro sobre el fondo cian */
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    background-color: @accent; 
+    border-color: @bg_base;
+    /* Brillo de fósforo cian */
+    box-shadow: 0 0 4px rgba(0, 204, 204, 0.5);
 }
 
-/* Estado: Hover (Pasar el mouse) */
+/* Estado: Hover (Interacción detectada) */
 switch:hover {
-    border-color: #00CCCC;
+    border-color: @fg_main; 
 }
 
-/* Estado: Deshabilitado */
-switch:disabled {
-    opacity: 0.4;
-    background-color: #0e1210;
-}
+/* --- DETALLES DE INTERFAZ --- */
 
-/* --- Limpieza Visual HUD --- */
-
-/* Ocultar las etiquetas de texto internas (ON/OFF) para mantener el minimalismo */
+/* Ocultar etiquetas internas (ON/OFF) para un look industrial limpio */
 switch label {
-    color: transparent;
+    opacity: 0;
     font-size: 0;
 }
 
-/* Ajuste para switches dentro de listas de configuración */
-row switch {
-    margin: 8px 0;
+/* Estado deshabilitado (Offline) */
+switch:disabled {
+    opacity: 0.3;
+    background-color: @bg_base;
+}
+
+switch:disabled slider {
+    border-color: @border_col;
+}
+
+/* Margen en filas de listas (Configuración) */
+list row switch {
+    margin-right: 6px;
 }

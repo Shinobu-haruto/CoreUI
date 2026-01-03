@@ -1,88 +1,85 @@
 /* ============================================================
-   CoreUI v1.1 - TABS / NOTEBOOK (GTK 3.0)
-   Estilo: Celdas HUD / Cian LCD
+   CoreUI v1.1 - ADAPTIVE TABS / NOTEBOOK (Fixed)
+   Estilo: Celdas HUD / Hardware-Linked
    ============================================================ */
 
 notebook {
-    background-color: #0e1210; /* core_bg */
-    border: 1px solid #1f2a24; /* core_border */
+    background-color: @bg_base; 
+    border: 1px solid @border_col; 
 }
 
 /* Contenedor de la barra de pestañas */
 notebook header {
-    background-color: #151a17; /* core_bg_alt */
-    border-bottom: 1px solid #1f2a24;
+    background-color: @bg_alt; 
+    border-bottom: 1px solid @border_col; 
     padding: 0;
 }
 
 /* Estilo base de cada Pestaña (Tab) */
 notebook tab {
-    min-height: 26px;          /* Optimizado para 768p */
-    padding: 4px 14px;
+    min-height: 26px !important;
+    padding: 2px 8px;
     background-color: transparent;
-    border-radius: 0px;        /* TOTALMENTE CUADRADO */
-    color: #a7bdb0;            /* core_fg_muted */
+    border-radius: 0px;        
+    color: @border_col; /* Color atenuado inactivo */
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
     border: 1px solid transparent;
-    transition: none;          /* Respuesta instantánea para LCD */
 }
 
-/* Estado: Hover */
+/* Estado: Hover - Pre-iluminación */
 notebook tab:hover {
-    background-color: #1b211d; /* core_bg_soft */
-    color: #e6f4ea;            /* core_fg */
+    background-color: rgba(0, 204, 204, 0.05); 
+    color: @accent;
 }
 
-/* Estado: Pestaña Activa (Seleccionada) */
-notebook tab:checked {
-    background-color: #0e1210; /* Fusión con el panel inferior */
-    color: #00CCCC;            /* Texto en Cian resaltado */
-    border-left: 1px solid #1f2a24;
-    border-right: 1px solid #1f2a24;
-    font-weight: bold;
+/* Estado: Pestaña Activa (Módulo Energizado) */
+notebook tab:checked,
+notebook tab:selected {
+    background-color: @bg_base; 
+    color: @accent;             
+    border-left: 1px solid @border_col;
+    border-right: 1px solid @border_col;
+    font-weight: 800; 
+    text-transform: uppercase;
 }
 
-/* --- Indicadores de Acento por Posición --- */
+/* --- INDICADORES DE ACENTO LCD (Sólidos para 768p) --- */
 
-/* Pestañas arriba (estándar) */
 notebook.top header tab:checked {
-    border-top: 3px solid #00CCCC;
-    margin-top: -1px; /* Solapa ligeramente el borde para nitidez */
+    box-shadow: inset 0 3px 0 0 @accent; 
 }
 
-/* Pestañas abajo */
 notebook.bottom header tab:checked {
-    border-bottom: 3px solid #00CCCC;
-    margin-bottom: -1px;
+    box-shadow: inset 0 -3px 0 0 @accent;
 }
 
-/* Pestañas a la izquierda (Side tabs) */
 notebook.left header tab:checked {
-    border-left: 3px solid #00CCCC;
-    margin-left: -1px;
+    box-shadow: inset 3px 0 0 0 @accent;
 }
 
-/* Pestañas a la derecha */
 notebook.right header tab:checked {
-    border-right: 3px solid #00CCCC;
-    margin-right: -1px;
+    box-shadow: inset -3px 0 0 0 @accent;
 }
 
-/* Botón de cerrar dentro de la pestaña (X) */
+/* --- ELEMENTOS DE CONTROL --- */
+
+/* Botón de cerrar (X) dentro de la pestaña */
 notebook tab button {
     padding: 2px;
-    margin-left: 6px;
+    margin-left: 4px;
     background-color: transparent;
-    color: currentColor;
+    color: inherit;
     border: none;
 }
 
 notebook tab button:hover {
-    background-color: #e74c3c; /* Rojo destructivo */
-    color: #ffffff;
+    background-color: @warning_amber; 
+    color: @bg_base;
 }
 
-/* El área donde vive el contenido */
+/* El área de contenido debajo de las pestañas */
 notebook stack {
-    padding: 10px;
-    background-color: #0e1210;
+    padding: 6px;
+    background-color: @bg_base;
 }

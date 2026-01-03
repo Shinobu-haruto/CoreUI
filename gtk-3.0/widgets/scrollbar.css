@@ -1,71 +1,77 @@
 /* ============================================================
-   CoreUI v1.1 - SCROLLBAR (GTK 3.0)
-   Estilo: Rectangular Industrial / Cian LCD
+   CoreUI v1.1 - ADAPTIVE SCROLLBAR
+   Estilo: Rectangular Industrial / Hardware-Linked
    ============================================================ */
 
 scrollbar {
     background-color: transparent;
-    transition: none; /* Eliminamos delay para respuesta táctil instantánea */
+    transition: none; 
 }
 
-/* El carril (Trough) */
+/* El carril (Trough): El chasis de navegación */
 scrollbar trough {
-    background-color: #0e1210; /* core_bg */
+    background-color: var(--bg-base); 
     border: none;
 }
 
-/* El tirador (Slider) - ESTILO CUADRADO HUD */
+/* El tirador (Slider): Bloque de Posición HUD */
 scrollbar slider {
-    background-color: #1b211d; /* core_bg_soft */
-    border: 1px solid #00CCCC; /* El contorno cian define la posición */
-    border-radius: 0px;        /* TOTALMENTE CUADRADO */
-    /* Grosor optimizado: Visible pero no invasivo */
-    min-width: 6px;
-    min-height: 6px;
-    margin: 1px;               
+    background-color: var(--bg-alt); 
+    /* El borde escala: 1px en SD para máxima finura */
+    border: var(--b-width) solid var(--accent); 
+    border-radius: var(--ui-radius);        
+    
+    /* Dimensiones proporcionales a la métrica del botón */
+    min-width: calc(var(--btn-h) * 0.35);            
+    min-height: calc(var(--btn-h) * 0.35);
+    margin: var(--b-width); 
 }
 
-/* Estado: Hover - El slider se llena de energía */
+/* Estado: Hover - Pre-activación */
 scrollbar slider:hover {
-    background-color: #00CCCC; 
-    border-color: #3EBFFF;     /* Brillo cian eléctrico */
+    background-color: rgba(0, 204, 204, 0.2); 
+    border-color: #3EBFFF;     
 }
 
-/* Estado: Active (Arrastrando) */
+/* Estado: Active (Arrastrando) - MODO ADQUISICIÓN ÁMBAR */
 scrollbar slider:active {
-    background-color: #26B863; /* Verde éxito CoreUI */
-    border-color: #e6f4ea;     /* Contraste máximo al mover */
+    background-color: #FFB000; 
+    border-color: #FFB000;
+    /* Glow de fósforo proporcional */
+    box-shadow: 0 0 calc(var(--b-width) * 8) rgba(255, 176, 0, 0.4); 
 }
 
 /* --- Variaciones de Orientación --- */
 
 scrollbar.vertical trough {
-    min-width: 10px; /* Un poco más ancho que el slider para el margen */
+    /* El ancho total del carril se ajusta al perfil */
+    min-width: calc(var(--btn-h) * 0.5); 
+    border-left: var(--b-width) solid var(--border); 
 }
 
 scrollbar.horizontal trough {
-    min-height: 10px;
+    min-height: calc(var(--btn-h) * 0.5);
+    border-top: var(--b-width) solid var(--border);
 }
 
-/* Estilo para las esquinas donde se juntan dos scrollbars */
+/* Punto de unión de ambos scrollbars (Junction) */
 scrollbar.junction {
-    background-color: #0e1210;
-    border: 1px solid #1f2a24;
+    background-color: var(--bg-base);
+    border: var(--b-width) solid var(--border);
+    /* Patrón de rejilla adaptativo */
+    background-image: radial-gradient(var(--border) 1px, transparent 0);
+    background-size: 4px 4px;
 }
 
 /* --- Limpieza Visual --- */
 
-/* Ocultar botones de flecha (Steppers) para look moderno */
+/* Ocultar botones de flecha (Steppers) para look minimalista */
 scrollbar button {
     display: none;
-    opacity: 0;
 }
 
-/* Ajuste para ScrolledWindow (Evita bordes dobles) */
-.scrolledwindow scrollbar.vertical {
-    border-left: 1px solid #1f2a24;
-}
-
-.scrolledwindow scrollbar.horizontal {
-    border-top: 1px solid #1f2a24;
+/* Estado Backdrop: Navegación Desconectada */
+scrollbar:backdrop slider {
+    border-color: var(--border);
+    background-color: transparent;
 }

@@ -1,11 +1,27 @@
+/* widgets/checks.css - LCD Indicators Fixed */
+
 check, radio {
-    min-width: 18px; /* Aumentado ligeramente para legibilidad */
-    min-height: 18px;
-    border: 1px solid #1f2a24;
+    min-width: 16px;
+    min-height: 16px;
+    margin: 3px;
+    border: 1px solid @border_col;
+    border-radius: 0px; 
+    background-color: @bg_base;
+    -gtk-icon-source: none; 
 }
 
+/* Checkbox: Cian */
+check:hover { border-color: @accent; }
 check:checked {
-    /* Usamos un checkmark sintético con gradientes lineales para evitar archivos .svg externos */
-    background-image: linear-gradient(to bottom, #00CCCC, #00CCCC);
-    box-shadow: inset 3px 3px 0px #0e1210, inset -3px -3px 0px #0e1210;
+    background-color: @accent;
+    /* Efecto de punto central */
+    box-shadow: inset 4px 4px 0px @bg_base, inset -4px -4px 0px @bg_base;
+}
+
+/* Radio: Ámbar */
+radio:hover { border-color: @warning_amber; }
+radio:checked {
+    background-color: @warning_amber;
+    /* Efecto de núcleo */
+    box-shadow: inset 4px 4px 0px @bg_base, inset -4px -4px 0px @bg_base;
 }

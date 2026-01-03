@@ -1,68 +1,85 @@
 /* ============================================================
-   CoreUI v1.1 - SLIDERS / SCALE (GTK 3.0)
-   Estilo: Industrial HUD / Cian LCD
+   CoreUI v1.1 - ADAPTIVE SLIDERS / SCALE (Fixed)
+   Estilo: Instrumentación HUD / Hardware-Linked
    ============================================================ */
 
 scale {
     background-color: transparent;
-    padding: 8px 0;
+    padding: 6px 0;
 }
 
-/* El carril o fondo del deslizador */
+/* El carril: Regla técnica segmentada */
 scale trough {
-    background-color: #151a17; /* core_bg_alt */
-    border: 1px solid #1f2a24; /* core_border */
-    border-radius: 0px;        /* TOTALMENTE CUADRADO */
-    min-height: 4px;           /* Más delgado para un look técnico */
-    margin: 10px 0;
+    background-color: @bg_base; 
+    border: 1px solid @border_col; 
+    border-radius: 0px;        
+    min-height: 8px; 
+    margin: 4px 0;
+
+    /* Patrón de escala: marcas cada 10px fijas */
+    background-image: repeating-linear-gradient(90deg, 
+                        @border_col, @border_col 1px, 
+                        transparent 1px, transparent 10px);
 }
 
-/* La parte resaltada (lo que ya se ha deslizado) */
+/* La parte resaltada (Energía Cian) */
 scale highlight {
-    background-color: #00CCCC; /* core_accent (Cian) */
-    border-radius: 0px;        /* TOTALMENTE CUADRADO */
+    background-color: @accent; 
+    border-radius: 0px;
+    box-shadow: inset 0 0 3px rgba(0, 204, 204, 0.4);
 }
 
-/* El tirador (Slider) - ESTILO BLOQUE COREUI */
+/* El tirador (Slider): El "Bracket" de ajuste Ámbar */
 scale slider {
-    background-color: #0e1210; /* core_bg */
-    border: 2px solid #00CCCC; /* Borde Cian sólido */
-    border-radius: 0px;        /* TOTALMENTE CUADRADO */
-    min-width: 12px;           /* Dimensiones optimizadas para 1366x768 */
-    min-height: 12px;
-    margin: -5px 0;            /* Centrado vertical sobre el carril */
+    background-color: @bg_base; 
+    border: 1px solid @warning_amber; 
+    border-radius: 0px;        
+    
+    /* Dimensiones fijas para 768p */
+    min-width: 14px;            
+    min-height: 14px;
+    
+    /* Centrado manual sobre el carril */
+    margin: -4px 0;            
+    
+    /* Efecto de 'mira' técnica: cruz central */
+    background-image: 
+        linear-gradient(90deg, transparent 45%, @warning_amber 45%, @warning_amber 55%, transparent 55%),
+        linear-gradient(0deg, transparent 45%, @warning_amber 45%, @warning_amber 55%, transparent 55%);
 }
 
-/* Estado: Pasar el mouse */
+/* Estado: Hover - El bracket brilla */
 scale slider:hover {
-    background-color: #1b211d; /* core_bg_soft */
-    border-color: #3EBFFF;     /* Cian más brillante */
+    background-color: @bg_alt; 
+    box-shadow: 0 0 4px rgba(255, 176, 0, 0.5);
 }
 
-/* Estado: Al arrastrar o presionar */
+/* Estado: Active - Manipulación de Sistema */
 scale slider:active {
-    background-color: #00CCCC; 
-    border-color: #e6f4ea;     /* Contraste blanco verdoso al activar */
+    background-color: @warning_amber; 
+    border-color: @fg_main;
+    background-image: none; /* Inversión sólida */
 }
 
-/* Deslizadores deshabilitados */
-scale:disabled trough {
-    background-color: #0e1210;
-    border-color: #1f2a24;
+/* --- VARIANTES VERTICALES --- */
+
+scale.vertical trough {
+    min-width: 8px;
+    background-image: repeating-linear-gradient(0deg, 
+                        @border_col, @border_col 1px, 
+                        transparent 1px, transparent 10px);
 }
 
-scale:disabled highlight {
-    background-color: #6f8578; /* core_fg_disabled */
+scale.vertical slider {
+    margin: 0 -4px;
+    min-height: 14px;
+    min-width: 14px;
 }
 
-scale:disabled slider {
-    background-color: #151a17;
-    border-color: #6f8578;
-}
+/* --- CONTEXTOS --- */
 
-/* Ajuste específico para Scales en barras de herramientas o Headerbars */
-headerbar scale {
-    min-width: 80px;
-    padding: 0 4px;
+/* Ajuste para Scales en Headerbars */
+headerbar scale trough {
+    background-color: @bg_alt;
+    min-width: 80px; 
 }
-

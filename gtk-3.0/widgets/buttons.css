@@ -1,81 +1,37 @@
-/* ============================================================
-   CoreUI v1.1 - BUTTONS (GTK 3.0)
-   Estilo: Industrial Hard-Square / Cian LCD (2026)
-   ============================================================ */
+/* widgets/buttons.css - Industrial Fixed */
 
 button {
-    background-color: #151a17; /* core_bg_alt */
-    color: #e6f4ea;            /* core_fg */
-    border: 1px solid #1f2a24; /* core_border */
-    border-radius: 0px;        /* TOTALMENTE CUADRADO */
-    min-height: 28px;          /* Ajustado de 30px para ahorrar espacio vertical */
-    padding: 0 12px;
+    background-color: @bg_alt; 
+    color: @fg_main;            
+    border: 1px solid @border_col; 
+    border-radius: 0px;        
+    min-height: 24px !important;
+    padding: 0 6px !important;
+    font-family: "Inter", sans-serif;
+    font-weight: 700; 
+    font-size: 9pt;
     box-shadow: none;
-    transition: none;          /* Respuesta instantánea para paneles LCD */
 }
 
-/* Hover: El botón se ilumina en los bordes y el texto */
+/* Hover: Activación de la matriz */
 button:hover {
-    background-color: #1b211d; /* core_bg_soft */
-    border-color: #00CCCC;     /* core_accent */
-    color: #00CCCC;
+    background-color: #1b211d; 
+    border-color: @accent;     
+    color: @accent;
 }
 
-/* Estado presionado o activado (Toggle) */
+/* Estado presionado: Inversión de polaridad LCD */
 button:active,
 button:checked {
-    background-color: #00CCCC; /* Relleno Cian sólido */
-    color: #0e1210;            /* Texto oscuro para contraste máximo */
-    border-color: #00CCCC;
+    background-color: @accent; 
+    color: @bg_base;            
+    border-color: @accent;
 }
 
-/* --- Botones Especiales --- */
-
-/* Acción Sugerida (Aceptar, Guardar, Confirmar) */
+/* Botón de Acción Sugerida (Ámbar) */
 button.suggested-action {
-    background-color: #00CCCC;
-    color: #0e1210;
-    border: 1px solid #00CCCC;
-    font-weight: bold;
-}
-
-button.suggested-action:hover {
-    background-color: #3EBFFF; /* Cian más eléctrico para hover */
-    border-color: #3EBFFF;
-    color: #0e1210;
-}
-
-/* Acción Destructiva (Eliminar, Salir sin guardar) */
-button.destructive-action {
-    background-color: #e74c3c; /* Rojo CoreUI */
-    color: #ffffff;
-    border: 1px solid #e74c3c;
-}
-
-button.destructive-action:hover {
-    background-color: #ff5c4c;
-    border-color: #ff5c4c;
-}
-
-/* --- Contextos Específicos --- */
-
-/* Botones en Headerbar (Cinnamon / GTK Apps) */
-headerbar button {
-    min-height: 24px;
-    padding: 0 8px;
-    margin: 3px 2px;
-}
-
-/* Botones en Listas (Sidebars) */
-row button {
     background-color: transparent;
-    border-color: transparent;
-}
-
-/* Estado Deshabilitado */
-button:disabled {
-    background-color: #0e1210;
-    color: #6f8578;            /* core_fg_disabled */
-    border-color: #1b211d;
-    opacity: 0.5;
+    color: @warning_amber;
+    border: 2px solid @warning_amber;
+    text-transform: uppercase;
 }

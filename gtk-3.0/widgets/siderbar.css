@@ -1,79 +1,97 @@
 /* ============================================================
-   CoreUI v1.1 - SIDEBAR (GTK 3.0)
-   Estilo: Navegación HUD / Cian LCD
+   CoreUI v1.1 - ADAPTIVE SIDEBAR
+   Estilo: Navegación HUD / Hardware-Linked
    ============================================================ */
 
-/* Contenedor de la barra lateral (Nemo, Nautilus, Ajustes) */
+/* Contenedor principal de navegación */
 .sidebar,
 .sidebar list,
 .sidebar listview,
 stacksidebar.sidebar list,
 viewport.sidebar {
-    background-color: #151a17; /* core_bg_alt */
-    color: #e6f4ea;            /* core_fg */
+    background-color: var(--bg-alt); 
+    color: var(--fg-main);            
     border: none;
 }
 
-/* Filas de navegación (Carpetas, Dispositivos, Categorías) */
+/* Filas de navegación: Bloques de Datos Dinámicos */
 .sidebar row {
-    min-height: 28px;          /* Ajustado para optimizar espacio en 768p */
-    padding: 2px 12px;
-    border-radius: 0px;        /* TOTALMENTE CUADRADO */
+    /* Sincronizado con la altura de fila del perfil (26px-28px en SD) */
+    min-height: var(--row-h) !important;
+    padding: 2px var(--p-side);
+    border-radius: var(--ui-radius);        
     border: none;
-    transition: none;          /* Respuesta instantánea para LCD */
+    transition: none; 
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
 }
 
-/* Estado: Pasar el mouse */
+/* Estado: Hover (Pre-selección) */
 .sidebar row:hover {
-    background-color: #1b211d; /* core_bg_soft */
-    color: #00CCCC;            /* Texto resalta en Cian */
+    background-color: rgba(27, 33, 29, 0.8); 
+    color: #3EBFFF; 
 }
 
-/* Estado: Seleccionado (Fila Activa) */
+/* Estado: Seleccionado (Fila Activa / Canal de Datos) */
 .sidebar row:selected {
-    background-color: rgba(0, 204, 204, 0.15); /* Acento suave CoreUI */
-    color: #00CCCC;
-    /* Indicador lateral: Firma visual del tema */
-    border-left: 3px solid #00CCCC;
+    background-color: rgba(0, 204, 204, 0.1); 
+    color: var(--accent);
+    /* Indicador lateral vinculado al grosor del borde */
+    box-shadow: inset calc(var(--b-width) * 4) 0 0 0 var(--accent);
+    font-weight: 700;
 }
 
-/* Estado: Seleccionado con Foco (Navegación por teclado) */
+/* Estado: Seleccionado con Foco (Operación Activa) */
 .sidebar row:selected:focus {
-    background-color: #00CCCC; /* Bloque Cian sólido */
-    color: #0e1210;            /* Texto oscuro para contraste HUD */
-    border-left: 3px solid #1f2a24;
+    background-color: var(--accent); 
+    color: var(--bg-base);            
+    box-shadow: none;
 }
 
-/* --- Iconografía --- */
+/* --- ICONOGRAFÍA TÉCNICA ESCALABLE --- */
 
 .sidebar image {
-    -gtk-icon-size: 16px;
-    margin-right: 10px;
-    color: inherit;            /* Los iconos cambian de color con el texto */
+    /* El icono se escala ligeramente según la fuente base */
+    -gtk-icon-size: calc(var(--f-size) * 1.5);
+    margin-right: var(--p-side);
+    color: inherit;
 }
 
-/* --- Estructura y Divisores --- */
+/* Los iconos en la fila seleccionada brillan en Ámbar */
+.sidebar row:selected image {
+    color: #FFB000; 
+    -gtk-icon-shadow: 0 0 calc(var(--b-width) * 5) rgba(255, 176, 0, 0.5);
+}
+
+/* --- ESTRUCTURA Y DIVISORES --- */
 
 .sidebar separator {
-    background-color: #1f2a24; /* core_divider */
-    min-height: 1px;
-    margin: 8px 4px;           /* Más espacio para separar secciones de datos */
+    background-color: var(--border); 
+    min-height: var(--b-width);
+    margin: var(--sep-margin) calc(var(--p-side) / 2);
 }
 
-/* Scrollbar específico para sidebar */
-.sidebar scrolledwindow {
-    background-color: transparent;
+/* Cabeceras de sección (ej. "Dispositivos") */
+.sidebar label.separator,
+.sidebar list-header {
+    font-family: "JetBrains Mono", monospace;
+    font-size: calc(var(--f-size) - 2pt);
+    font-weight: 800;
+    color: var(--border);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding: calc(var(--sep-margin) / 2) var(--p-side);
 }
 
-/* --- Estados de Fondo (Backdrop) --- */
+/* --- ESTADOS DE FONDO (Backdrop) --- */
 
 .sidebar:backdrop {
-    background-color: #0e1210; /* Se oscurece al perder foco */
-    color: #6f8578;            /* core_fg_disabled */
+    background-color: var(--bg-base); 
+    color: var(--border);
 }
 
 .sidebar row:selected:backdrop {
-    background-color: #1b211d;
-    color: #a7bdb0;
-    border-color: #1f2a24;
+    background-color: transparent;
+    color: var(--border);
+    box-shadow: inset calc(var(--b-width) * 2) 0 0 0 var(--border);
 }

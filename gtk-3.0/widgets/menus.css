@@ -1,84 +1,36 @@
-/* ============================================================
-   CoreUI v1.1 - MENUS & MENUBARS (GTK 3.0)
-   Estilo: Industrial Hard-Square / Cian LCD
-   ============================================================ */
+/* widgets/menus.css - Technical Cell Fixed */
 
-/* Contenedor principal del menú desplegable */
-menu,
-.menu {
-    background-color: #151a17; /* core_bg_alt */
-    color: #e6f4ea;            /* core_fg */
-    border: 1px solid #00CCCC; /* Borde Cian sólido: máxima nitidez */
+menu, .menu {
+    background-color: @bg_alt; 
+    color: @fg_main;            
+    border: 1px solid @accent; 
     border-radius: 0px; 
-    padding: 2px 0;            /* Un poco más compacto verticalmente */
-    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.5); /* Sombra sólida, no difusa */
+    padding: 2px 0;
+    /* Sombra de bloque sólida (Retro HUD) */
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.8); 
 }
 
-/* Elementos individuales del menú */
 menuitem {
-    min-height: 26px;          /* Optimizado para 768p */
-    padding: 2px 12px;
-    border-radius: 0px;
-    transition: none;
+    min-height: 26px !important;
+    padding: 2px 6px;
+    font-family: "Inter", sans-serif;
 }
 
-/* Estado: Hover o Selección */
-menuitem:hover,
-menuitem:selected {
-    background-color: rgba(0, 204, 204, 0.25); 
-    color: #00CCCC;
+menuitem:hover, menuitem:selected {
+    background-color: @bg_hover; 
+    color: @accent;
+    /* Indicador lateral cian */
+    box-shadow: inset 3px 0 0 0 @accent;
 }
 
-/* Texto de atajo de teclado (Aceleradores) */
+/* Atajos de teclado (Telemetría Ámbar) */
 menuitem accelerator {
-    color: #a7bdb0;            /* core_fg_muted */
-    margin-left: 10px;
+    font-family: "JetBrains Mono", monospace;
+    color: @warning_amber;
+    font-size: 8pt;
 }
 
-menuitem:hover accelerator {
-    color: #00CCCC;            /* Brilla junto con el texto principal */
-}
-
-/* Checkmarks y Radios dentro de Menús */
-menuitem check,
-menuitem radio {
-    min-width: 8px;
-    min-height: 8px;
-    margin-right: 8px;
-    background-color: transparent;
-    border: 1px solid #1f2a24;
-}
-
-menuitem check:checked,
-menuitem radio:checked {
-    background-color: #00CCCC;
-    border-color: #00CCCC;
-}
-
-/* --- Barra de Menú (Menubar Superior) --- */
 menubar {
-    background-color: #0e1210; 
-    border-bottom: 1px solid #1f2a24;
-    padding: 0 4px;
-}
-
-menubar menuitem {
-    padding: 4px 10px;
-    color: #e6f4ea;
-}
-
-menubar menuitem:hover {
-    background-color: #1b211d;
-    color: #00CCCC;
-}
-
-/* Flechas de submenú: Bloque de datos CoreUI */
-menu .arrow {
-    -gtk-icon-source: none;
-    background-color: #00CCCC;
-    min-width: 5px;
-    min-height: 5px;
-    margin-left: 10px;
-    /* Efecto de rombo técnico */
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    background-color: @bg_base; 
+    border-bottom: 1px solid @border_col; 
 }
