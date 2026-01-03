@@ -1,46 +1,43 @@
-/* ================================
- * Core Global Styles
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - GLOBAL ADAPTIVE SURFACES (Desktop Fix)
+   ============================================================ */
 
+/* 1. FONDO GENERAL (EXCEPTO EL ESCRITORIO) */
+window,
+.background.main-window,
+.background.csd,
+messagedialog {
+    background-color: @bg_base !important; 
+    color: @fg_main;
+    opacity: 1.0 !important;
+}
+
+/* 2. EL ESCRITORIO (TRANSPARENTE PARA VER TU WALLPAPER) */
+/* Eliminamos el color sólido específicamente para el nodo del desktop */
 .background {
-    background-color: @core_bg;
-    color: @core_fg;
+    background-color: transparent !important;
+    background-image: none !important;
 }
 
-.background:backdrop {
-    background-color: shade(@core_bg, 0.96);
-    color: @core_fg_muted;
+/* 3. NEMO DESKTOP (Específico para Cinnamon/Nemo) */
+/* Esto asegura que los iconos del escritorio tengan texto legible */
+NemoDesktopCanvas {
+    color: @fg_main;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
 }
 
-selection,
-*:selected {
-    background-color: @core_selection_bg;
-    color: @core_selection_fg;
+/* --- PROTECCIÓN DEL SISTEMA --- */
+
+/* Evitamos que el estado 'disabled' afecte la visibilidad del wallpaper */
+.background:disabled,
+NemoDesktopCanvas:disabled {
+    opacity: 1.0 !important;
+    background-color: transparent !important;
 }
 
-tooltip {
-    background-color: @core_bg_alt;
-    color: @core_fg;
-    border: 1px solid @core_border;
-    border-radius: @core_radius_md;
-    padding: @core_pad_sm @core_pad_md;
-    box-shadow: 0 4px 10px @core_shadow_soft;
+/* Aseguramos que los iconos del escritorio sigan siendo visibles 
+   aunque el sistema esté ocupado */
+.nemo-desktop.nemo-canvas-item:disabled {
+    opacity: 0.6;
+    background-color: transparent !important;
 }
-
-popover {
-    background-color: @core_bg_alt;
-    border: 1px solid @core_border;
-    border-radius: @core_radius_lg;
-    box-shadow: 0 6px 16px @core_shadow_strong;
-}
-
-separator {
-    background-color: @core_divider;
-    min-height: 1px;
-    min-width: 1px;
-}
-
-scrolledwindow {
-    background-color: transparent;
-}
-

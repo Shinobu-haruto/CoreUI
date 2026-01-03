@@ -1,12 +1,51 @@
-/* ================================
- * Core GTK3 Reset
- * ================================ */
+/* ============================================================
+   Core GTK 3/4 Reset - CoreUI v1.1
+   Estilo: Limpieza de Matriz LCD / Hard-Square Adaptativo
+   ============================================================ */
 
 * {
+    /* Forzamos el renderizado al borde del padding para evitar halos */
     background-clip: padding-box;
+    
+    /* Eliminamos herencias de temas anteriores */
     box-shadow: none;
     outline: none;
     text-shadow: none;
     -gtk-icon-shadow: none;
+    
+    /* RIGIDEZ ABSOLUTA: Vinculado a variable (por defecto 0px) */
+    border-radius: var(--ui-radius, 0px) !important;
+    -gtk-outline-radius: var(--ui-radius, 0px) !important;
+
+    /* Aplicamos la fuente base del perfil activo */
+    font-size: var(--f-size);
 }
 
+/* REDUCCIÓN DE GHOSTING LCD: 
+   Usamos la duración definida en el perfil para una respuesta "eléctrica".
+*/
+* {
+    transition-duration: var(--anim-speed, 80ms);
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    transition-property: background-color, border-color;
+}
+
+/* Eliminamos animaciones en elementos que requieren precisión instantánea */
+scrollbar slider,
+button:active,
+menuitem:selected,
+switch slider {
+    transition: none !important;
+}
+
+/* Forzar que los iconos no se suavicen de más (Pixel-Perfect) */
+image {
+    -gtk-icon-transform: scale(1);
+    /* nearest-neighbor asegura nitidez en 768p */
+    interpolation-mode: nearest-neighbor;
+}
+
+/* Reset de márgenes y paddings para control total desde metrics.css */
+button, entry, headerbar {
+    margin: 0;
+}
