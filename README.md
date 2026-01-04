@@ -1,10 +1,11 @@
 # CoreUI v1.1 - Industrial HUD Environment  
-![Branding](https://github.com/Shinobu-haruto/CoreUI/blob/main/logo_full.svg) # CoreUI
+
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-00CCCC.svg)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/Shinobu-haruto/CoreUI)](https://github.com/Shinobu-haruto/CoreUI/stargazers)
 [![GTK4 Ready](https://img.shields.io/badge/GTK4-Compatible-00CCCC)](https://github.com/Shinobu-haruto/CoreUI)
-
+![Branding](https://github.com/Shinobu-haruto/CoreUI/blob/main/logo_full.svg)
+# Preview
 ![screenshot.png](https://github.com/Shinobu-haruto/CoreUI/blob/main/screenshot.png)
 
 **CoreUI** es un entorno visual de alto rendimiento diseñado para terminales de control y estaciones de trabajo. Inspirado en interfaces HUD industriales, está optimizado específicamente para pantallas LCD con resoluciones de **1366x768** y **1080p**.
