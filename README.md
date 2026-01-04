@@ -1,4 +1,4 @@
-# CoreUI v1.1 - Industrial HUD Environment
+# CoreUI v1.1 - Industrial HUD Environment  [Branding](https://github.com/Shinobu-haruto/CoreUI/blob/main/logo-full.svg)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-00CCCC.svg)](LICENSE)
 [![GitHub stars](https://img.shields.io/github/stars/Shinobu-haruto/CoreUI)](https://github.com/Shinobu-haruto/CoreUI/stargazers)
