@@ -1,85 +1,11 @@
-/* ============================================================
-   CoreUI v1.1 - ADAPTIVE TABS / NOTEBOOK (Fixed)
-   Estilo: Celdas HUD / Hardware-Linked
-   ============================================================ */
-
-notebook {
-    background-color: @bg_base; 
-    border: 1px solid @border_col; 
-}
-
-/* Contenedor de la barra de pestañas */
-notebook header {
-    background-color: @bg_alt; 
-    border-bottom: 1px solid @border_col; 
-    padding: 0;
-}
-
-/* Estilo base de cada Pestaña (Tab) */
 notebook tab {
-    min-height: 26px !important;
-    padding: 2px 8px;
-    background-color: transparent;
-    border-radius: 0px;        
-    color: @border_col; /* Color atenuado inactivo */
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
+    background-color: @bg_alt;
+    padding: 4px 10px;
     border: 1px solid transparent;
 }
 
-/* Estado: Hover - Pre-iluminación */
-notebook tab:hover {
-    background-color: rgba(0, 204, 204, 0.05); 
-    color: @accent;
-}
-
-/* Estado: Pestaña Activa (Módulo Energizado) */
-notebook tab:checked,
-notebook tab:selected {
-    background-color: @bg_base; 
-    color: @accent;             
-    border-left: 1px solid @border_col;
-    border-right: 1px solid @border_col;
-    font-weight: 800; 
-    text-transform: uppercase;
-}
-
-/* --- INDICADORES DE ACENTO LCD (Sólidos para 768p) --- */
-
-notebook.top header tab:checked {
-    box-shadow: inset 0 3px 0 0 @accent; 
-}
-
-notebook.bottom header tab:checked {
-    box-shadow: inset 0 -3px 0 0 @accent;
-}
-
-notebook.left header tab:checked {
-    box-shadow: inset 3px 0 0 0 @accent;
-}
-
-notebook.right header tab:checked {
-    box-shadow: inset -3px 0 0 0 @accent;
-}
-
-/* --- ELEMENTOS DE CONTROL --- */
-
-/* Botón de cerrar (X) dentro de la pestaña */
-notebook tab button {
-    padding: 2px;
-    margin-left: 4px;
-    background-color: transparent;
-    color: inherit;
-    border: none;
-}
-
-notebook tab button:hover {
-    background-color: @warning_amber; 
-    color: @bg_base;
-}
-
-/* El área de contenido debajo de las pestañas */
-notebook stack {
-    padding: 6px;
+notebook tab:checked {
     background-color: @bg_base;
+    color: @accent;
+    border-bottom: 2px solid @accent;
 }

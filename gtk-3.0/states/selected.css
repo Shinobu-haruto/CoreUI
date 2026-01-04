@@ -1,11 +1,29 @@
-/* Selección global */
-*:selected {
-    background-color: #00CCCC;
-    color: #0e1210;
+/* Selectores estándar con tus colores definidos */
+/* Usamos @accent para el fondo y @bg_base para el texto */
+
+.view:selected,
+row:selected,
+treeview:selected,
+list:selected,
+entry:selected,
+textview:selected,
+button:selected,
+iconview:selected { 
+    background-color: @accent;
+    color: @bg_base;
 }
 
-/* Selección en segundo plano (Ventana no activa) */
-*:selected:backdrop {
-    background-color: #1f2a24; /* Gris verdoso oscuro */
-    color: #e6f4ea;
+/* Forzar legibilidad en etiquetas y texto de Nemo */
+.view:selected label,
+row:selected label,
+treeview:selected label,
+.view:selected selection {
+    color: @bg_base;
+}
+
+/* Mejora para las filas de Nemo (Treeview) */
+treeview.view:selected:focus,
+treeview.view:selected {
+    background-color: @accent;
+    color: @bg_base;
 }

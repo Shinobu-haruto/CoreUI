@@ -1,13 +1,52 @@
-/* ================================
- * CoreUI – Browsers
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 – BROWSERS & WEB VIEWS (GTK SAFE)
+   ============================================================ */
 
-window.background {
-    background-color: @core_bg;
+/* 1. Contenedor Base del Navegador (Selector GTK) */
+window.browser-window,
+window.mozilla-window,
+.browser_window {
+    background-color: @bg_base;
+    color: @fg_main;
 }
 
-/* Firefox GTK */
-#main-window {
-    background-color: @core_bg;
+/* 2. Barra de herramientas (Selectores que Firefox reconoce via GTK) */
+toolbar,
+.toolbar {
+    background-color: @bg_alt;
+    border: none;
+    border-bottom: 1px solid @border_col;
 }
 
+/* 3. Entradas de texto (Barra de direcciones en modo GTK) */
+.location-bar,
+urlbar,
+entry.urlbar {
+    background-color: @bg_alt;
+    color: @fg_main;
+    border: 1px solid @border_col;
+    border-radius: 0;
+}
+
+/* 4. Scrollbars de la Interfaz (No afectan las páginas web) */
+scrollbar {
+    background-color: @bg_base;
+}
+
+scrollbar slider {
+    background-color: @bg_hover;
+    border: 1px solid @accent;
+    border-radius: 0;
+}
+
+/* 5. Tabs (Nativo GTK para navegadores ligeros como Epiphany) */
+tab {
+    background-color: @bg_alt;
+    color: @fg_disabled;
+}
+
+tab:selected {
+    background-color: @bg_base;
+    color: @accent;
+    border-top: 2px solid @accent;
+}

@@ -1,26 +1,24 @@
 /* ============================================================
-   Core Typography - CoreUI v1.1 (SD Fixed)
-   Estilo: Tipografía de Precisión HUD / LCD Optimized
+   Core Typography - CoreUI v1.1 (GTK3 Fixed)
    ============================================================ */
 
+/* Selector Universal Estable */
 * {
-    /* Fuente principal fija de 9pt para SD */
     font-family: "Inter", sans-serif;
     font-size: 9pt; 
     font-weight: 500; 
-    /* Iconos fijos a 16px para evitar errores de cálculo */
-    -gtk-icon-size: 16px;
     letter-spacing: -0.01em;
+    /* Quitamos background-color: transparent aquí para evitar conflictos de parpadeo */
 }
 
-/* Títulos de Ventana (Identificación de Módulo) */
+/* Títulos de Ventana */
 headerbar .title,
 .titlebar .title {
     font-size: 10.5pt;
     font-weight: 800;
-    text-transform: uppercase;
+    /* text-transform: uppercase; <- ELIMINADO (No compatible) */
     letter-spacing: 1.2px;
-    color: @accent; /* Usamos la constante @ definida en SD.css */
+    color: @accent; 
 }
 
 /* Metadatos y Telemetría: Estética Mono */
@@ -34,22 +32,25 @@ levelbar block {
     color: @warning_amber; 
 }
 
-/* Botones: Texto de Acción Inmediata */
+/* Botones: Texto de Acción */
 button {
     font-weight: 700;
-    text-transform: uppercase;
     letter-spacing: 0.5px;
 }
 
-/* Renderizado Crítico para LCD */
+/* Renderizado Limpio */
 * {
-    -gtk-font-smoothing: antialiased;
-    text-shadow: none !important;
+    text-shadow: none;
 }
 
 /* Cursor de bloque tipo terminal */
 entry {
-    /* Grosor del cursor para mejor visibilidad */
-    -gtk-cursor-aspect-ratio: 0.15;
+    /* -gtk-cursor-aspect-ratio: 0.15; <- ELIMINADO (No estándar en todas las versiones) */
     caret-color: @accent;
+}
+
+/* Iconos (Correctamente aplicados) */
+button image,
+button.image-button {
+    -gtk-icon-size: 16px;
 }

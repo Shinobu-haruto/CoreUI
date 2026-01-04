@@ -1,43 +1,61 @@
 /* ============================================================
-   CoreUI v1.1 - GLOBAL ADAPTIVE SURFACES (Desktop Fix)
+   CoreUI v1.1 – GLOBAL ADAPTIVE SURFACES (GTK3 SAFE)
    ============================================================ */
 
-/* 1. FONDO GENERAL (EXCEPTO EL ESCRITORIO) */
+/* ============================================================
+ * 1. Ventanas GTK reales (SIEMPRE fondo sólido)
+ * ============================================================ */
+
 window,
-.background.main-window,
+window.background,
 .background.csd,
+dialog,
 messagedialog {
-    background-color: @bg_base !important; 
+    background-color: @bg_base; /* Variable corregida */
+    background-image: none;
+    opacity: 1.0;
+}
+
+/* Ventanas inactivas (Previene que Nemo se vuelva invisible) */
+window:backdrop,
+window.background:backdrop,
+.background.csd:backdrop {
+    background-color: @bg_base;
+    opacity: 1.0;
+}
+
+/* ============================================================
+ * 2. Escritorio Cinnamon (TRANSPARENTE a propósito)
+ * ============================================================ */
+/* Esto asegura que el fondo de pantalla se vea en el escritorio */
+
+.cinnamon-layout-view,
+#desktop-geometry,
+#header-desktop {
+    background-color: transparent;
+    background-image: none;
+}
+
+/* ============================================================
+ * 3. Nemo Desktop (iconos y texto del escritorio)
+ * ============================================================ */
+
+.nemo-desktop.nemo-canvas-item {
     color: @fg_main;
-    opacity: 1.0 !important;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
 }
 
-/* 2. EL ESCRITORIO (TRANSPARENTE PARA VER TU WALLPAPER) */
-/* Eliminamos el color sólido específicamente para el nodo del desktop */
-.background {
-    background-color: transparent !important;
-    background-image: none !important;
-}
-
-/* 3. NEMO DESKTOP (Específico para Cinnamon/Nemo) */
-/* Esto asegura que los iconos del escritorio tengan texto legible */
+/* El canvas de Nemo debe ser transparente para ver el wallpaper */
 NemoDesktopCanvas {
-    color: @fg_main;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+    background-color: transparent;
 }
 
-/* --- PROTECCIÓN DEL SISTEMA --- */
+/* ============================================================
+ * 4. Protección de estados
+ * ============================================================ */
 
-/* Evitamos que el estado 'disabled' afecte la visibilidad del wallpaper */
-.background:disabled,
-NemoDesktopCanvas:disabled {
-    opacity: 1.0 !important;
-    background-color: transparent !important;
-}
-
-/* Aseguramos que los iconos del escritorio sigan siendo visibles 
-   aunque el sistema esté ocupado */
-.nemo-desktop.nemo-canvas-item:disabled {
-    opacity: 0.6;
-    background-color: transparent !important;
+NemoDesktopCanvas:disabled,
+.cinnamon-layout-view:disabled {
+    opacity: 1.0;
+    background-color: transparent;
 }

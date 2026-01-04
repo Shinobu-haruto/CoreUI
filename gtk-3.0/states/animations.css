@@ -1,48 +1,35 @@
 /* ============================================================
-   CoreUI v1.1 - ANIMATIONS & KINETICS
-   Estilo: Respuesta Táctica / Cero Ghosting
+   CoreUI - ANIMATIONS (Fixed for GTK3 Native)
+   Estilo: Transiciones HUD rápidas (150ms)
    ============================================================ */
 
-* {
-    /* Propiedades seguras para evitar parpadeos de renderizado GPU */
-    transition-property: background-color, border-color, color, opacity;
-    
-    /* 80ms es el "Sweet Spot" para LCD: 
-       Más rápido que un parpadeo, pero evita el salto brusco de píxeles. */
-    transition-duration: 80ms;
-    
-    /* Usamos linear para una respuesta de hardware puro */
-    transition-timing-function: linear;
+/* Transiciones globales */
+/* Nota: Quitamos 'all' y 'cubic-bezier' para evitar errores de parseo */
+button,
+entry,
+row,
+.sidebar row {
+    transition: 150ms ease-in-out;
 }
 
-/* --- EXCEPCIONES DE ALTA VELOCIDAD --- */
-
-/* Elementos que deben responder SIN delay para una sensación de control total */
-button:active,
-button:checked,
-switch slider,
-scrollbar slider,
-menuitem:hover {
-    transition-duration: 0s !important;
+/* Efecto de Focus (Pulso cian) */
+entry:focus {
+    /* En GTK3 es mejor no encadenar múltiples transiciones con comas en una sola línea */
+    transition: 200ms ease-in;
 }
 
-/* --- OPTIMIZACIÓN DE RENDIMIENTO --- */
-
-/* Deshabilitamos animaciones de sombras: 
-   Las sombras dinámicas consumen ciclos de GPU innecesarios y 
-   pueden ensuciar la nitidez del borde Cian en LCD. */
-button, 
-entry, 
-switch, 
-headerbar, 
-window {
-    box-shadow: none !important;
-    /* Forzamos el renderizado 2D para mantener los bordes afilados */
-    backface-visibility: hidden;
+/* Desactivar animaciones en estado inactivo para ahorrar recursos de GPU */
+*:backdrop {
+    transition: none;
 }
 
-/* Animación sutil de aparición para Tooltips y Popovers */
-tooltip,
-popover {
-    transition: opacity 150ms ease-out;
+/* Transicion especifica para el Slider de las barras de scroll */
+scrollbar slider {
+    transition: 300ms ease-out;
+}
+
+/* Barra de progreso fluida */
+progressbar progress {
+    /* La transición de min-width es la forma correcta de animar barras en GTK */
+    transition: 400ms ease-out;
 }

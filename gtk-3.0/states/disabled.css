@@ -3,98 +3,57 @@
    Estilo: Desconexión de Circuito / Bajo Contraste
    ============================================================ */
 
-/* Estado Global Deshabilitado */
-*:disabled {
+/* Estado Global Deshabilitado: Evitamos el uso de * para mejorar rendimiento */
+widget:disabled,
+label:disabled,
+button:disabled,
+entry:disabled,
+menuitem:disabled {
     /* Opacidad reducida para aplanamiento visual */
-    opacity: 0.45 !important;
+    opacity: 0.5;
     
     /* Color de fósforo apagado (verde grisáceo muy oscuro) */
-    color: #4a5a50 !important;
+    color: #4a5a50;
     
-    /* Evitamos fondos brillantes que distraigan */
-    background-color: transparent !important;
-    
-    /* Eliminamos cualquier borde de acento */
-    border-color: #1f2a24 !important;
-    
-    /* Sin sombras ni efectos de luz */
-    box-shadow: none !important;
-    text-shadow: none !important;
-    -gtk-icon-shadow: none !important;
+    /* Sin sombras ni efectos de luz para look "muerto" */
+    box-shadow: none;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
 }
 
-/* Casos específicos para mantener la estructura */
+/* Casos específicos para mantener la estructura técnica */
 
-/* Botones deshabilitados: mantienen su chasis pero pierden la energía */
+/* Botones deshabilitados: chasis sin energía */
 button:disabled {
     background-color: rgba(21, 26, 23, 0.5);
+    background-image: none;
     border: 1px solid #1f2a24;
+    color: #4a5a50;
 }
 
-/* Entradas de texto deshabilitadas: lectura de solo consulta */
+/* Entradas de texto deshabilitadas */
 entry:disabled {
     background-color: #0e1210;
     color: #314239;
+    border-color: #151a17;
 }
 
-/* Selección deshabilitada: no debe brillar en cian */
-*:disabled:selected {
-    background-color: #1f2a24 !important;
-    color: #4a5a50 !important;
+/* Selección deshabilitada: bloque oscuro sin brillo cian */
+row:disabled:selected,
+node:disabled:selected,
+treeview.view:disabled:selected {
+    background-color: #1f2a24;
+    color: #4a5a50;
 }
 
-/* Iconos deshabilitados: máxima desaturación */
+/* Iconos deshabilitados: efecto "dim" nativo de GTK */
 image:disabled {
     -gtk-icon-effect: dim;
-    opacity: 0.3;
-}
-/* ============================================================
-   CoreUI v1.1 - DISABLED STATE (Estado Offline)
-   Estilo: Desconexión de Circuito / Bajo Contraste
-   ============================================================ */
-
-/* Estado Global Deshabilitado */
-*:disabled {
-    /* Opacidad reducida para aplanamiento visual */
-    opacity: 0.45 !important;
-    
-    /* Color de fósforo apagado (verde grisáceo muy oscuro) */
-    color: #4a5a50 !important;
-    
-    /* Evitamos fondos brillantes que distraigan */
-    background-color: transparent !important;
-    
-    /* Eliminamos cualquier borde de acento */
-    border-color: #1f2a24 !important;
-    
-    /* Sin sombras ni efectos de luz */
-    box-shadow: none !important;
-    text-shadow: none !important;
-    -gtk-icon-shadow: none !important;
+    opacity: 0.4;
 }
 
-/* Casos específicos para mantener la estructura */
-
-/* Botones deshabilitados: mantienen su chasis pero pierden la energía */
-button:disabled {
-    background-color: rgba(21, 26, 23, 0.5);
-    border: 1px solid #1f2a24;
-}
-
-/* Entradas de texto deshabilitadas: lectura de solo consulta */
-entry:disabled {
-    background-color: #0e1210;
-    color: #314239;
-}
-
-/* Selección deshabilitada: no debe brillar en cian */
-*:disabled:selected {
-    background-color: #1f2a24 !important;
-    color: #4a5a50 !important;
-}
-
-/* Iconos deshabilitados: máxima desaturación */
-image:disabled {
-    -gtk-icon-effect: dim;
-    opacity: 0.3;
+/* Notebooks (Pestañas) deshabilitadas */
+notebook tab:disabled {
+    color: #2a352f;
+    background-color: transparent;
 }

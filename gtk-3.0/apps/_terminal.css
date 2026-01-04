@@ -1,10 +1,78 @@
-/* ================================
- * CoreUI – Terminals
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - TERMINALS (AMBER-CYAN HYBRID)
+   Estilo: Inmersión Total HUD / JetBrains Mono (2026)
+   ============================================================ */
 
+/* Ventana principal de la terminal */
 terminal-window,
-VteTerminal {
-    background-color: @core_bg;
-    color: @core_fg;
+window.terminal-window {
+    background-color: #0e1210 !important;
+    color: #e6f4ea !important;
+    /* Borde de ventana Cian para match con Metacity */
+    border: 1px solid #00CCCC !important;
 }
 
+/* El widget de la terminal (VTE) */
+VteTerminal,
+vte-terminal {
+    background-color: #0e1210 !important;
+    color: #e6f4ea !important;
+    
+    /* Tipografía técnica obligatoria */
+    font-family: "JetBrains Mono", monospace !important;
+    
+    /* Cursor Ámbar: El detalle de "Sistema de Datos" */
+    -VteTerminal-cursor-color: #FFB000 !important;
+    -VteTerminal-cursor-blink: true;
+}
+
+/* Selección de texto: Mezcla HUD */
+VteTerminal:selected,
+vte-terminal:selected {
+    background-color: rgba(255, 176, 0, 0.2) !important; /* Resalte Ámbar suave */
+    color: #ffffff !important;
+}
+
+/* Scrollbar Industrial: Delgado para no estorbar en 768p */
+terminal-window scrollbar {
+    -GtkScrollbar-has-backward-stepper: 0;
+    -GtkScrollbar-has-forward-stepper: 0;
+    width: 6px;
+}
+
+terminal-window scrollbar slider {
+    background-color: #0e1210 !important;
+    border: 1px solid #00CCCC !important; /* Slider Cian */
+    border-radius: 0px !important;
+}
+
+terminal-window scrollbar slider:hover {
+    background-color: #00CCCC !important;
+}
+
+/* Pestañas (Notebook): Navegación Sci-Fi */
+terminal-window notebook header {
+    background-color: #151a17 !important;
+    border-bottom: 2px solid #1f2a24 !important;
+}
+
+terminal-window notebook tab {
+    font-family: "Inter", sans-serif; /* Inter para la interfaz */
+    font-weight: 600;
+    color: #1f2a24;
+    padding: 4px 12px;
+}
+
+terminal-window notebook tab:checked {
+    background-color: #0e1210 !important;
+    color: #FFB000 !important; /* Texto de pestaña activa en Ámbar */
+    border-bottom: 2px solid #FFB000 !important; /* Match con Panel Superior */
+    font-weight: 800;
+}
+
+/* Barra de búsqueda integrada (HUD Search) */
+terminal-window .search-bar {
+    background-color: #151a17 !important;
+    border-top: 1px solid #00CCCC !important;
+    padding: 8px;
+}

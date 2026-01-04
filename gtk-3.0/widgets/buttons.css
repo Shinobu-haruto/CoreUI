@@ -1,37 +1,25 @@
-/* widgets/buttons.css - Industrial Fixed */
-
 button {
-    background-color: @bg_alt; 
-    color: @fg_main;            
-    border: 1px solid @border_col; 
-    border-radius: 0px;        
-    min-height: 24px !important;
-    padding: 0 6px !important;
-    font-family: "Inter", sans-serif;
-    font-weight: 700; 
-    font-size: 9pt;
-    box-shadow: none;
+    background-color: @bg_alt;
+    color: @fg_main;
+    border: 1px solid @border_col;
+    border-radius: 0;
+    padding: 4px 8px;
+    /* En GTK3 no se usa min-height con !important si causa junk */
+    min-height: 24px; 
 }
 
-/* Hover: Activación de la matriz */
 button:hover {
-    background-color: #1b211d; 
-    border-color: @accent;     
-    color: @accent;
-}
-
-/* Estado presionado: Inversión de polaridad LCD */
-button:active,
-button:checked {
-    background-color: @accent; 
-    color: @bg_base;            
+    background-color: @bg_hover;
     border-color: @accent;
 }
 
-/* Botón de Acción Sugerida (Ámbar) */
-button.suggested-action {
-    background-color: transparent;
-    color: @warning_amber;
-    border: 2px solid @warning_amber;
-    text-transform: uppercase;
+button:active,
+button:checked {
+    background-color: @accent;
+    color: @bg_base;
+}
+
+/* Eliminamos text-transform que NO existe en GTK3 */
+button label {
+    font-weight: bold;
 }

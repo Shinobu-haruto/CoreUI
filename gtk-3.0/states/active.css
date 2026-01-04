@@ -1,11 +1,8 @@
 /* ============================================================
-   CoreUI v1.1 - ACTIVE STATES (Adaptativo)
-   Estilo: Circuito Cerrado / Inversión de Píxeles
+   CoreUI v1.1 - ACTIVE STATES (GTK3 Native)
    ============================================================ */
 
-/* Global Active: Cuando el usuario interactúa físicamente 
-   con un componente (Click o Toggle ON)
-*/
+/* Global Active: Click o Toggle ON */
 button:active,
 button:checked,
 check:checked,
@@ -14,36 +11,43 @@ switch:checked,
 scale slider:active,
 treeview.view:selected,
 list row:selected:focus {
-    background-color: var(--accent) !important;
-    color: var(--bg-base) !important; /* Inversión total */
+    background-color: @accent;
+    color: @bg_base; /* Inversión total de color */
     
-    /* Resplandor de activación: Escala según el tamaño del widget */
-    box-shadow: 0 0 calc(var(--btn-h) / 2) rgba(0, 204, 204, 0.4) !important;
+    /* Resplandor de activación (Glow) simplificado para estabilidad */
+    box-shadow: 0 0 10px alpha(@accent, 0.4);
     
-    /* Transición instantánea para respuesta táctica */
-    transition: none !important;
+    /* Respuesta instantánea */
+    transition: none;
 }
 
-/* Ajuste para Iconos en estado activo */
+/* Ajuste para Iconos y Etiquetas en estado activo */
 button:active image,
 button:checked image,
 button:active label,
-button:checked label {
-    color: var(--bg-base) !important;
+button:checked label,
+row:selected label {
+    color: @bg_base;
 }
 
-/* Efecto de pulsación técnica:
-   Profundidad mecánica vinculada al grosor de borde del perfil
-*/
+/* Efecto de pulsación técnica: Profundidad mecánica */
 button:active {
-    box-shadow: inset 0 var(--b-width) calc(var(--b-width) * 3) rgba(0, 0, 0, 0.3), 
-                0 0 calc(var(--btn-h) / 3) rgba(0, 204, 204, 0.5) !important;
+    /* Combinamos una sombra interna para profundidad y externa para el brillo */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.4), 
+                0 0 8px alpha(@accent, 0.5);
 }
 
-/* Estado de Selección en Listas/Sidebars cuando no tienen el foco */
+/* Estado de Selección en ventanas inactivas (Backdrop) */
 selection:backdrop,
 .sidebar row:selected:backdrop,
-list row:selected:backdrop {
-    background-color: var(--border); /* Color apagado en ventanas inactivas */
-    color: var(--fg-main);
+list row:selected:backdrop,
+treeview.view:selected:backdrop {
+    background-color: @border_col;
+    color: @fg_main;
+}
+
+/* Switches (Interruptores) específicos */
+switch:checked {
+    background-color: @accent;
+    border-color: @accent;
 }

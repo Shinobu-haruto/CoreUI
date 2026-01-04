@@ -1,129 +1,79 @@
-/* ================================
- * CoreUI – Audacious (GTK3)
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 - MULTIMEDIA & AUDIO (GTK3 SAFE)
+   ============================================================ */
 
-/* Ventana principal */
-.audacious {
-    background-color: @core_bg;
-    color: @core_fg;
+/* --- Audacious --- */
+.audacious window,
+.audacious .playlistview,
+window#audacious-main-window {
+    background-color: #0e1210;
+    color: #e6f4ea;
+    border-radius: 0;
 }
 
-/* Playlist */
-.audacious .playlistview {
-    background-color: @core_bg;
-    color: @core_fg;
-}
-
-/* Filas */
+/* Filas de la Playlist */
 .audacious .playlistview row {
-    padding: 4px 6px;
+    padding: 4px 8px;
+    border-radius: 0;
+    border-bottom: 1px solid #1f2a24;
 }
 
-/* Selección */
+/* Selección de pista: Contraste Máximo */
 .audacious .playlistview row:selected {
-    background-color: @core_accent;
-    color: #ffffff;
+    background-color: #00CCCC;
+    color: #0e1210;
+    font-weight: bold;
 }
 
-/* Hover */
-.audacious .playlistview row:hover {
-    background-color: @core_bg_soft;
+/* --- Pavucontrol (Control de Volumen) --- */
+window.pavucontrol,
+.pavucontrol {
+    background-color: #0e1210;
+    color: #e6f4ea;
 }
 
-/* Header / toolbar */
-.audacious toolbar {
-    background-color: @core_bg_alt;
-    border-bottom: 1px solid @core_border;
+/* Notebook / Pestañas HUD */
+.pavucontrol notebook header {
+    background-color: #151a17;
+    border-bottom: 1px solid #00CCCC;
 }
 
-/* Botones */
-.audacious button {
-    border-radius: 6px;
+.pavucontrol notebook tab {
+    padding: 8px 16px;
+    border-radius: 0;
+    color: #a7bdb0;
 }
 
-.audacious button:hover {
-    background-color: @core_bg_soft;
+.pavucontrol notebook tab:checked {
+    background-color: #0e1210;
+    color: #00CCCC;
+    box-shadow: inset 0 3px 0 0 #00CCCC; /* Reemplaza border-top para evitar saltos */
 }
 
-/* Sliders (volumen / progreso) */
-.audacious scale trough highlight {
-    background-color: @core_accent;
+/* --- Sliders y Barras de Progreso (Común) --- */
+scale trough,
+progressbar trough {
+    background-color: #151a17;
+    border: 1px solid #1f2a24;
+    border-radius: 0;
+    min-height: 8px;
 }
 
-.audacious scale trough {
-    background-color: @core_border;
-    border-radius: 999px;
+scale highlight,
+progressbar progress {
+    background-color: #00CCCC;
+    border-radius: 0;
 }
 
-/* ================================
- * CoreUI – Pavucontrol
- * ================================ */
-
-/* Ventana principal */
-.pavucontrol,
-window.pavucontrol {
-    background-color: @core_bg;
-    color: @core_fg;
-}
-
-/* Notebook (tabs: Playback, Recording, Output, Input, Configuration) */
-.pavucontrol notebook {
-    background-color: @core_bg;
-}
-
-/* Tabs */
-.pavucontrol notebook > header {
-    background-color: @core_bg_alt;
-    border-bottom: 1px solid @core_border;
-}
-
-.pavucontrol notebook > header tab {
-    padding: 6px 12px;
-    border-radius: 6px;
-    color: @core_fg;
-}
-
-.pavucontrol notebook > header tab:hover {
-    background-color: @core_bg_soft;
-}
-
-.pavucontrol notebook > header tab:checked {
-    background-color: @core_accent;
-    color: #ffffff;
-}
-
-/* Lists (devices, streams) */
-.pavucontrol treeview {
-    background-color: @core_bg;
-    color: @core_fg;
-}
-
-.pavucontrol treeview row:selected {
-    background-color: @core_accent;
-    color: #ffffff;
-}
-
-/* Sliders (volume bars) */
-.pavucontrol scale trough {
-    background-color: @core_border;
-    border-radius: 999px;
-}
-
-.pavucontrol scale trough highlight {
-    background-color: @core_accent;
-}
-
-/* Mute buttons */
+/* Botones técnicos cuadrados */
+.audacious button,
 .pavucontrol button {
-    border-radius: 6px;
-}
-
-.pavucontrol button:hover {
-    background-color: @core_bg_soft;
+    border-radius: 0;
+    border: 1px solid #1f2a24;
+    background-image: none;
 }
 
 .pavucontrol button:checked {
-    background-color: @core_accent;
+    background-color: #cc0000; /* Rojo alerta para Mute */
     color: #ffffff;
 }
-

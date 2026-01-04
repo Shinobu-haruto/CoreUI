@@ -1,50 +1,51 @@
 /* ============================================================
-   Core Metrics - Adaptative HUD
-   Estilo: Rejilla de Datos Dinámica (768p / 1080p)
+   Core Metrics - Adaptative HUD (Fixed for GTK3)
    ============================================================ */
 
-/* Botones: Ajuste quirúrgico de altura */
+/* Botones: Ajuste quirúrgico (Antes era --btn-h: 24px) */
 button {
-    min-height: var(--btn-h) !important; 
-    padding: 0 var(--p-side) !important;
-    margin: 1px; /* Margen reducido para ahorrar espacio */
-    border-radius: var(--ui-radius) !important;
+    min-height: 24px; 
+    padding: 0 6px;
+    margin: 1px;
+    border-radius: 0; /* ui-radius era 0px */
 }
 
-/* Entradas de Texto: Alineación con la altura de botones */
+/* Entradas de Texto */
 entry {
-    min-height: var(--btn-h) !important;
-    padding: 0 var(--p-side);
-    border-radius: var(--ui-radius) !important;
+    min-height: 24px;
+    padding: 0 6px;
+    border-radius: 0;
 }
 
-/* Headerbar: El chasis de la ventana se encoge en SD */
+/* Headerbar (Antes era --h-bar: 32px) */
 headerbar {
-    min-height: var(--h-bar) !important;
-    padding: 0 var(--p-side);
-    border-radius: var(--ui-radius) !important;
+    min-height: 32px;
+    padding: 0 6px;
+    border-radius: 0;
 }
 
-/* Menús y Listas: Densidad de información escalable */
+/* Menús y Listas: Densidad (Antes era --row-h: 26px) */
 menuitem,
 .sidebar row,
 list row {
-    min-height: var(--row-h) !important;
-    padding: 2px var(--p-side); /* Reducimos padding vertical para 768p */
+    min-height: 26px;
+    padding: 2px 6px;
 }
 
 /* Notebook Tabs: Pestañas compactas */
 notebook tab {
-    min-height: var(--btn-h);
-    padding: 0 var(--p-side);
+    min-height: 24px;
+    padding: 0 6px;
 }
 
 /* Ajustes de Scrolled Windows */
+/* Nota: -gtk-gradient no es una propiedad válida aquí, se usa background-image */
 scrolledwindow {
-    -gtk-gradient: none;
+    background-image: none;
+    background-color: transparent;
 }
 
-/* Espaciado de Checkboxes y Radios: Proporcional al botón */
+/* Checkboxes y Radios (Simulando el calc(6px / 2)) */
 check, radio {
-    margin: calc(var(--p-side) / 2);
+    margin: 3px;
 }

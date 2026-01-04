@@ -1,72 +1,71 @@
 /* ============================================================
-   CoreUI v1.1 - CHECKBOX & RADIO BUTTONS
-   Estilo: Indicadores de Estado HUD / Hard-Square
+   CoreUI v1.1 - CHECKBOX & RADIO BUTTONS (GTK3 Native)
    ============================================================ */
 
 /* Contenedor base del Check y Radio */
 check,
 radio {
     margin: 4px;
-    min-width: 18px;  /* Dimensiones robustas para 1080p */
-    min-height: 18px;
+    min-width: 16px; 
+    min-height: 16px;
     background-color: #0e1210;
-    border: 2px solid #1f2a24;
-    border-radius: 0px !important; /* Cuadrado absoluto */
-    transition: all 80ms linear;
+    border: 1px solid #1f2a24;
+    border-radius: 0; /* Cuadrado absoluto */
+    /* Eliminamos 'all' para evitar el error 'Junk at end of value' */
+    transition: 100ms ease-in-out;
 }
 
-/* --- CHECKBOX (Selector Cuadrado) --- */
+/* --- CHECKBOX --- */
 
 check:hover {
     border-color: #00CCCC;
-    background-color: rgba(0, 204, 204, 0.05);
+    background-color: alpha(#00CCCC, 0.1);
 }
 
 check:checked {
     background-color: #00CCCC;
     border-color: #00CCCC;
-    /* Usamos una máscara vectorial para la 'V' de verificación */
+    /* Forzamos el uso del icono de check del sistema */
     -gtk-icon-source: -gtk-icontheme("object-select-symbolic");
-    -gtk-icon-shadow: none;
-    color: #0e1210; /* Color del icono sobre el fondo cian */
+    color: #0e1210; 
 }
 
-/* --- RADIO BUTTONS (Selector de Rombo Técnico) --- */
+/* --- RADIO BUTTONS (Optimización de Forma) --- */
 
 radio {
-    /* En CoreUI v1.1 los radios son rombos, no círculos */
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    /* clip-path NO es compatible con GTK3. 
+       Para un look técnico usamos border-radius: 0 (Cuadrado) 
+       o 50% para el estándar circular. 
+       Para mantener tu estilo HUD, los dejamos cuadrados pero con acento Ámbar. */
+    border-radius: 0;
 }
 
 radio:hover {
-    border-color: #FFB000; /* El radio brilla en Ámbar al hover */
-    background-color: rgba(255, 176, 0, 0.05);
+    border-color: #FFB000;
+    background-color: alpha(#FFB000, 0.1);
 }
 
 radio:checked {
-    background-color: #FFB000; /* Ámbar para diferenciar de los Checks */
+    background-color: #FFB000;
     border-color: #FFB000;
-    -gtk-icon-source: none; /* No necesita icono, el relleno es el indicador */
+    /* En GTK3 los radios checked suelen necesitar un punto central */
+    -gtk-icon-source: -gtk-icontheme("non-starred-symbolic");
+    color: #0e1210;
 }
 
 /* --- ESTADOS DE SISTEMA --- */
 
-/* Elementos deshabilitados */
 check:disabled,
 radio:disabled {
-    opacity: 0.3;
-    border-color: #1f2a24;
-    background-color: transparent;
-}
-
-/* Estado Backdrop (Ventana sin foco) */
-check:backdrop,
-radio:backdrop {
+    opacity: 0.4;
     border-color: #1b211d;
     background-color: transparent;
 }
 
-check:checked:backdrop {
-    background-color: #1b211d;
-    color: #0e1210;
+/* Estado Backdrop */
+check:backdrop,
+radio:backdrop {
+    border-color: #1b211d;
+    background-color: transparent;
+    box-shadow: none;
 }

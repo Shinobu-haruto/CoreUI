@@ -1,42 +1,61 @@
-/* widgets/headerbar.css - Technical HUD Header */
+/* ============================================================
+   CoreUI - HEADERBAR & TITLEBAR (NEMO & GTK3 SAFE)
+   ============================================================ */
 
-headerbar {
-    background: @bg_base !important;
-    border-radius: 0 !important;
-    border: none !important;
-    min-height: 32px !important; 
+headerbar,
+.titlebar,
+headerbar.titlebar {
+    background-color: @bg_base;
+    background-image: none;
+    border-radius: 0;
+    border: none;
+    min-height: 32px;
     /* Línea de acento inferior (Bus de datos) */
-    box-shadow: inset 0 -2px 0 0 @accent !important; 
+    box-shadow: inset 0 -2px 0 0 @accent;
     padding: 0 6px;
 }
 
-/* Botones de control de ventana (Cerrar, Min, Max) */
+/* Títulos de ventana: Tipografía LCD */
+headerbar label.title,
+.titlebar label.title,
+headerbar .title,
+.titlebar .title {
+    color: @accent;
+    font-weight: bold;
+    text-shadow: none;
+}
+
+/* Botones de control (Cerrar, Min, Max) */
+headerbar button.titlebutton,
+.titlebar button.titlebutton,
 windowcontrols button {
-    background: transparent;
-    border: none;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0;
     color: @fg_main;
-    min-width: 24px;
-    min-height: 24px;
+    min-width: 26px;
+    min-height: 26px;
     margin: 4px 2px;
-    padding: 0;
 }
 
-/* Botón de Cerrar (X Dinámica) */
-windowcontrols button.close {
-    background-image: 
-        linear-gradient(45deg, transparent 42%, @fg_main 42%, @fg_main 58%, transparent 58%),
-        linear-gradient(-45deg, transparent 42%, @fg_main 42%, @fg_main 58%, transparent 58%) !important;
-    background-size: 10px 10px !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
+/* Hover general en botones de la barra */
+headerbar button.titlebutton:hover,
+windowcontrols button:hover {
+    background-color: @bg_hover;
+    border: 1px solid @accent;
 }
 
+/* Botón de Cerrar - Estilo Alerta */
+headerbar button.titlebutton.close:hover,
 windowcontrols button.close:hover {
-    background-color: #cc0000 !important; /* Rojo alerta al cerrar */
-    color: white !important;
+    background-color: #cc0000;
+    color: #ffffff;
+    border: 1px solid #ff0000;
 }
 
-/* Botón de Minimizar (Línea de pulso) */
-windowcontrols button.minimize {
-    box-shadow: inset 0 -2px 0 0 @fg_main;
+/* Limpieza de errores de gradiente (Junk Fix) */
+/* Si deseas la X dibujada, usamos una sintaxis más simple para GTK */
+button.titlebutton.close {
+    -gtk-icon-shadow: none;
 }

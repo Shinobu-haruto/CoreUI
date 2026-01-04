@@ -1,24 +1,13 @@
-/* widgets/entries.css - Data Cell Fixed */
-
 entry {
-    background-color: @bg_alt; 
-    color: @fg_main;            
-    border: 1px solid @border_col; 
-    border-radius: 0px;        
-    min-height: 24px !important;
-    padding: 0 6px;
-    font-family: "Inter", sans-serif;
+    background-color: @bg_alt;
+    color: @fg_main;
+    border: 1px solid @border_col;
+    border-radius: 0;
+    min-height: 28px;
+    padding: 2px 6px;
 }
 
 entry:focus {
-    border-color: @accent;      
-    background-color: @bg_base; 
-    /* El borde inferior cian simula un cursor de terminal */
-    box-shadow: inset 0 -2px 0 0 @accent;
-}
-
-/* Selección de texto dentro de la entrada */
-entry selection {
-    background-color: @accent;
-    color: @bg_base;
+    border-color: @accent;
+    box-shadow: inset 0 0 0 1px @accent;
 }

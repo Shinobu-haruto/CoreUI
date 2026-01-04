@@ -1,29 +1,26 @@
 /* ============================================================
-   CoreUI - PROFILE: FULL HD (1920x1080)
-   Estilo: Métricas Expandidas para Alta Densidad (GTK3 Fixed)
+   CoreUI - PROFILE: SD (1366x768) - GLOBAL VARIABLES
+   Solo definiciones de color validas para GTK3
    ============================================================ */
 
-/* --- MÉTRICAS DE INTERFAZ (Escaladas para 1080p) --- */
-@define-color h_bar_height 46px;    /* Headerbar más robusta */
-@define-color btn_height 32px;      /* Botones más grandes para click fácil */
-@define-color row_height 36px;      /* Filas con aire en listas y Nemo */
-@define-color p_side 12px;          /* Padding lateral expandido */
-@define-color b_width 2px;          /* Borde doble para resaltar en alta resolución */
-@define-color ui_radius 0px;        /* Look Industrial intacto */
-@define-color sep_margin 12px;      /* Espaciado técnico */
-
-/* --- TIPOGRAFÍA HD --- */
-@define-color font_main_size 10.5pt;
-@define-color font_mono_size 9pt;
-
-/* --- PALETA DE COLORES (Misma ADN que SD) --- */
+/* --- PALETA DE COLORES --- */
 @define-color bg_base #0e1210;
 @define-color bg_alt #151a17;
-@define-color accent #00CCCC;
-@define-color border_col #1f2a24;
 @define-color fg_main #e6f4ea;
+@define-color accent #00CCCC;
+@define-color accent_alt #3EBFFF;
+@define-color border_col #1f2a24;
 @define-color warning_amber #FFB000;
 
-/* Variantes de estado para HD */
-@define-color bg_hover rgba(0, 204, 204, 0.12);
-@define-color bg_active rgba(0, 204, 204, 0.25);
+/* --- ESTADOS --- */
+@define-color bg_hover rgba(0, 204, 204, 0.08);
+@define-color bg_active rgba(0, 204, 204, 0.2);
+@define-color fg_disabled #4a5a50;
+@define-color fg_main_muted #8a9a90;
+
+/* --- SELECCION --- */
+@define-color core_selection_bg @accent;
+@define-color core_selection_fg @bg_base;
+
+/* NOTA: Las medidas (32px, 9pt) se han movido a sus respectivos 
+   archivos de widgets para evitar errores de compilacion. */

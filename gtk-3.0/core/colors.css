@@ -1,37 +1,78 @@
 /* ============================================================
-   CoreUI Color System - Adaptive Logic (GTK3 Fixed)
+   CoreUI – Color System (GTK3 / Cinnamon 6.x)
    ============================================================ */
 
+/* 1. Base de la Ventana */
 window,
-.background {
+window.background,
+.background,
+dialog,
+messagedialog {
     background-color: @bg_base;
     color: @fg_main;
 }
 
+/* Permitir transparencia en esquinas redondeadas o Sombras CSD */
+window.csd {
+    background-color: transparent;
+}
+window.csd .background {
+    background-color: @bg_base;
+    border-radius: 0; /* Estilo HUD Industrial */
+}
+
+/* Ventanas inactivas (Mantenemos la desaturación que querías) */
+window:backdrop,
+window.background:backdrop {
+    background-color: @bg_base;
+    color: @fg_disabled; /* Usando la variable de tu paleta base */
+}
+
+/* 2. Headerbar / Titlebar */
 headerbar {
-    background-color: @bg_alt;
+    background-color: @bg_alt; /* Usando @bg_alt de tu lista base */
     color: @fg_main;
-    /* Usamos 1px o 2px fijo o la constante si la definiste en SD.css */
-    border-bottom: 1px solid @accent; 
+    border-bottom: 1px solid @border_col;
+    box-shadow: none;
 }
 
-/* Ajuste de contraste para listas y sidebars */
-.sidebar, 
+/* 3. Listas, sidebars y vistas */
+.sidebar,
 viewport,
-list, 
-treeview {
+list,
+treeview,
+.view {
     background-color: @bg_alt;
     color: @fg_main;
 }
 
-/* Selección Universal */
-selection, 
-*:selected {
-    background-color: @accent;
-    color: @bg_base;
+/* Filas normales */
+row {
+    background-color: transparent;
+    color: @fg_main;
 }
 
-/* Filas de listas para que no se vean blancas */
-row {
-    color: @fg_main;
+/* 4. Selección (Usando tu Cian @accent) */
+row:selected,
+list row:selected,
+treeview:selected,
+.sidebar row:selected,
+entry:selected {
+    background-color: @accent;
+    color: @bg_base; /* Texto oscuro sobre fondo cian para legibilidad */
+}
+
+/* Hover de filas */
+row:hover {
+    background-color: @bg_hover; /* Usando tu rgba de la paleta base */
+}
+
+/* 5. Widgets deshabilitados */
+*:disabled {
+    color: @fg_disabled;
+}
+
+/* 6. Separadores */
+separator {
+    background-color: @border_col;
 }

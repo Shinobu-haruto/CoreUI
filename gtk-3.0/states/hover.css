@@ -1,45 +1,45 @@
 /* ============================================================
-   CoreUI v1.1 - HOVER STATES (Feedback de Proximidad)
-   Estilo: Iluminación de Celda HUD / 2026 Edition
+   CoreUI v1.1 - HOVER STATES (GTK3 Native)
    ============================================================ */
 
 /* Feedback Global: Resaltado de componentes interactivos */
 button:hover,
 row:hover,
-menuitem:hover,
 .sidebar row:hover,
 list row:hover {
-    /* Fondo con tinte Cian muy sutil para simular luz de fondo */
-    background-color: rgba(0, 204, 204, 0.08); 
+    /* Usamos alpha nativo para mejor rendimiento en pantallas LCD */
+    background-color: alpha(#00CCCC, 0.08); 
     color: #00CCCC;            
-    border-color: #3EBFFF;     /* Borde Cian Eléctrico para definición */
+    border-color: #3EBFFF;     
     
-    /* Transición rápida para evitar el 'smearing' en paneles LCD */
-    transition: background-color 60ms linear;
+    /* En GTK3 la transición se define de forma simple para evitar el error 'Junk' */
+    transition: 60ms ease-in;
 }
 
-/* Excepción para Menús: Inversión de color más agresiva */
-menu menuitem:hover {
+/* Excepción para Menús: Inversión de color HUD */
+menu menuitem:hover,
+.menu menuitem:hover {
     background-color: #00CCCC;
     color: #0e1210;
 }
 
-/* Iconografía en Hover: Energía en los símbolos */
+/* Iconografía en Hover: Los iconos pasan a estado Ámbar */
 button:hover image,
-row:hover image {
-    color: #FFB000; /* Los iconos brillan en Ámbar al pasar el mouse */
-    -gtk-icon-shadow: 0 0 5px rgba(255, 176, 0, 0.3);
+row:hover image,
+.sidebar row:hover image {
+    color: #FFB000;
+    /* Simplificamos la sombra para evitar lag en el scroll de Nemo */
+    -gtk-icon-shadow: 0 1px 2px rgba(255, 176, 0, 0.4);
 }
 
 /* Efecto para Sliders y Switches: Pre-activación */
 scale slider:hover,
 switch:hover {
-    box-shadow: 0 0 8px rgba(0, 204, 204, 0.2);
+    box-shadow: 0 0 5px alpha(#00CCCC, 0.3);
     border-color: #00CCCC;
 }
 
 /* Links y texto interactivo */
 link:hover {
     color: #3EBFFF;
-    text-decoration-color: #3EBFFF;
 }

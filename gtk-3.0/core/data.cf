@@ -1,0 +1,17 @@
+window,
+window.background,
+.background.csd,
+dialog,
+messagedialog {
+    background-color: @bg_base;
+    color: @fg_main;
+}
+
+/* Ventanas inactivas */
+window:backdrop,
+window.background:backdrop,
+.background.csd:backdrop {
+    background-color: @bg_base;
+    color: @fg_main_muted;
+}
+

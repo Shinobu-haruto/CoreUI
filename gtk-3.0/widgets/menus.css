@@ -1,36 +1,16 @@
-/* widgets/menus.css - Technical Cell Fixed */
-
-menu, .menu {
-    background-color: @bg_alt; 
-    color: @fg_main;            
-    border: 1px solid @accent; 
-    border-radius: 0px; 
-    padding: 2px 0;
-    /* Sombra de bloque sólida (Retro HUD) */
-    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.8); 
+menu,
+menubar {
+    background-color: @bg_alt;
+    border: 1px solid @border_col;
+    padding: 4px;
 }
 
 menuitem {
-    min-height: 26px !important;
-    padding: 2px 6px;
-    font-family: "Inter", sans-serif;
+    padding: 4px 8px;
+    min-height: 24px;
 }
 
-menuitem:hover, menuitem:selected {
-    background-color: @bg_hover; 
-    color: @accent;
-    /* Indicador lateral cian */
-    box-shadow: inset 3px 0 0 0 @accent;
-}
-
-/* Atajos de teclado (Telemetría Ámbar) */
-menuitem accelerator {
-    font-family: "JetBrains Mono", monospace;
-    color: @warning_amber;
-    font-size: 8pt;
-}
-
-menubar {
-    background-color: @bg_base; 
-    border-bottom: 1px solid @border_col; 
+menuitem:hover {
+    background-color: @accent;
+    color: @bg_base;
 }

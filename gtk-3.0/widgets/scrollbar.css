@@ -1,77 +1,76 @@
 /* ============================================================
-   CoreUI v1.1 - ADAPTIVE SCROLLBAR
-   Estilo: Rectangular Industrial / Hardware-Linked
+   CoreUI v1.1 - ADAPTIVE SCROLLBAR (GTK3 NATIVE)
    ============================================================ */
 
 scrollbar {
     background-color: transparent;
-    transition: none; 
+    transition: none;
+    -GtkScrollbar-has-backward-stepper: 0;
+    -GtkScrollbar-has-forward-stepper: 0;
 }
 
-/* El carril (Trough): El chasis de navegación */
+/* El carril (Trough) */
 scrollbar trough {
-    background-color: var(--bg-base); 
+    background-color: @bg_base;
     border: none;
 }
 
-/* El tirador (Slider): Bloque de Posición HUD */
+/* El tirador (Slider) */
 scrollbar slider {
-    background-color: var(--bg-alt); 
-    /* El borde escala: 1px en SD para máxima finura */
-    border: var(--b-width) solid var(--accent); 
-    border-radius: var(--ui-radius);        
+    background-color: @bg_alt;
+    /* Borde de 1px Cian para match con el resto de la interfaz */
+    border: 1px solid @accent;
+    border-radius: 0; 
     
-    /* Dimensiones proporcionales a la métrica del botón */
-    min-width: calc(var(--btn-h) * 0.35);            
-    min-height: calc(var(--btn-h) * 0.35);
-    margin: var(--b-width); 
+    /* Dimensiones fijas para estabilidad en 768p */
+    min-width: 8px;
+    min-height: 8px;
+    margin: 1px;
 }
 
-/* Estado: Hover - Pre-activación */
+/* Estado: Hover */
 scrollbar slider:hover {
-    background-color: rgba(0, 204, 204, 0.2); 
-    border-color: #3EBFFF;     
+    background-color: alpha(@accent, 0.2);
+    border-color: #3EBFFF;
 }
 
-/* Estado: Active (Arrastrando) - MODO ADQUISICIÓN ÁMBAR */
+/* Estado: Active (Arrastrando) - MODO ÁMBAR */
 scrollbar slider:active {
-    background-color: #FFB000; 
+    background-color: #FFB000;
     border-color: #FFB000;
-    /* Glow de fósforo proporcional */
-    box-shadow: 0 0 calc(var(--b-width) * 8) rgba(255, 176, 0, 0.4); 
 }
 
 /* --- Variaciones de Orientación --- */
 
 scrollbar.vertical trough {
-    /* El ancho total del carril se ajusta al perfil */
-    min-width: calc(var(--btn-h) * 0.5); 
-    border-left: var(--b-width) solid var(--border); 
+    min-width: 10px;
+    border-left: 1px solid @border_col;
 }
 
 scrollbar.horizontal trough {
-    min-height: calc(var(--btn-h) * 0.5);
-    border-top: var(--b-width) solid var(--border);
+    min-height: 10px;
+    border-top: 1px solid @border_col;
 }
 
-/* Punto de unión de ambos scrollbars (Junction) */
+/* Punto de unión (Junction) */
 scrollbar.junction {
-    background-color: var(--bg-base);
-    border: var(--b-width) solid var(--border);
-    /* Patrón de rejilla adaptativo */
-    background-image: radial-gradient(var(--border) 1px, transparent 0);
-    background-size: 4px 4px;
+    background-color: @bg_base;
+    border: 1px solid @border_col;
 }
 
 /* --- Limpieza Visual --- */
 
-/* Ocultar botones de flecha (Steppers) para look minimalista */
+/* En GTK3 no se usa display:none, se resetea el tamaño y fondo */
 scrollbar button {
-    display: none;
+    min-width: 0;
+    min-height: 0;
+    background-image: none;
+    background-color: transparent;
+    border: none;
 }
 
-/* Estado Backdrop: Navegación Desconectada */
-scrollbar:backdrop slider {
-    border-color: var(--border);
+/* Estado Backdrop */
+scrollbar slider:backdrop {
+    border-color: @border_col;
     background-color: transparent;
 }

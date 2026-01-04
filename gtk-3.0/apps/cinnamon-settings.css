@@ -1,48 +1,81 @@
-/* ================================
- * Core Cinnamon Settings Sidebar
- * ================================ */
+/* ============================================================
+   CoreUI v1.1 – CINNAMON SETTINGS (GTK 3.0 Native)
+   ============================================================ */
 
+/* Contenedor principal y fondo */
+window.cinnamon-settings,
+.cinnamon-settings {
+    background-color: @bg_base;
+    color: @fg_main;
+}
+
+/* Barra lateral de categorías */
+.cinnamon-settings stacksidebar.sidebar,
 .cinnamon-settings .sidebar {
-    background-color: @core_bg_alt;
+    background-color: @bg_alt;
+    border-right: 1px solid @border_col;
 }
 
-/* Categoría */
-.cinnamon-settings .sidebar row {
-    padding: @core_pad_sm @core_pad_md;
-    border-radius: @core_radius_sm;
+/* Filas de categorías */
+.cinnamon-settings stacksidebar.sidebar row {
+    padding: 8px 12px;
+    border-radius: 0;
+    color: @fg_main;
+    border: none;
 }
 
-/* Hover */
-.cinnamon-settings .sidebar row:hover {
-    background-color: alpha(@core_accent, 0.12);
+/* Hover en categorías */
+.cinnamon-settings stacksidebar.sidebar row:hover {
+    background-color: @bg_hover;
+    color: @accent;
 }
 
-/* Activo */
-.cinnamon-settings .sidebar row:selected {
-    background-color: @core_accent_soft;
-    color: @core_fg;
+/* Categoría seleccionada (Indicador HUD) */
+.cinnamon-settings stacksidebar.sidebar row:selected {
+    background-color: @bg_active;
+    color: @accent;
+    font-weight: bold;
+    /* Indicador lateral sólido */
+    box-shadow: inset 3px 0 0 0 @accent;
 }
 
-.cinnamon-settings frame {
+/* Marcos / secciones de ajustes */
+.cinnamon-settings frame > border {
+    border: 1px solid @border_col;
+    border-radius: 0;
     background-color: transparent;
-    border: 1px solid @core_border;
-    margin-bottom: @core_pad_md;
 }
 
+/* Etiquetas y Texto */
 .cinnamon-settings label {
-    color: @core_fg;
+    color: @fg_main;
 }
 
-.cinnamon-settings label.dim-label {
-    color: @core_fg_muted;
-    font-size: 0.95em;
+.cinnamon-settings label:disabled {
+    color: @fg_disabled;
 }
 
-.cinnamon-settings switch:checked {
-    background-color: @core_accent;
+/* Texto secundario (Metadata) */
+.cinnamon-settings .dim-label {
+    color: @fg_main_muted;
 }
 
-.cinnamon-settings scale slider {
-    border-width: 2px;
+/* Switches (Interruptores) */
+switch:checked {
+    background-color: @accent;
+    border-color: @accent;
+    color: @bg_base;
 }
 
+/* Sliders (Escalas de rango) */
+scale slider {
+    background-color: @bg_base;
+    border: 2px solid @accent;
+    border-radius: 0;
+    min-width: 14px;
+    min-height: 14px;
+}
+
+scale highlight {
+    background-color: @accent;
+}

@@ -1,51 +1,47 @@
-/* Core GTK Theme */
+/* ============================================================
+   CoreUI v1.1 - MAIN MANIFEST (2026 Edition)
+   Arquitectura: Modular / Hardware-Dependent
+   Resolución Objetivo: 1366x768 (Profile: SD)
+   ============================================================ */
 
-@import url("core/colors.css");
-@import url("core/typography.css");
-@import url("core/metrics.css");
+/* 1. PERFIL DE HARDWARE (Activo)
+   Cambiar a HDFull.css si conectas un monitor 1080p externo */
+@import url("core/SD.css");
+@import url("core/HDFull.css");
+/* 2. LOGICA CORE Y VARIABLES ESTRUCTURALES */
+@import url("core/reset.css");       /* Limpieza de estilos default */
+@import url("core/colors.css");      /* Mapeo de variables a widgets */
+@import url("core/typography.css");  /* Tipografía HUD escalable */
+@import url("core/metrics.css");     /* Rejilla de píxeles adaptativa */
 
-@import url("base/reset.css");
-@import url("base/globals.css");
-@import url("base/animations.css");
+/* 3. ESTADOS LOGICOS (Máquina de Estados) */
+@import url("states/animations.css"); /* Kinetics de 80ms */
+@import url("states/focus.css");      /* Navegación por teclado */
+@import url("states/hover.css");      /* Feedback de proximidad */
+@import url("states/active.css");     /* Activación de circuitos */
+@import url("states/checked.css");    /* Selectores binarios */
+@import url("states/backdrop.css");   /* Hibernación visual */
+@import url("states/disabled.css");   /* Estado offline */
 
-@import url("states/hover.css");
-@import url("states/active.css");
-@import url("states/focus.css");
-@import url("states/disabled.css");
-
+/* 4. COMPONENTES DE INTERFAZ (Widgets) */
+@import url("widgets/headerbar.css");
 @import url("widgets/buttons.css");
 @import url("widgets/entries.css");
-@import url("widgets/headerbar.css");
+@import url("widgets/sidebar.css");
 @import url("widgets/menus.css");
 @import url("widgets/popovers.css");
-@import url("widgets/sidebar.css");
-@import url("widgets/scrollbar.css");
+@import url("widgets/tabs.css");
+@import url("widgets/sliders.css");
 @import url("widgets/switches.css");
-
-@import url("apps/_filemanagers.css");
-@import url("apps/cinnamon-settings.css");
-@import url("apps/_terminal.css");
+@import url("widgets/progressbar.css");
+@import url("widgets/levelbar.css");
+@import url("widgets/scrollbar.css");
+@import url("apps/_browser.css");
+@import url("apps/_cinnamon-settings.css");
 @import url("apps/_media.css");
 @import url("apps/_settings.css");
+@import url("apps/_terminal.css");
 
-@import url("widgets/checks.css");
-@import url("widgets/progressbar.css");
-@import url("widgets/tabs.css");
-
-@import url("widgets/levelbar.css");
-@import url("widgets/switches.css");
-@import url("widgets/frame.css");
-@import url("widgets/sliders.css");
-@import url("gtk-compact.css");
-@import url("gtk-light.css");
-
-@import url("states/hover.css");
-@import url("states/active.css");
-@import url("states/checked.css");
-@import url("states/focus.css");
-@import url("states/disabled.css");
-@import url("states/selected.css");
-@import url("states/backdrop.css");
-@import url("states/animations.css");
-@import url("states/contrast.css");
-
+/* 5. OVERRIDES DE USUARIO (Opcional)
+   Para ajustes rápidos sin tocar los módulos */
+@import url("user-custom.css");

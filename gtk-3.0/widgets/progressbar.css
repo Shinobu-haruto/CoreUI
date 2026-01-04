@@ -1,19 +1,38 @@
-/* widgets/progressbar.css - Reactor Core Fixed */
+/* ============================================================
+   CoreUI - PROGRESSBAR (Reactor Core)
+   Estilo: Segmentado Industrial / Hardware-Linked
+   ============================================================ */
 
 progressbar trough {
     background-color: @bg_base; 
     border: 1px solid @border_col; 
-    border-radius: 0px;
+    border-radius: 0;
     padding: 1px;
-    min-height: 10px; 
+    min-height: 12px; 
 }
 
 progressbar progress {
     background-color: @accent;
+    border-radius: 0;
     border: none;
-    /* Efecto de bloques segmentados sin usar calc() pesado */
-    background-image: linear-gradient(90deg, 
+    
+    /* Efecto de bloques segmentados:
+       Cambiamos '90deg' por 'to right' que es la sintaxis nativa de GTK3.
+    */
+    background-image: linear-gradient(to right, 
                         @bg_base 1px, 
                         transparent 1px);
     background-size: 8px 100%;
+}
+
+/* Estado de carga pulsante (Indeterminado) */
+progressbar.horizontal.trough progress {
+    background-image: linear-gradient(to right, 
+                        @bg_base 1px, 
+                        transparent 1px);
+}
+
+/* Barra de progreso en estado de error/alerta */
+progressbar.error progress {
+    background-color: #cc0000;
 }

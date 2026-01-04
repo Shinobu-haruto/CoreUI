@@ -1,97 +1,83 @@
 /* ============================================================
-   CoreUI v1.1 - ADAPTIVE SIDEBAR
-   Estilo: Navegación HUD / Hardware-Linked
+   CoreUI v1.1 - ADAPTIVE SIDEBAR (GTK3 Native)
    ============================================================ */
 
-/* Contenedor principal de navegación */
+/* Contenedor principal: Nemo, Nautilus y Settings */
 .sidebar,
 .sidebar list,
-.sidebar listview,
-stacksidebar.sidebar list,
-viewport.sidebar {
-    background-color: var(--bg-alt); 
-    color: var(--fg-main);            
+stacksidebar row,
+.navigation-sidebar {
+    background-color: @bg_alt; 
+    color: @fg_main;           
     border: none;
 }
 
-/* Filas de navegación: Bloques de Datos Dinámicos */
+/* Filas de navegación */
 .sidebar row {
-    /* Sincronizado con la altura de fila del perfil (26px-28px en SD) */
-    min-height: var(--row-h) !important;
-    padding: 2px var(--p-side);
-    border-radius: var(--ui-radius);        
+    min-height: 26px; 
+    padding: 3px 8px;
+    border-radius: 0;        
     border: none;
     transition: none; 
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
 }
 
-/* Estado: Hover (Pre-selección) */
+/* Estado: Hover (Cian eléctrico suave) */
 .sidebar row:hover {
-    background-color: rgba(27, 33, 29, 0.8); 
-    color: #3EBFFF; 
+    background-color: @bg_hover; 
+    color: @accent; 
 }
 
-/* Estado: Seleccionado (Fila Activa / Canal de Datos) */
+/* Estado: Seleccionado (Indicador lateral HUD) */
 .sidebar row:selected {
-    background-color: rgba(0, 204, 204, 0.1); 
-    color: var(--accent);
-    /* Indicador lateral vinculado al grosor del borde */
-    box-shadow: inset calc(var(--b-width) * 4) 0 0 0 var(--accent);
-    font-weight: 700;
+    background-color: rgba(0, 204, 204, 0.15); 
+    color: @accent;
+    /* Indicador de 4px sólido a la izquierda */
+    box-shadow: inset 4px 0 0 0 @accent;
 }
 
-/* Estado: Seleccionado con Foco (Operación Activa) */
+/* Estado: Seleccionado con Foco (Navegación por teclado) */
 .sidebar row:selected:focus {
-    background-color: var(--accent); 
-    color: var(--bg-base);            
+    background-color: @accent; 
+    color: @bg_base;           
     box-shadow: none;
 }
 
-/* --- ICONOGRAFÍA TÉCNICA ESCALABLE --- */
+/* --- ICONOGRAFÍA --- */
 
-.sidebar image {
-    /* El icono se escala ligeramente según la fuente base */
-    -gtk-icon-size: calc(var(--f-size) * 1.5);
-    margin-right: var(--p-side);
-    color: inherit;
+/* Nota: No usamos -gtk-icon-size en .sidebar image para evitar el bug de typography.css */
+.sidebar row image {
+    margin-right: 8px;
+    opacity: 0.9;
 }
 
-/* Los iconos en la fila seleccionada brillan en Ámbar */
 .sidebar row:selected image {
-    color: #FFB000; 
-    -gtk-icon-shadow: 0 0 calc(var(--b-width) * 5) rgba(255, 176, 0, 0.5);
+    color: inherit;
+    opacity: 1.0;
 }
 
 /* --- ESTRUCTURA Y DIVISORES --- */
 
 .sidebar separator {
-    background-color: var(--border); 
-    min-height: var(--b-width);
-    margin: var(--sep-margin) calc(var(--p-side) / 2);
+    background-color: @border_col; 
+    min-height: 1px;
+    margin: 8px 0;
 }
 
-/* Cabeceras de sección (ej. "Dispositivos") */
+/* Cabeceras de sección (Dispositivos, Etiquetas, etc.) */
 .sidebar label.separator,
-.sidebar list-header {
+.sidebar list-header,
+.sidebar .sidebar-label {
     font-family: "JetBrains Mono", monospace;
-    font-size: calc(var(--f-size) - 2pt);
-    font-weight: 800;
-    color: var(--border);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    padding: calc(var(--sep-margin) / 2) var(--p-side);
+    font-size: 8pt;
+    font-weight: bold;
+    color: @fg_main_muted;
+    letter-spacing: 1px;
+    padding: 8px 6px 2px 6px;
 }
 
 /* --- ESTADOS DE FONDO (Backdrop) --- */
 
 .sidebar:backdrop {
-    background-color: var(--bg-base); 
-    color: var(--border);
-}
-
-.sidebar row:selected:backdrop {
-    background-color: transparent;
-    color: var(--border);
-    box-shadow: inset calc(var(--b-width) * 2) 0 0 0 var(--border);
+    background-color: @bg_base; 
+    color: @fg_disabled;
 }
